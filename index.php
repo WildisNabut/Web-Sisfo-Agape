@@ -17,23 +17,14 @@
       window.scrollTo(0, 1);
     }
   </script>
-  <!--// Meta tag Keywords -->
-  <!-- css files -->
-  <link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
-  <link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-  <link rel="stylesheet" href="css/swipebox.css">
-  <link rel="stylesheet" href="css/roma.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-  <link rel="stylesheet" href="css/jquery-ui.css" />
-  <link rel="stylesheet" href="css/beranda.css" />
-  <link rel="stylesheet" href="css/kontak.css" />
+
 
 
   <script src="https://unpkg.com/feather-icons"></script>
 
   <!-- //css files -->
   <!-- online-fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
   <!-- //online-fonts -->
@@ -41,32 +32,14 @@
 
 <body>
 
-  <?php include('napigasi.php'); ?>
+  <?php include('nav.php'); ?>
 
   <div class="clearfix"> </div>
   <!-- Slideshoww -->
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-    </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="images/1.jpg" alt="gambar 1" style="width:100%; height: 500px">
-      </div>
-      <div class="item">
-        <img src="images/2.jpg" alt="gambar 2" style="width:100%; height: 500px">
-      </div>
-      <div class="item">
-        <img src="images/3.jpg" alt="gambar 3" style="width:100%; height: 500px">
-      </div>
 
-    </div>
+
 
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">

@@ -91,8 +91,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
     
     <div class="button-container">
         <button onclick="window.location.href='mailto:siteunc22@gmail.com'">Kirim Email</button>
-        <button onclick="window.location.href='https://wa.me/6282144893442?text=Halo,%20saya%20ingin%20menghubungi%'">Hubungi via WhatsApp</button>
-    </div>
+        <button onclick="window.open('https://wa.me/6282144893442?text=Halo,%20saya%20ingin%20menghubungi%', '_blank')">Hubungi via WhatsApp</button>
+        </div>
 </div>
 </div>
  <!-- Footer Section -->

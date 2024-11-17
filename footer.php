@@ -103,7 +103,7 @@
     </div>
 
     <!-- About Us Section -->
-    <div>
+    <div class="email">
         <h3>Tentang Kami</h3>
         <p>Kirimkan Kami Pesan jika membutuhkan bantuan lebih lanjut<a href="mail.php">disini</a></p>
         <div class="social-icons">

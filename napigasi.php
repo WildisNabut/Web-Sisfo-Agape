@@ -80,6 +80,7 @@
 								<li><a href='kegiatan.php' >Kegiatan Sekolah</a></li>
 							</ul>
 						</li>
+<<<<<<< HEAD
 
 
 						<li> <a class='effect-3 scroll' data-toggle='dropdown'>Galery<span class='caret'></span> </a>
