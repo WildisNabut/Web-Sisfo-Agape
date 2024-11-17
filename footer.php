@@ -58,20 +58,29 @@
         }
 
         .footer-bottom {
-    background-color: #020b32;
-    color: #ccc;
+    background-color: #fff;
+    color: #000000 !important; ;
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
 }
+.footer-bottom {
+    background-color: #fff; /* Warna latar belakang footer */
+    border-top: 2px solid #000; /* Garis pembatas atas dengan warna ungu */
+    padding: 10px; /* Jarak dalam elemen */
+    text-align: center; /* Teks rata tengah */
+}
+
 .footer-bottom a {
-    color: #8c51ff;
-    text-decoration: none;
-    margin-left: 5px;
+    color: #8c51ff; /* Warna teks link */
+    text-decoration: none; /* Hilangkan garis bawah link */
+    margin-left: 5px; /* Jarak antar link */
 }
+
 .footer-bottom a:hover {
-    color: #fff;
+    color: #fff; /* Warna teks menjadi putih saat hover */
 }
+
 
     </style>
 </head>
@@ -114,10 +123,6 @@
         </div>
     </div>
 </div>
-  <!-- Footer Bottom -->
-  <div class="footer-bottom">
-    &copy; Copyright SMP Agape Indah 2024. All Rights Reserved.
-  </div>
 
 </body>
 </html>

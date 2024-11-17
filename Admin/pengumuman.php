@@ -113,48 +113,92 @@
             </form>
         </div>
 
-    <div class="card-body">
+        <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th class="header-no">No</th>
-                        <th class="header-judul">Judul</th>
-                        <th class="header-konten">Deskripsi</th>
-                        <th class="header-tanggal">Tanggal</th>
-                        <th class="header-status">Status</th>
-                        <th class="header-aksi text-center" colspan="2"> Aksi</tt
-                    </tr>
-                </thead>
-                <?php
-                  include '../koneksi.php';
-                  $i = 1;
-                  $data = mysqli_query($koneksi, "SELECT * FROM  pengumuman");
-                  while($d =  mysqli_fetch_array($data) ){
-                   ?>
-                <tbody>
-                    <tr>
-                    <th> <?php echo $i++; ?> </th>
-                    <th> <?php echo $d['judul']; ?> </th>
-                    <th> <?php echo $d['dekripsi']; ?> </th>
-                    <th> <?php echo $d['tanggal']; ?> </th>
-                    <th> <?php echo $d['status']; ?> </th>
-                    <th class='text-center' width='100'>
-                            <a href='pengumuman_edit.php?kode=<?php echo $d['judul']; ?>' class='btn btn-success'>Edit</a>
-                        </th>
-                        <th class='text-center' width='100'>
-                        <button class='btn btn-danger' onclick="showDeleteModal('<?php echo $d['judul']; ?>')">Hapus</button>
-                         </th>  
-                    </tr>
-                    <?php
-                     }
-                     ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="header-no">No</th>
+                <th class="header-judul">Judul</th>
+                <th class="header-konten">Deskripsi</th>
+                <th class="header-tanggal">Tanggal</th>
+                <th class="header-status">Status</th>
+                <th class="header-aksi text-center" colspan="2">Aksi</th>
+            </tr>
+        </thead>
+        <?php
+        include '../koneksi.php';
+        $i = 1;
+        $data = mysqli_query($koneksi, "SELECT * FROM pengumuman");
+        while ($d = mysqli_fetch_array($data)) {
+        ?>
+        <tbody>
+            <tr>
+                <th><?php echo $i++; ?></th>
+                <th><?php echo $d['judul']; ?></th>
+                <th><?php echo $d['dekripsi']; ?></th>
+                <th><?php echo $d['tanggal']; ?></th>
+                <th>
+                <select class="form-control status" data-id="<?php echo $d['id']; ?>" name="status">
+                  <option value="Aktif" <?php echo ($d['status'] == 'Aktif') ? 'selected' : ''; ?>>Aktif</option>
+                  <option value="Nonaktif" <?php echo ($d['status'] == 'Nonaktif') ? 'selected' : ''; ?>>Nonaktif</option>
+              </select>
+
+                </th>
+                <th class='text-center' width='100'>
+                    <a href='pengumuman_edit.php?id=<?php echo $d['id']; ?>' class='btn btn-success'>Edit</a>
+                </th>
+                <th class='text-center' width='100'>
+                    <button class='btn btn-danger' onclick="showDeleteModal('<?php echo $d['id']; ?>')">Hapus</button>
+                </th>
+            </tr>
+        </tbody>
+        <?php
+        }
+        ?>
+    </table>
 </div>
 </div>
+
+</div>
+</div>
+
+<!-- JavaScript untuk Modal Hapus -->
+<script>
+    function showDeleteModal(id) {
+        // Set URL dengan ID data untuk dihapus
+        document.getElementById('confirmDeleteBtn').href = 'Hapus_pengumuman.php?kode=' + id;
+        
+        // Tampilkan modal
+        $('#deleteModal').modal('show');
+    }
+
+$(document).ready(function() {
+    // Mengubah status pengumuman saat dropdown berubah
+    $('.status').change(function() {
+        var id = $(this).data('id');  // Mengambil id pengumuman dari atribut data-id
+        var status = $(this).val();   // Mengambil nilai status yang dipilih
+
+        // Mengirim data ke server menggunakan AJAX
+        $.ajax({
+            url: 'update_status.php',  // Halaman yang akan menangani perubahan status
+            method: 'POST',
+            data: {
+                id: id,
+                status: status
+            },
+            success: function(response) {
+                // Menampilkan pesan atau update status yang sukses
+                alert('Status pengumuman berhasil diperbarui!');
+            },
+            error: function() {
+                alert('Terjadi kesalahan saat memperbarui status.');
+            }
+        });
+    });
+});
+
+</script>
 
 <!-- Modal Konfirmasi Hapus -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -185,6 +229,32 @@
         // Tampilkan modal
         $('#deleteModal').modal('show');
     }
+
+$(document).ready(function() {
+    // Mengubah status pengumuman saat dropdown berubah
+    $('.status').change(function() {
+        var id = $(this).data('id');  // Mengambil id pengumuman dari atribut data-id
+        var status = $(this).val();   // Mengambil nilai status yang dipilih
+
+        // Mengirim data ke server menggunakan AJAX
+        $.ajax({
+            url: 'update_status.php',  // Halaman yang akan menangani perubahan status
+            method: 'POST',
+            data: {
+                id: id,
+                status: status
+            },
+            success: function(response) {
+                // Menampilkan pesan atau update status yang sukses
+                alert('Status pengumuman berhasil diperbarui!');
+            },
+            error: function() {
+                alert('Terjadi kesalahan saat memperbarui status.');
+            }
+        });
+    });
+});
+
 </script>
 
 
@@ -232,6 +302,7 @@
         </div>
     </div>
 </div>
+
 
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>

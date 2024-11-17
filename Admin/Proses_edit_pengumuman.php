@@ -4,6 +4,7 @@ include('../koneksi.php');
 // Periksa apakah form telah disubmit
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ambil data dari form
+    $id = mysqli_real_escape_string($koneksi, $_POST['id']);
     $judul = mysqli_real_escape_string($koneksi, $_POST['judul']);
     $dekripsi = mysqli_real_escape_string($koneksi, $_POST['dekripsi']);  // Menggunakan 'dekripsi' untuk deskripsi
     $tanggal = mysqli_real_escape_string($koneksi, $_POST['tanggal']);
@@ -16,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Update data di database
-    $update = mysqli_query($koneksi, "UPDATE pengumuman SET judul = '$judul', dekripsi = '$dekripsi', tanggal = '$tanggal', status = '$status' WHERE judul = '$judul'");
+    $update = mysqli_query($koneksi, "UPDATE pengumuman SET judul = '$judul', dekripsi = '$dekripsi', tanggal = '$tanggal', status = '$status' WHERE id = '$id'");
 
     if ($update) {
         echo "<script>alert('Data pengumuman berhasil diupdate.'); window.location.href='pengumuman.php';</script>";

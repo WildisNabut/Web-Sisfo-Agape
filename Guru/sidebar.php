@@ -20,56 +20,6 @@
     </a>
   </li>
 
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Nav Item - Renungan -->
-  <li class="nav-item">
-    <a class="nav-link" href="renungan.php">
-      <i class="fas fa-fw fa-book-open"></i>
-      <span>Renungan</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Nav Item - Kutipan -->
-  <li class="nav-item">
-    <a class="nav-link" href="kutipan.php">
-      <i class="fas fa-fw fa-book"></i>
-      <span>Kutipan</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Nav Item - Kegiatan -->
-  <li class="nav-item">
-    <a class="nav-link" href="kegiatan.php">
-      <i class="fas fa-fw fa-calendar-check"></i>
-      <span>Kegiatan</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Galeri Section -->
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGaleri" aria-expanded="false" aria-controls="collapseGaleri">
-      <i class="fas fa-fw fa-images"></i>
-      <span>Galeri</span>
-    </a>
-    <div id="collapseGaleri" class="collapse" aria-labelledby="headingGaleri" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Galeri Sekolah</h6>
-        <a class="collapse-item" href="#">Foto</a>
-        <a class="collapse-item" href="vidio.php">Video</a>
-      </div>
-    </div>
-  </li>
   
  <!-- Divider -->
 <hr class="sidebar-divider" />

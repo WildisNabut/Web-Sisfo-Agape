@@ -11,7 +11,7 @@
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--// Meta tag Keywords -->
 <!-- css files -->
-
+<link rel="stylesheet" href="navbar.css">
 
 <!-- //css files -->
 <!-- online-fonts -->
@@ -21,52 +21,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
 
-<?php include ('napigasi.php'); ?>
 
 <div class="clearfix"> </div> 
+<?php include('slide.php'); ?>
 
 <!-- Slideshoww -->	
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
 
- <!-- Wrapper for slides -->
-<div class="carousel-inner" role="listbox">
-    <div class="item active">
-        <div class="video-section">
-            <h3>Proses Pemakaman Penganut Jingitiu</h3>
-            <iframe src="https://www.youtube.com/embed/4TCU2mKmi-U" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div class="item">
-        <div class="video-section">
-            <h3>Jingitiu, Kepercayaan Adat Sabu Raijua</h3>
-            <iframe src="https://www.youtube.com/embed/Rz39002wSNQ" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div class="item">
-        <div class="video-section">
-            <h3>Jingitiu, Penjaga Budaya Sabu Raijua</h3>
-            <iframe src="https://www.youtube.com/embed/Rz39002wSNQ" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-</div>
-
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 <!-- //Slideshoww -->
  
 <!-- Footer Section -->

@@ -80,8 +80,8 @@
 <div class="container-fluid">
     <div id="Edit_Akun">
     <?php
-      $Kode = $_GET['kode'];
-      $query = mysqli_query($koneksi, "SELECT * FROM pengumuman WHERE judul='$Kode'");
+      $id = $_GET['id'];
+      $query = mysqli_query($koneksi, "SELECT * FROM pengumuman WHERE id='$id'");
       $data = mysqli_fetch_array($query);
       ?>
         <div class="container">
@@ -89,11 +89,14 @@
 
                 <form class="form-group" action="Proses_edit_pengumuman.php" method="post">
 
-                    <!-- Judul -->
+                <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+
+
+                <!-- Judul -->
                     <div class="form-group row">
                         <label for="inputJudul" class="col-sm-2 col-form-label">Judul</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="judul" maxlength="100" placeholder="<?php echo "$data[judul]"; ?>" required>
+                        <input type="text" class="form-control" name="judul" maxlength="100" placeholder="Judul" value="<?php echo htmlspecialchars($data['judul']); ?>" required>
                         </div>
                     </div>
 
@@ -114,24 +117,14 @@
                         </div>
                     </div>
 
-                    <!--Status -->
+                    <!-- Status Pengumuman -->
                     <div class="form-group row">
-                    <label for="inputjeniskelamin" class="col-sm-2 col-form-label">Status</label>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="laki-laki" value="<?php echo $data['status']; ?>" checked>
-                            <label class="form-check-label" for="Aktif">
-                                Aktif
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="perempuan" value="<?php echo $data['status']; ?>">
-                            <label class="form-check-label" for="Nonaktif">
-                                Nonaktif
-                            </label>
+                        <div class="col-sm-10">
+                            <!-- Input tersembunyi untuk status -->
+                            <input type="hidden" name="status" value="Aktif">
                         </div>
                     </div>
-                </div>
+
 
                     <!-- Tombol Simpan dan Batal -->
                     <button type="submit" class="btn btn-primary">Simpan</button>

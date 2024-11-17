@@ -8,16 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="Scholarly web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-  <script type="application/x-javascript">
-    addEventListener("load", function() {
-      setTimeout(hideURLbar, 0);
-    }, false);
 
-    function hideURLbar() {
-      window.scrollTo(0, 1);
-    }
-  </script>
 
+  <!--// Meta tag Keywords -->
+  <!-- css files -->
+  <link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link rel="stylesheet" href="css/beranda.css" />
+  <link rel="stylesheet" href="css/kontak.css" />
+   <!-- Custom fonts and styles for this template -->
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="css/sb-admin-2.min.css" rel="stylesheet" />
 
 
   <script src="https://unpkg.com/feather-icons"></script>
@@ -32,9 +36,16 @@
 
 <body>
 
-  <?php include('nav.php'); ?>
 
   <div class="clearfix"> </div>
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- Sidebar -->
+    <?php include ('slide.php'); ?> 
+    <!-- End of Sidebar -->
+<!-- Konten kamu -->
+    <div class="clearfix"> </div>
+
   <!-- Slideshoww -->
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
@@ -52,7 +63,12 @@
     </a>
   </div>
   <!-- //Slideshoww -->
-
+  <div class="jumbotron">
+  tulisan berjalan
+    <div class="container">
+     
+</div>
+  </div>
   <!-- Event -->
   <div class="jumbotron">
     <div class="container">
@@ -64,18 +80,6 @@
             <div class="video-section">
                 <h3>Proses Pemakaman Penganut Jingitiu</h3>
                 <iframe src="https://www.youtube.com/embed/4TCU2mKmi-U" allowfullscreen></iframe>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="video-section">
-                <h3>Jingitiu, Kepercayaan Adat Sabu Raijua</h3>
-                <iframe src="https://www.youtube.com/embed/Rz39002wSNQ" allowfullscreen></iframe>
-            </div>
-
-            <!-- Video 3 -->
-            <div class="video-section">
-                <h3>Jingitiu, Penjaga Budaya Sabu Raijua</h3>
-                <iframe src="https://www.youtube.com/embed/Rz39002wSNQ" allowfullscreen></iframe>
             </div>
         </div>
         <style>
@@ -144,14 +148,23 @@
 
 
       <!-- //Thumbniell-->
-    </div>
-
 
   </div>
+  
+      <!-- End of Footer -->
+         </div>
+ <?php include('footer.php'); ?>
+
+
+ <!-- Akhir konte yang mau di rubah  -->        
+ </div>
+  
+ </div>
+  </div>
+  <!-- End of Page Wrapper -->
 
 
  <!-- Footer Section -->
- <?php include('footer.php'); ?>
 
   <!-- js-scripts -->
   <!-- js-files -->
@@ -221,8 +234,16 @@
     });
   </script>
   <!-- //Calendar -->
-
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
   <!-- //js-scripts -->
 </body>
-
+ <!-- Footer Bottom -->
+ <div class="footer-bottom" style="background-color: 003366;">
+    &copy; Copyright SMP Agape Indah 2024. All Rights Reserved.
+  </div>
+  
 </html>

@@ -104,24 +104,13 @@
         </div>
 
         <!-- Status Pengumuman -->
-        
         <div class="form-group row">
-    <label for="inputjeniskelamin" class="col-sm-2 col-form-label">Status</label>
-    <div class="col-sm-10">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="status" id="laki-laki" value="Laki-laki" checked>
-            <label class="form-check-label" for="Aktif">
-                Aktif
-            </label>
+            <div class="col-sm-10">
+                <!-- Input tersembunyi untuk status -->
+                <input type="hidden" name="status" value="Aktif">
+            </div>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="status" id="perempuan" value="Perempuan">
-            <label class="form-check-label" for="Nonaktif">
-                Nonaktif
-            </label>
-        </div>
-    </div>
-</div>
+
         <!-- Tombol Submit -->
         <div class="form-group row">
             <div class="col-sm-10">
