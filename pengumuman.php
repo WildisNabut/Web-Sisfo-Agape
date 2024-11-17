@@ -44,62 +44,57 @@
 
 
 <div class="container mt-5">
-        <h1 class="text-center mb-5" style="font-size: 2rem;">Pengumuman Terbaru</h1>
+    <h1 class="text-center mb-5" style="font-size: 2rem;">Pengumuman Terbaru</h1>
 
-        <div class="row">
-        <?php
-        include('koneksi.php');
-        // Query untuk mengambil data pengumuman
-        $data = mysqli_query($koneksi, "SELECT * FROM pengumuman");
+    <div class="row">
+    <?php
+    include('koneksi.php');
+    // Query untuk mengambil data pengumuman yang statusnya Aktif dan diurutkan berdasarkan tanggal terbaru
+    $data = mysqli_query($koneksi, "SELECT * FROM pengumuman WHERE status = 'Aktif' ORDER BY tanggal DESC");
 
-        // Menampilkan data dalam format card
-        while ($d = mysqli_fetch_array($data)) {
-        ?>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4"> <!-- Responsif untuk ukuran layar kecil, medium, dan besar -->
-                <div class="card">
-                    <div class="card-header">
-                        <h5><?php echo htmlspecialchars($d['judul']); ?></h5>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Tanggal: </strong><?php echo date('d F Y', strtotime($d['tanggal'])); ?></p>
-                        <p><?php echo nl2br(htmlspecialchars($d['dekripsi'])); ?></p>
-                    </div>
-                    <div class="card-footer">
-                        <p><strong>Status: </strong>
-                            <span class="badge badge-<?php echo ($d['status'] == 'Aktif') ? 'success' : 'secondary'; ?>">
-                                <?php echo htmlspecialchars($d['status']); ?>
-                            </span>
-                        </p>
-                    </div>
+    // Menampilkan data dalam format card
+    while ($d = mysqli_fetch_array($data)) {
+    ?>
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4"> <!-- Responsif untuk ukuran layar kecil, medium, dan besar -->
+            <div class="card">
+                <div class="card-header">
+                    <h5><?php echo htmlspecialchars($d['judul']); ?></h5>
                 </div>
+                <div class="card-body">
+                    <p><strong>Tanggal: </strong><?php echo date('d F Y', strtotime($d['tanggal'])); ?></p>
+                    <p><?php echo nl2br(htmlspecialchars($d['dekripsi'])); ?></p>
+                </div>
+                <!-- Menghilangkan card-footer yang menampilkan status -->
             </div>
-        <?php
-        }
-        ?>
-        </div> <!-- End of row -->
-    </div>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fc;
-        }
-        .card {
-            margin-bottom: 20px; /* Memberikan jarak antar card */
-        }
-        .card-header {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #3498db;
-        }
-        .card-body {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .card-footer {
-            background-color: #f7f7f7;
-            border-top: 1px solid #ddd;
-        }
-    </style>
+        </div>
+    <?php
+    }
+    ?>
+    </div> <!-- End of row -->
+</div>
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fc;
+    }
+    .card {
+        margin-bottom: 20px; /* Memberikan jarak antar card */
+    }
+    .card-header {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #3498db;
+    }
+    .card-body {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .card-footer {
+        background-color: #f7f7f7;
+        border-top: 1px solid #ddd;
+    }
+</style>
 
 
  <!-- End of Footer -->
