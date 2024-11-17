@@ -1,93 +1,141 @@
 .footer-kontak {
-    padding: 3vw 5vw;
-    background-color: #03024b;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    gap: 30px;
-    flex-wrap: nowrap; /* Tetap di satu baris */
+  padding: 3vw 5vw;
+  background-color: #03024b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  gap: 30px;
+  flex-wrap: nowrap; /* Tetap di satu baris */
 }
 
 /* Kontainer kontak memanjang ke samping */
 #kontak {
-    background-color: #a8a9d19f;
-    padding: 15px;
-    border-radius: 6px;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; /* Ubah ke kolom agar lebih rapi */
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
+  background-color: #a8a9d19f;
+  padding: 15px;
+  border-radius: 6px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Ubah ke kolom agar lebih rapi */
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 #kontak h2 {
-    font-size: 18px; /* Ukuran judul lebih kecil */
-    color: #333;
-    margin-bottom: 12px;
-    text-align: center;
+  font-size: 18px; /* Ukuran judul lebih kecil */
+  color: #333;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 .contact-container .form-row {
-    margin-bottom: 8px;
-    width: 100%; /* Agar elemen dalam form-row mengisi lebar kontainer */
+  margin-bottom: 8px;
+  width: 100%; /* Agar elemen dalam form-row mengisi lebar kontainer */
 }
 
 .contact-container label {
-    font-weight: bold;
-    color: #555;
-    font-size: 13px;
-    margin-bottom: 3px;
-    display: block; /* Membuat label berada di atas input */
+  font-weight: bold;
+  color: #555;
+  font-size: 13px;
+  margin-bottom: 3px;
+  display: block; /* Membuat label berada di atas input */
 }
 
 .contact-container .form-control {
-    width: 100%; /* Mengatur lebar agar sesuai dengan lebar #kontak */
-
+  width: 100%; /* Mengatur lebar agar sesuai dengan lebar #kontak */
 }
 
 .contact-container .message-box {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .contact-container .message {
-    min-height: 80px;
-    resize: vertical;
-    padding: 8px;
-    font-size: 12px;
-    width: 100%; /* Mengatur lebar message box agar mengikuti lebar kontainer */
-    box-sizing: border-box;
+  min-height: 80px;
+  resize: vertical;
+  padding: 8px;
+  font-size: 12px;
+  width: 100%; /* Mengatur lebar message box agar mengikuti lebar kontainer */
+  box-sizing: border-box;
 }
 
 .btn-container {
-    text-align: center;
-    width: 100%; /* Agar tombol sesuai lebar kontainer */
+  text-align: center;
+  width: 100%; /* Agar tombol sesuai lebar kontainer */
 }
 
 .btn-container .btn-primary {
-    width: 100%; /* Agar tombol mengikuti lebar kontainer */
+  width: 100%; /* Agar tombol mengikuti lebar kontainer */
 }
 
 .btn-container .btn-primary:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 /* Responsif */
 @media (max-width: 768px) {
-    #kontak {
-        padding: 10px;
-        max-width: 100%; /* Lebar penuh di perangkat kecil */
-    }
-    #kontak h2 {
-        font-size: 16px;
-    }
-    .contact-container .form-control {
-        font-size: 11px;
-    }
-    .btn-container .btn-primary {
-        font-size: 11px;
-    }
+  #kontak {
+    padding: 10px;
+    max-width: 100%; /* Lebar penuh di perangkat kecil */
+  }
+  #kontak h2 {
+    font-size: 16px;
+  }
+  .contact-container .form-control {
+    font-size: 11px;
+  }
+  .btn-container .btn-primary {
+    font-size: 11px;
+  }
+}
+.contact-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+
+  width: 100%;
+}
+
+.contact-container img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.contact-container h2 {
+  font-size: 18px;
+  color: #4a3aff;
+  margin: 0;
+}
+.contact-container p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
+.contact-container .email {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.contact-container .button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+.contact-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #4a3aff;
+}
+.contact-container button:hover {
+  background-color: #382bff;
 }
