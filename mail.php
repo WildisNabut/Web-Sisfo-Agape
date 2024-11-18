@@ -39,13 +39,22 @@
     <!-- Sidebar -->
     <?php include ('slide.php'); ?> 
     <!-- End of Sidebar -->
-    <div class="container mt-5">
+    <div class="container mt-5" style="color :#0056b3;">
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
             <!-- Gambar animasi -->
             <img src="https://i.pinimg.com/originals/3b/e2/f4/3be2f445535301ebc8d739576ce8b36d.gif" alt="Animasi Kontak" class="img-fluid mb-4">
 
-<<<<<<< HEAD
+            <h2>Silahkan kontak Email berikut</h2>
+    <p class="email">siteunc22@gmail.com</p>
+    
+    <div class="button-container">
+        <button onclick="window.location.href='mailto:siteunc22@gmail.com'">Kirim Email</button>
+        <button onclick="window.open('https://wa.me/6282144893442?text=Halo,%20saya%20ingin%20menghubungi%', '_blank')">Hubungi via WhatsApp</button>
+        </div>
+        </div>
+    </div> 
+
 <div class="Konten">
 <div class="contact-container">
     <!-- Gambar animasi (gantikan dengan URL gambar yang sesuai) -->
@@ -58,19 +67,6 @@
         <button onclick="window.location.href='mailto:siteunc22@gmail.com'">Kirim Email</button>
         <button onclick="window.open('https://wa.me/6282144893442?text=Halo,%20saya%20ingin%20menghubungi%', '_blank')">Hubungi via WhatsApp</button>
         </div>
-            <h2>Silahkan kontak Email berikut</h2>
-            <p class="email mb-4"><strong>siteunc22@gmail.com</strong></p>
-
-            <div class="button-container">
-                <!-- Tombol Kirim Email dengan ikon -->
-                <button class="btn btn-primary btn-lg" onclick="window.location.href='mailto:siteunc22@gmail.com'">
-                    <i class="fas fa-envelope"></i> Kirim Email
-                </button>
-                <!-- Tombol Hubungi via WhatsApp dengan ikon -->
-                <button class="btn btn-success btn-lg ml-3" onclick="window.location.href='https://wa.me/6282144893442?text=Halo,%20saya%20ingin%20menghubungi%'">
-                    <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
-                </button>
-            </div>
         </div>
     </div>
 </div>

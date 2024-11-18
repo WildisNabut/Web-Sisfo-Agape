@@ -8,7 +8,7 @@ if (empty($_SESSION['username'])) {
             <a class='nav-link active' href='#' data-bs-toggle='modal' data-bs-target='#myModal2'>
                 <i class='fa fa-sign-in' aria-hidden='true'></i> Masuk
             </a>
-        </li>
+        </li> 
     </ul>";
 } else {
     echo "

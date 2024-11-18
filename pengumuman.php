@@ -22,7 +22,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-
+ 
 
   <script src="https://unpkg.com/feather-icons"></script>
 
@@ -42,59 +42,80 @@
     <!-- End of Sidebar -->
 <!-- Konten kamu -->
 
+         <div class="container-fluid py-5" style="background: url('images/renungan/1.png') no-repeat center center; background-size: cover; min-height: 100vh;">
+        <div class="container">
+        <h1 class="text-center text-white mb-5" style="font-size: 2.5rem; font-weight: bold;">Pengumuman Terbaru</h1>
 
-<div class="container mt-5">
-    <h1 class="text-center mb-5" style="font-size: 2rem;">Pengumuman Terbaru</h1>
-
-    <div class="row">
-    <?php
-    include('koneksi.php');
-    // Query untuk mengambil data pengumuman yang statusnya Aktif dan diurutkan berdasarkan tanggal terbaru
-    $data = mysqli_query($koneksi, "SELECT * FROM pengumuman WHERE status = 'Aktif' ORDER BY tanggal DESC");
-
-    // Menampilkan data dalam format card
-    while ($d = mysqli_fetch_array($data)) {
-    ?>
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4"> <!-- Responsif untuk ukuran layar kecil, medium, dan besar -->
-            <div class="card">
-                <div class="card-header">
-                    <h5><?php echo htmlspecialchars($d['judul']); ?></h5>
+        <div class="row justify-content-center">
+            <?php
+            include('koneksi.php');
+            
+            // Query untuk mengambil data pengumuman yang statusnya Aktif dan diurutkan berdasarkan tanggal terbaru
+            $data = mysqli_query($koneksi, "SELECT * FROM pengumuman WHERE status = 'Aktif' ORDER BY tanggal DESC");
+            $i = 0; // Untuk melacak indeks GIF
+            
+            // Menampilkan data dalam format card
+            while ($d = mysqli_fetch_array($data)) {
+                // Pilih GIF berdasarkan indeks
+                $i++;
+            ?>
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-lg" style="border-radius: 15px; overflow: hidden;">
+                        <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between" style="font-size: 1.25rem; font-weight: bold;">
+                            <!-- Logo Sekolah di Kiri -->
+                            <img src="images/logo_agape.png" alt="Logo Sekolah" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
+                            
+                            <!-- Judul -->
+                            <span><?php echo htmlspecialchars($d['judul']); ?></span>
+                            
+                            <!-- Logo SMP di Kanan -->
+                            <img src="images/logo_tutwuri.png" alt="Logo SMP" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
+                        </div>
+                        <div class="card-body d-flex align-items-start">
+                            <!-- GIF Kartun -->
+                            <!-- Konten Pengumuman -->
+                            <div>
+                                <p><strong>Tanggal: </strong><?php echo date('d F Y', strtotime($d['tanggal'])); ?></p>
+                                <p><?php echo nl2br(htmlspecialchars($d['dekripsi'])); ?></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p><strong>Tanggal: </strong><?php echo date('d F Y', strtotime($d['tanggal'])); ?></p>
-                    <p><?php echo nl2br(htmlspecialchars($d['dekripsi'])); ?></p>
-                </div>
-                <!-- Menghilangkan card-footer yang menampilkan status -->
-            </div>
+            <?php
+            }
+            ?>
         </div>
-    <?php
-    }
-    ?>
-    </div> <!-- End of row -->
+    </div>
 </div>
 
 <style>
     body {
         font-family: 'Roboto', sans-serif;
-        background-color: #f8f9fc;
+        background-color: #f8f9fa;
+    }
+    .container-fluid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .card {
-        margin-bottom: 20px; /* Memberikan jarak antar card */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
     .card-header {
+        background-color: #3498db !important; /* Warna biru untuk header card */
         font-size: 1.25rem;
-        font-weight: 700;
-        color: #3498db;
+        font-weight: bold;
     }
-    .card-body {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-    .card-footer {
-        background-color: #f7f7f7;
-        border-top: 1px solid #ddd;
+    .card-header img {
+        flex-shrink: 0; /* Membuat gambar tetap proporsional */
     }
 </style>
+
+
 
 
  <!-- End of Footer -->
@@ -177,6 +198,16 @@
   </script>
   <!-- //Calendar -->
   <!-- Scripts -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- FontAwesome CSS untuk ikon -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+<!-- jQuery dan Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
