@@ -25,98 +25,58 @@
 <?php include ('navbar.php'); ?> 
 <body>
 <!-- Header dengan marquee -->
-         <?php
-            include('koneksi.php');
-            
-            // Query untuk mengambil data pengumuman yang statusnya Aktif dan diurutkan berdasarkan tanggal terbaru
-            $data = mysqli_query($koneksi, "SELECT * FROM kutipan");
-            $i = 0; // Untuk melacak indeks GIF
-            
-            // Menampilkan data dalam format card
-            while ($d = mysqli_fetch_array($data)) {
-                // Pilih GIF berdasarkan indeks
-                $i++;
-            ?>
-            <div class="header-text">
-        <span>SMP AGAPE INDAH > Renungan</span>   
+<?php
+// Menyertakan file koneksi database
+include('koneksi.php');
+
+// Mengecek apakah ada parameter 'id_renungan' di URL
+if (isset($_GET['id'])) {
+    // Mendapatkan nilai 'id' dari URL
+    $id_renungan = $_GET['id'];
+
+    // Query untuk mengambil data renungan berdasarkan 'id_renungan'
+    $query = "SELECT * FROM renungan WHERE id_renungan = '$id_renungan'";
+    $result = mysqli_query($koneksi, $query);
+
+    // Mengecek apakah data ditemukan
+    if (mysqli_num_rows($result) > 0) {
+        // Mengambil data renungan
+        $renungan = mysqli_fetch_array($result);
+    } else {
+        echo "Renungan tidak ditemukan!";
+        exit;
+    }
+} else {
+    echo "ID Renungan tidak valid!";
+    exit;
+}
+?>
+<div class="header-text">
+        <span>SMP AGAPE INDAH - Renungan-<?php echo htmlspecialchars($renungan['judul']); ?></span>
     </div>
-      <header class="header fade">
-      <marquee behavior="scroll" direction="left" class="quote bg-primary text-white" scrollamount="5">
-            <?php echo htmlspecialchars($d['deskripsi']); ?>
-        </marquee>
-        <!-- Card untuk Tanggal Hari Ini -->
-        <div class="date-card">
-            <?php echo date('l, d F Y'); // Menampilkan hari, tanggal, bulan, dan tahun ?>
-        </div>        
-    </header>
+<div class="container mt-5">
 
-      <?php
-      }
-      ?>
-
-<div class="container mt-4">
-    <!-- Pembungkus utama -->
-    <div class="row">
-        <?php
-        include('koneksi.php');
-        
-        // Query untuk mengambil data renungan dan diurutkan berdasarkan tanggal terbaru
-        $data = mysqli_query($koneksi, "SELECT * FROM renungan ORDER BY tanggal DESC");
-        $gifs = [
-            "images/a1.jpeg",  // Ganti dengan gambar yang sesuai
-            "images/a2.jpeg",
-            "images/a3.jpeg",
-            "images/a4.jpeg",
-            "images/a5.jpeg",
-            "images/a6.jpeg",
-            "images/a7.jpeg",
-            "images/a8.jpeg",
-            "images/a9.jpeg",
-            "images/a10.jpeg"
-        ];
-        $i = 0; // Untuk melacak indeks gambar
-
-        while ($d = mysqli_fetch_array($data)) {
-            // Pilih gambar berdasarkan indeks
-            $gif = $gifs[$i % count($gifs)];
-            $i++;
-        ?>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <!-- Gambar -->
-                <img src="<?php echo $gif; ?>" class="card-img-top" alt="Gambar Renungan" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                <div class="card-body">
-                    <!-- Judul -->
-                    <h5 class="card-title text-primary">
-                        <?php echo htmlspecialchars($d['judul']); ?>
-                    </h5>
-                    <!-- Isi Renungan (dibatasi) -->
-                    <p class="card-text text-secondary">
-                        <?php echo substr(htmlspecialchars($d['isi']), 0, 100) . (strlen($d['isi']) > 100 ? "..." : ""); ?>
-                    </p>
-                    <!-- Ayat dan Tanggal -->
-                    <p class="small text-muted">
-                        <i class="fas fa-calendar-alt"></i>Tanggal : <?php echo date('d F Y', strtotime($d['tanggal'])); ?>
-                        <br>
-                        <i class="fas fa-book"></i> Baca : <?php echo htmlspecialchars($d['ayat']); ?>
-                    </p>
-                </div>
-                <div class="card-footer text-center">
-                    <!-- Tombol Lihat Selengkapnya -->
-                    <a href="tampil_renungan.php?id=<?php echo $d['id_renungan']; ?>" class="btn btn-primary btn-sm">
-                        Lihat Selengkapnya
-                    </a>
-                </div>
-            </div>
+    <div class="card shadow-sm">
+        <!-- Gambar Renungan -->
+        <img src="images/a1.jpeg" class="card-img-top" alt="Gambar Renungan" style="height: 300px; object-fit: cover;">
+        <div class="card-body">
+            <!-- Isi Renungan -->
+            <p class="card-text">
+                <?php echo nl2br(htmlspecialchars($renungan['isi'])); ?>
+            </p>
+            <!-- Ayat dan Tanggal -->
+            <p class="small text-muted">
+                <i class="fas fa-calendar-alt"></i> Tanggal: <?php echo date('d F Y', strtotime($renungan['tanggal'])); ?>
+                <br>
+                <i class="fas fa-book"></i> Baca: <?php echo htmlspecialchars($renungan['ayat']); ?>
+            </p>
         </div>
-        <?php
-        }
-        ?>
+
+        <div class="card-footer text-center">
+            <a href="renungan.php" class="btn btn-secondary btn-sm">Kembali ke Daftar Renungan</a>
+        </div>
     </div>
 </div>
-
-            
-
       </div>
       <?php include ('footer.php'); ?>
       <!-- Bootstrap JS -->

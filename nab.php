@@ -5,10 +5,10 @@ if (empty($_SESSION['username'])) {
     echo "
     <ul class='nav'>
         <li class='nav-item'>
-            <a class='nav-link active' href='#' data-bs-toggle='modal' data-bs-target='#myModal2'>
-                <i class='fa fa-sign-in' aria-hidden='true'></i> Masuk
-            </a>
-        </li> 
+        <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#myModal2'>
+            <i class='fa fa-sign-in' aria-hidden='true'></i>
+        </button>
+    </li> 
     </ul>";
 } else {
     echo "

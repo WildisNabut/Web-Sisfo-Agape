@@ -1,3 +1,4 @@
+
 <?php include("nab.php") ?>
 <nav class="navbar bg-white fixed-top">
   <div class="d-flex align-items-center ms-3">
@@ -21,7 +22,7 @@
             }
             ?>
             <?php if (empty($_SESSION['username'])): ?>
-                <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">Anda belum login</h5>
+                <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">Hai!  <?= $greeting; ?>,</h5>
             <?php else: ?>
                 <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
                     <?= $greeting; ?>, <span class="text-warning"><?= htmlspecialchars($_SESSION['username']); ?></span>
@@ -44,7 +45,7 @@
                   </a>
                   <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="pengumuman.php"><i class="fas fa-bullhorn"></i> Pengumuman</a></li>
-                      <li><a class="dropdown-item" href="kegiatan.php"><i class="fas fa-calendar-alt"></i> Kegiatan Sekolah</a></li>
+                      <li><a class="dropdown-item" href="kegiatan.php"><i class="fas fa-calendar-alt"></i>Berita</a></li>
                   </ul>
               </li>
               <li class="nav-item dropdown">
@@ -82,7 +83,7 @@
 </nav>
 
 <style>
-  /* Mengurangi lebar offcanvas */
+    /* Mengurangi lebar offcanvas */
 .custom-offcanvas {
     width: 10px; /* Ubah sesuai dengan lebar yang diinginkan */
 }
@@ -92,40 +93,11 @@
     }
 }
 
-  .navbar-nav .nav-link {
-    position: relative;
-    font-weight: bold;
-    padding-left: 30px; /* Memberikan ruang untuk ikon */
-    padding-right: 20px; /* Memberikan ruang untuk ikon sebelah kanan */
-}
-
-.navbar-nav .nav-link i {
-    position: absolute;
-    left: 10px; /* Menempatkan ikon di kiri */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.navbar-nav .nav-link:hover {
-    color: #366273; /* Warna saat hover */
-}
-
-.navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ffc107;
-    transition: width 0.4s ease;
-}
-
-/* Memberikan jarak antara ikon dan teks pada menu */
 .navbar-nav .nav-link {
     position: relative;
     font-weight: bold;
     padding-left: 35px; /* Memberikan ruang untuk ikon dan teks */
+    transition: color 0.3s ease; /* Animasi untuk efek hover */
 }
 
 .navbar-nav .nav-link i {
@@ -135,15 +107,16 @@
     transform: translateY(-50%);
 }
 
-/* Menambahkan padding di kanan ikon agar ada jarak dengan teks */
 .navbar-nav .nav-link span {
     padding-left: 30px; /* Jarak antara ikon dan teks */
 }
 
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
+/* Warna hover kuning telur */
+.navbar-nav .nav-link:hover {
+    color: #ffc107; /* Kuning telur */
 }
 
+/* Dropdown menu */
 .navbar-nav .dropdown-menu {
     background-color: #ffffff;
     border: 1px solid #ddd;
