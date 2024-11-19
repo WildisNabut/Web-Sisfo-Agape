@@ -1,0 +1,110 @@
+/* =============== pengumuman=============== */
+/* =============== pengumuman=============== */
+/* Pembungkus utama */
+.main-card {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Pembungkus setiap pengumuman */
+.announcement-item {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Judul pengumuman */
+.announcement-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Isi pengumuman */
+.announcement-body p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Tanggal */
+.announcement-body strong {
+  font-weight: bold;
+  color: #007bff;
+}
+.header-text {
+  height: 150px; /* Tinggi div */
+  display: flex; /* Menggunakan flexbox untuk menempatkan teks di tengah secara vertikal */
+  align-items: center; /* Vertikal center */
+  justify-content: left; /* Horizontal center */
+  font-weight: bold; /* Menebalkan teks */
+  font-size: 1.2rem; /* Ukuran font */
+  background-image: linear-gradient(to right, #abc49b, #9bfea8), linear-gradient(to top, #00c6ff, #0072ff);
+  color: white; /* Warna teks */
+  margin-bottom: 20px; /* Jarak bawah dengan konten selanjutnya */
+  padding-left: 10px; /* Jarak kiri teks dengan div */
+}
+
+/* =============== pengumuman=============== */
+/* =============== pengumuman=============== */
+
+/* =============== Renungan=============== */
+/* Gaya untuk header teks */
+.header-text {
+  text-align: center; /* Teks diratakan di tengah */
+  font-size: 18px; /* Ukuran font */
+  font-weight: bold; /* Teks lebih tebal */
+  color: #333; /* Warna teks */
+  margin-bottom: 5px; /* Jarak bawah antara teks dan marquee */
+  padding: 20px 0;
+}
+
+.title {
+  display: block; /* Membuat span menjadi block-level untuk mengambil satu baris penuh */
+  text-align: left; /* Judul tetap di kiri */
+  font-size: 24px; /* Ukuran font judul */
+  font-weight: bold; /* Membuat judul lebih tebal */
+}
+
+/* Gaya untuk marquee */
+.header .quote {
+  margin-top: -2; /* Menghilangkan jarak atas */
+  padding: 10px; /* Memberikan ruang dalam marquee */
+  font-size: 14px; /* Ukuran font marquee */
+}
+
+/* Gaya untuk card tanggal */
+.date-card {
+  display: inline-block;
+  background-color: #f8f9fa; /* Warna latar belakang card */
+  color: #333; /* Warna teks */
+  border: 1px solid #ddd; /* Border untuk card */
+  border-radius: 5px; /* Membuat sudut membulat */
+  padding: 8px 15px; /* Ruang dalam card */
+  margin-left: 10px; /* Jarak antara marquee dan card */
+  font-size: 14px; /* Ukuran teks */
+  font-weight: bold; /* Menebalkan teks */
+  text-align: center; /* Teks rata tengah */
+  white-space: nowrap; /* Mencegah teks pecah */
+}
+/* =============== Renungan=============== */
+
+/* =============== icon=============== */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+}
+.social-icons a:hover {
+  color: #8c51ff;
+}
+/* =============== Icon=============== */

@@ -1,5 +1,19 @@
 <?php session_start(); ?>
 <?php include ('koneksi.php'); ?> 
+<?php
+include('koneksi.php');
+
+// Cek apakah parameter id ada
+if (isset($_GET['id']))
+    $id = intval($_GET['id']); // Pastikan id berupa angka untuk keamanan
+    // Query untuk mengambil data berita berdasarkan ID
+    $query = "SELECT * FROM kegiatan WHERE id_kegiatan = $id";
+    $result = mysqli_query($koneksi, $query);
+
+    // Periksa apakah data ditemukan
+    if (mysqli_num_rows($result) > 0) {
+        $d = mysqli_fetch_assoc($result); // Ambil data
+        ?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -41,41 +55,34 @@
     <!-- End of Sidebar -->
 <!-- Konten kamu -->
 
+
 <div class="header-text">
-        <span>SMP AGAPE INDAH - PENGUMUMAN</span>
+        <span class="title">SMP AGAPE INDAH - Berita - <?php echo htmlspecialchars($d['judul']); ?></span>
+            
+        
     </div>
-<div class="container">
-  <!-- Pembungkus utama -->
-  <div class="#">
-        <div class="card-wrapper">
-            <?php
-            include('koneksi.php');
-
-            // Query untuk mengambil data pengumuman yang statusnya Aktif dan diurutkan berdasarkan tanggal terbaru
-            $data = mysqli_query($koneksi, "SELECT * FROM pengumuman WHERE status = 'Aktif' ORDER BY tanggal DESC");
-
-            // Menampilkan data dalam format elegan
-            while ($d = mysqli_fetch_array($data)) {
-            ?>
-                <div class="announcement-item">
-                    <div class="announcement-header">
-                        <!-- Judul Pengumuman -->
-                        <span class="announcement-title"><?php echo htmlspecialchars($d['judul']); ?></span>
-                    </div>
-                    <div class="announcement-body">
-                        <p><strong>SMP Kristen Agape Indah - </strong> <?php echo nl2br(htmlspecialchars($d['dekripsi'])); ?></p>
-                        <p><i class="fas fa-calendar-alt"></i> <?php echo date('d F Y', strtotime($d['tanggal'])); ?></p>
-                      </div>
+    <div class="social-icons">
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4"> 
+                <!-- Memperbaiki path gambar -->
+                <img src="Admin/<?php echo $d['gambar']; ?>" class="img-fluid rounded-start" alt="Foto tidak tersedia">            </div>
+            <div class="col-md-8 fade">
+                <div class="card-body">
+                    <p class="card-text"><?php echo htmlspecialchars($d['deskripsi']); ?></p> <!-- Menampilkan deskripsi terbatas -->
+                    <p class="card-text"><i class="fas fa-calendar-alt"></i> <small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
                 </div>
-            <?php
-            }
-            ?>
+            </div>
         </div>
     </div>
-</div>
-
-
-            
+  <?php
+            }
+            ?>          
         
 
 

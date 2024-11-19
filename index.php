@@ -73,7 +73,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><?php echo htmlspecialchars($d['judul']); ?></h5>
                     <p class="card-text"><?php echo $description; ?></p> <!-- Menampilkan deskripsi terbatas -->
-                    <a href="kegiatan.php?id=<?php echo $d['id_kegiatan']; ?>">
+                    <a href="tampil_berita.php?id=<?php echo $d['id_kegiatan']; ?>">
                         <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">Baca Selengkapnya</button>
                     </a>
                     <p class="card-text"><small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
