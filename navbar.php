@@ -53,12 +53,12 @@
                       <i class="fas fa-images"></i> Galeri
                   </a>
                   <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdownGallery">
-                      <li><a class="dropdown-item" href="#"><i class="fas fa-camera"></i> Foto</a></li>
+                      <li><a class="dropdown-item" href="foto.php"><i class="fas fa-camera"></i> Foto</a></li>
                       <li><a class="dropdown-item" href="galeri_vidio.php"><i class="fas fa-video"></i> Video</a></li>
                   </ul>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-primary fw-semibold" href="renungan.php"><i class="fas fa-cogs"></i> Renungan</a>
+                  <a class="nav-link text-primary fw-semibold" href="renungan.php"><i class="fas fa-book"></i> Renungan</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link text-primary fw-semibold" href="fasilitas.php"><i class="fas fa-building"></i> Fasilitas</a>
@@ -68,13 +68,13 @@
                       <i class="fas fa-school"></i> Profil Sekolah
                   </a>
                   <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdownSchoolProfile">
-                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-history"></i> Sejarah</a></li>
+                      <li><a class="dropdown-item" href="sejarah.php"><i class="fas fa-history"></i> Sejarah</a></li>
                       <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
-                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-users"></i> Organisasi</a></li>
+                      <li><a class="dropdown-item" href="struktur-organisasi.php"><i class="fas fa-users"></i> Organisasi</a></li>
                   </ul>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-primary fw-semibold" href="mail.php"><i class="fas fa-phone"></i> Kontak</a>
+                  <a class="nav-link text-primary fw-semibold" href="kontak2.php"><i class="fas fa-phone"></i> Kontak</a>
               </li>
           </ul>
         </div>

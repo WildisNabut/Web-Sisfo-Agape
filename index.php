@@ -48,6 +48,9 @@
             ?>
       
       <div class="container mt-4 fade">
+        <div class="#">
+          
+        </div>
     <div class="row fade">
         <!-- Tulisan Terbaru -->
         <div id="tulisan" class="col-md-8">
@@ -105,29 +108,69 @@
               </div>
           </div>
   
-          <!-- Foto dan Video Terbaru (sesuai permintaan Anda) -->
-          <div id="galeri" class="mt-5 fade">
-              <h2 class="section-title">Foto Terbaru</h2>
-              <div class="row">
-                  <div class="col-md-4">
-                      <img src="beranda_image/5.jpg" class="img-thumbnail" alt="Foto 1">
-                  </div>
-                  <div class="col-md-4">
-                      <img src="beranda_image/6.jpg" class="img-thumbnail" alt="Foto 2">
-                  </div>
-                  <div class="col-md-4">
-                      <img src="beranda_image/3.jpg" class="img-thumbnail" alt="Foto 3">
-                  </div>
-              </div>
-              <h2 class="section-title mt-4 fade">Video Terbaru</h2>
-              <div class="row fade">
-                  <div class="col-md-6">
-                      <iframe class="w-100" src="https://www.youtube.com/embed/4TCU2mKmi-U" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                  <div class="col-md-6">
-                      <iframe class="w-100" src="https://www.youtube.com/embed/4TCU2mKmi-U" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
+<!-- Foto dan Video Terbaru -->
+<!-- Foto dan Video Terbaru -->
+<div id="galeri" class="mt-5 fade">
+    <h2 class="section-title">Galeri Foto dan Video</h2>
+    <div class="row align-items-start">
+        <!-- Foto -->
+        <div class="col-lg-6 mb-3">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <?php
+                    include('koneksi.php');
+                    // Query untuk mengambil 10 data terbaru dari tabel kegiatan
+                    $data = mysqli_query($koneksi, "SELECT * FROM foto LIMIT 10");
+                    $isActive = true; // Menandai slide pertama sebagai aktif
+                    
+                    while ($d = mysqli_fetch_array($data)) {
+                        ?>
+                        <div class="carousel-item <?php echo $isActive ? 'active' : ''; ?>">
+                            <img src="Admin/<?php echo $d['gambar']; ?>" class="img-fluid rounded-start d-block w-100" alt="Foto tidak tersedia">
+                        </div>
+                        <?php
+                        $isActive = false; // Slide berikutnya menjadi tidak aktif
+                    }
+                    ?>
+                </div>
+                <!-- Navigasi Carousel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Video -->
+        <div class="col-lg-6">
+            <div class="row">
+                <?php  
+                include('koneksi.php');
+                // Query untuk mengambil data dari tabel vidio
+                $tampil = "SELECT * FROM vidio LIMIT 2"; // Batasi jumlah video yang ditampilkan
+                $hasil = mysqli_query($koneksi, $tampil);
+
+                while ($data = mysqli_fetch_array($hasil)) {
+                    // Mengganti URL YouTube dengan format embed
+                    $url_vidio = $data['url_vidio'];
+                    $embed_url = str_replace("watch?v=", "embed/", $url_vidio);
+                    ?>
+                    <div class="col-md-6 mb-3">
+                        <iframe width="100%" height="150" src="<?php echo $embed_url; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <?php         
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+
               
           </div>
       </div>

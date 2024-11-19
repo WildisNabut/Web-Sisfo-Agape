@@ -108,3 +108,367 @@
   color: #8c51ff;
 }
 /* =============== Icon=============== */
+
+/* =============== Sejarah=============== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Menumpuk gambar dan teks secara vertikal */
+  padding: 20px 50px;
+  background: #2e4482;
+  color: white;
+}
+
+.hero-image {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero-image img {
+  max-width: 250px;
+  animation: zoomImage 10s infinite alternate;
+}
+
+/* Animasi gambar */
+@keyframes zoomImage {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Teks yang berjalan */
+.hero-content {
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: white;
+  animation: scrollText 10s linear infinite;
+}
+
+/* Animasi teks berjalan dari kiri ke kanan */
+@keyframes scrollText {
+  0% {
+    transform: translateX(-100%); /* Mulai di luar layar di kiri */
+  }
+  100% {
+    transform: translateX(100%); /* Bergerak ke luar layar di kanan */
+  }
+}
+
+/* Bagian Sejarah */
+.sejarah {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.sejarah h2 {
+  font-size: 2.5rem;
+  color: #2e4482;
+  margin-bottom: 10px;
+}
+
+.sejarah-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sejarah-content div {
+  width: 48%;
+  text-align: justify;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+.footer {
+  background: #2e4482;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+.footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* =============== Sejarah=============== */
+
+/* =============== Struktur Organisasi=============== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Menumpuk gambar dan teks secara vertikal */
+  padding: 50px 50px; /* Menambah padding agar lebih besar */
+  background: #2e4482;
+  color: white;
+  position: relative; /* Agar teks bisa diposisikan di atas gambar */
+  overflow: hidden; /* Menyembunyikan teks yang berada di luar area hero */
+}
+
+.hero-image img {
+  max-width: 250px; /* Membesarkan gambar */
+  margin-bottom: 20px; /* Memberikan jarak antara gambar dan teks */
+}
+
+.hero-content h1 {
+  font-size: 2.5rem; /* Ukuran teks yang lebih besar */
+  margin: 0;
+  position: absolute; /* Agar teks bisa bergerak */
+  white-space: nowrap; /* Menjaga teks tetap dalam satu baris */
+  animation: moveText 10s linear infinite; /* Animasi teks bergerak */
+}
+
+/* Animasi teks bergerak dari kiri ke kanan */
+@keyframes moveText {
+  0% {
+    left: -100%; /* Mulai dari luar layar di sebelah kiri */
+    opacity: 1;
+  }
+  50% {
+    left: 50%; /* Tengah layar */
+    opacity: 1;
+  }
+  100% {
+    left: 100%; /* Berhenti di luar layar di sebelah kanan */
+    opacity: 0;
+  }
+}
+
+/* Struktur Organisasi */
+.fade-in-zoom {
+  animation: fadeZoomIn 2s ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.struktur-organisasi {
+  padding: 50px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.struktur-organisasi img {
+  width: 80%;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Footer */
+.footer {
+  background: #2e4482;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+.footer nav a:hover {
+  text-decoration: underline;
+}
+/* =============== ====================================Struktur Organisasi=============== */
+
+/* ============================================== Kontak=================================== */
+/* ============================================== Kontak=================================== */
+
+/* Kontainer kontak memanjang ke samping */
+#kontak {
+  background-color: #ffffff;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Ubah ke kolom agar lebih rapi */
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+#kontak h2 {
+  font-size: 18px; /* Ukuran judul lebih kecil */
+  color: #333;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.contact-container .form-row {
+  width: 100%; /* Agar elemen dalam form-row mengisi lebar kontainer */
+}
+
+.contact-container label {
+  font-weight: bold;
+  color: #555;
+  font-size: 13px;
+  display: block; /* Membuat label berada di atas input */
+}
+
+.contact-container .form-control {
+  width: 100%; /* Mengatur lebar agar sesuai dengan lebar #kontak */
+}
+
+.contact-container .message-box {
+  margin-bottom: 10px;
+}
+
+.contact-container .message {
+  min-height: 80px;
+  resize: vertical;
+  padding: 8px;
+  font-size: 12px;
+  width: 100%; /* Mengatur lebar message box agar mengikuti lebar kontainer */
+}
+
+.btn-container {
+  text-align: center;
+  width: 100%; /* Agar tombol sesuai lebar kontainer */
+}
+
+.btn-container .btn-primary {
+  width: 100%; /* Agar tombol mengikuti lebar kontainer */
+}
+
+.btn-container .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  #kontak {
+    padding: 10px;
+    max-width: 100%; /* Lebar penuh di perangkat kecil */
+  }
+  #kontak h2 {
+    font-size: 16px;
+  }
+  .contact-container .form-control {
+    font-size: 11px;
+  }
+  .btn-container .btn-primary {
+    font-size: 11px;
+  }
+}
+.contact-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+
+  width: 100%;
+}
+
+.contact-container img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.contact-container h2 {
+  font-size: 18px;
+  color: #4a3aff;
+  margin: 0;
+}
+.contact-container p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
+.contact-container .email {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.contact-container .button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+.contact-container button {
+  padding: 10px 20px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #4a3aff;
+}
+.contact-container button:hover {
+  background-color: #382bff;
+}
+
+/* ============================================== Kontak=================================== */
+/* ============================================== Kontak=================================== */
+
+/* ============================================== Fasilitas=================================== */
+/* ============================================== Fasilitas=================================== */
+.galery {
+  padding: 200px;
+}

@@ -27,25 +27,23 @@
 <body>
 <!-- Header dengan marquee -->
 <div id="galeri" class="mt-5">
-    <h2 class="section-title">Galeri Vidio</h2>
+    <h2 class="section-title">Galeri Foto </h2>
     <div class="row">
-    <?php  
-                include('koneksi.php');
-                // Query untuk mengambil data dari tabel vidio
-                $tampil = "SELECT * FROM vidio LIMIT 2"; // Batasi jumlah video yang ditampilkan
-                $hasil = mysqli_query($koneksi, $tampil);
-
-                while ($data = mysqli_fetch_array($hasil)) {
-                    // Mengganti URL YouTube dengan format embed
-                    $url_vidio = $data['url_vidio'];
-                    $embed_url = str_replace("watch?v=", "embed/", $url_vidio);
-                    ?>
-                    <div class="col-md-6 mb-3">
-                        <iframe width="100%" height="150" src="<?php echo $embed_url; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <?php         
-                }
-                ?>
+        <?php
+        include('koneksi.php');
+        // Query untuk mengambil semua data dari tabel foto
+        $data = mysqli_query($koneksi, "SELECT * FROM foto");
+        while ($d = mysqli_fetch_array($data)) {
+        ?>
+            <!-- Responsif: 4 kolom besar, 2 kolom sedang, 1 kolom kecil -->
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="Admin/<?php echo $d['gambar']; ?>" class="card-img-top img-fluid rounded" alt="Foto tidak tersedia">
+                </div>
+            </div>
+        <?php
+        }
+        ?>
     </div>
 </div>
 
