@@ -1,161 +1,161 @@
-<!-- Sidebar -->
- 
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #ffffff ; ">   <!-- Sidebar - Brand -->
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-      <div class="sidebar-brand-icon rotate-n-15 btn btn-primary btn-sm">
-         <i class="fas fa-book-open"></i>
-      </div>
-      <div class="sidebar-brand-text mx-3" style="color: #000000 !important;">AGAPE<sup>indah</sup></div>
-   </a>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider my-0" />
-
-  <!-- Nav Item - Dashboard -->
-  <li class="nav-item active">
-    <a class="nav-link" href="index.php">
-      <i class="fas fa-fw fa-home"></i> <!-- Ikon dasbor -->
-      <span>Beranda</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Data Sekolah Section -->
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDataSekolah" aria-expanded="true" aria-controls="collapseDataSekolah">
-      <i class="fas fa-fw fa-cogs"></i> <!-- Ikon pengaturan -->
-      <span>Informasi</span>
-    </a>
-    <div id="collapseDataSekolah" class="collapse" aria-labelledby="headingDataSekolah" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header"><span>Informasi</span></h6>
-        <a class="collapse-item" href="pengumuman.php">Pengumuman</a>
-        <a class="collapse-item" href="kegiatan.php">Kegiatan Sekolah</a>
-      </div>
+<?php include("nab.php") ?>
+<nav class="navbar bg-white fixed-top">
+  <div class="d-flex align-items-center ms-3">
+    <i class="fas fa-bars text-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="font-size: 24px; cursor: pointer;"></i>
+    <span class="ms-2" style="font-size: 18px; font-weight: bold; color: #366273;">SMP KRISTEN AGAPE INDAH</span>
+  </div>
+  <?php include("nab.php") ?>
+  <div class="container-fluid">
+  <div class="offcanvas offcanvas-end custom-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">        <div class="offcanvas-header bg-light text-primary">
+            <?php
+            date_default_timezone_set('Asia/Jakarta');
+            $hour = date('H');
+            if ($hour >= 5 && $hour < 12) {
+                $greeting = "Selamat Pagi";
+            } elseif ($hour >= 12 && $hour < 15) {
+                $greeting = "Selamat Siang";
+            } elseif ($hour >= 15 && $hour < 18) {
+                $greeting = "Selamat Sore";
+            } else {
+                $greeting = "Selamat Malam";
+            }
+            ?>
+            <?php if (empty($_SESSION['username'])): ?>
+                <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">Anda belum login</h5>
+            <?php else: ?>
+                <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
+                    <?= $greeting; ?>, <span class="text-warning"><?= htmlspecialchars($_SESSION['username']); ?></span>
+                </h5>
+            <?php endif; ?>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2 rounded-pill" type="search" placeholder="Cari sesuatu..." aria-label="Search">
+                <button class="btn btn-primary rounded-pill px-4" type="submit">Cari</button>
+            </form>
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 mt-4">
+              <li class="nav-item">
+                  <a class="nav-link text-primary fw-semibold" href="index.php"><i class="fas fa-home"></i> Beranda</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link text-primary fw-semibold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-info-circle"></i> Informasi
+                  </a>
+                  <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="pengumuman.php"><i class="fas fa-bullhorn"></i> Pengumuman</a></li>
+                      <li><a class="dropdown-item" href="kegiatan.php"><i class="fas fa-calendar-alt"></i> Kegiatan Sekolah</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link text-primary fw-semibold dropdown-toggle" href="#" id="navbarDropdownGallery" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-images"></i> Galeri
+                  </a>
+                  <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdownGallery">
+                      <li><a class="dropdown-item" href="#"><i class="fas fa-camera"></i> Foto</a></li>
+                      <li><a class="dropdown-item" href="galeri_vidio.php"><i class="fas fa-video"></i> Video</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-primary fw-semibold" href="renungan.php"><i class="fas fa-cogs"></i> Renungan</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-primary fw-semibold" href="fasilitas.php"><i class="fas fa-building"></i> Fasilitas</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link text-primary fw-semibold dropdown-toggle" href="#" id="navbarDropdownSchoolProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-school"></i> Profil Sekolah
+                  </a>
+                  <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdownSchoolProfile">
+                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-history"></i> Sejarah</a></li>
+                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
+                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-users"></i> Organisasi</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-primary fw-semibold" href="mail.php"><i class="fas fa-phone"></i> Kontak</a>
+              </li>
+          </ul>
+        </div>
     </div>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Nav Item - Renungan -->
-  <li class="nav-item">
-    <a class="nav-link" href="renungan.php">
-      <i class="fas fa-fw fa-book"></i> <!-- Ikon buku untuk renungan -->
-      <span>Renungan</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Nav Item - Fasilitas -->
-  <li class="nav-item">
-    <a class="nav-link" href="kutipan.php">
-      <i class="fas fa-fw fa-wrench"></i> <!-- Ikon kunci pas untuk fasilitas -->
-      <span>Fasilitas</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Galeri Section -->
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGaleri" aria-expanded="false" aria-controls="collapseGaleri">
-      <i class="fas fa-fw fa-images"></i> <!-- Ikon galeri untuk gambar -->
-      <span>Galeri</span>
-    </a>
-    <div id="collapseGaleri" class="collapse" aria-labelledby="headingGaleri" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Galeri Sekolah</h6>
-        <a class="collapse-item" href="video.php">Video</a>
-      </div>
-    </div>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Profil Sekolah Section -->
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfilSekolah" aria-expanded="false" aria-controls="collapseProfilSekolah">
-      <i class="fas fa-fw fa-building"></i> <!-- Ikon gedung untuk profil sekolah -->
-      <span>Profil Sekolah</span>
-    </a>
-    <div id="collapseProfilSekolah" class="collapse" aria-labelledby="headingProfilSekolah" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Profil Sekolah</h6>
-        <a class="collapse-item" href="sejarah.php">Sejarah</a>
-        <a class="collapse-item" href="visi_misi.php">Visi & Misi</a>
-        <a class="collapse-item" href="struktur.php">Struktur Organisasi</a>
-      </div>
-    </div>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-    <!-- Nav Item - Fasilitas -->
-    <li class="nav-item">
-    <a class="nav-link" href="mail.php">
-      <i class="fas fa-fw fa-envelope"></i> <!-- Ikon kunci pas untuk fasilitas -->
-      <span>Kontak</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-  
- <!-- Sidebar Toggler -->
-<div class="text-center d-none d-md-inline">
-    <button class="rounded-circle border-0 bg-black text-dark" id="sidebarToggle">
-    </button>
-</div>
-</ul>
-<!-- End of Sidebar -->
+  </div>
+</nav>
 
 <style>
-  /* Mengatur warna dasar sidebar */
-  #accordionSidebar {
-      background-color: #ffffff !important; /* Warna latar belakang putih */
-  }
+  /* Mengurangi lebar offcanvas */
+.custom-offcanvas {
+    width: 10px; /* Ubah sesuai dengan lebar yang diinginkan */
+}
+@media (max-width: 768px) {
+    .custom-offcanvas {
+        width: 200px; /* Lebar untuk perangkat kecil */
+    }
+}
 
-  #accordionSidebar .nav-link {
-      position: relative; /* Posisi untuk pseudo-element */
-      color: #000000 !important; /* Warna teks hitam */
-      overflow: hidden; /* Memastikan efek tidak keluar */
-      transition: color 0.3s ease; /* Transisi warna */
-  }
+  .navbar-nav .nav-link {
+    position: relative;
+    font-weight: bold;
+    padding-left: 30px; /* Memberikan ruang untuk ikon */
+    padding-right: 20px; /* Memberikan ruang untuk ikon sebelah kanan */
+}
 
-  #accordionSidebar .nav-link:hover {
-      color: #007bff !important; /* Warna teks biru saat hover */
-  }
+.navbar-nav .nav-link i {
+    position: absolute;
+    left: 10px; /* Menempatkan ikon di kiri */
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-  /* Pseudo-element untuk garis */
-  #accordionSidebar .nav-link::before {
-      content: ""; /* Konten kosong untuk garis */
-      position: absolute;
-      bottom: 0; /* Garis di bagian bawah */
-      left: 0; /* Mulai dari kiri */
-      width: 0; /* Awalnya garis tidak terlihat */
-      height: 2px; /* Ketebalan garis */
-      background-color: #007bff; /* Warna garis biru */
-      transition: width 0.3s ease; /* Animasi perubahan lebar */
-  }
+.navbar-nav .nav-link:hover {
+    color: #366273; /* Warna saat hover */
+}
 
-  /* Efek hover untuk menampilkan garis */
-  #accordionSidebar .nav-link:hover::before {
-      width: 100%; /* Garis memenuhi lebar link */
-  }
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffc107;
+    transition: width 0.4s ease;
+}
 
-  /* Mengatur ikon agar tetap terpusat */
-  #accordionSidebar .nav-link i {
-      color: inherit; /* Ikon mengikuti warna teks */
-      transition: color 0.3s ease;
-  }
+/* Memberikan jarak antara ikon dan teks pada menu */
+.navbar-nav .nav-link {
+    position: relative;
+    font-weight: bold;
+    padding-left: 35px; /* Memberikan ruang untuk ikon dan teks */
+}
+
+.navbar-nav .nav-link i {
+    position: absolute;
+    left: 10px; /* Menempatkan ikon di kiri */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Menambahkan padding di kanan ikon agar ada jarak dengan teks */
+.navbar-nav .nav-link span {
+    padding-left: 30px; /* Jarak antara ikon dan teks */
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1; /* Warna latar saat item di-hover */
+}
+
+.navbar-nav .dropdown-menu i {
+    margin-right: 10px; /* Memberi jarak antara ikon dan teks */
+}
+
 </style>
-
-

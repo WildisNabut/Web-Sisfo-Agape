@@ -1,96 +1,218 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="id">
+<html lang="zxx">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renungan Pagi - Berjalan Dalam Iman</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-    <link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" href="css/beranda.css">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-
-
-<!-- //css files -->
-<!-- online-fonts -->
-<link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
-<!-- //online-fonts -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .item {
-            position: relative;
-            text-align: left;
-            color: #333;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 20px auto;
-            line-height: 1.6;
-        }
-        .item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .carousel-captionl {
-            margin-top: 20px;
-        }
-        .carousel-captionl h1 {
-            font-size: 24px;
-            color: #333;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .carousel-captionl p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        .verse {
-            font-style: italic;
-            font-size: 16px;
-            color: #555;
-        }
-        .subheading {
-            color: #d9534f;
-            font-weight: bold;
-        }
-    </style>
+  <title>SMP AGAPE</title>
+  <!-- Meta tag Keywords -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Scholarly web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  
+  <!-- CSS files -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/beranda.css" />
+  <link rel="stylesheet" href="css/kontak.css" />
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- JavaScript files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-
+<?php include ('navbar.php'); ?> 
 <body>
-<?php include ('napigasi.php'); ?>
-<!-- Renungan Card 1 -->
-<div class="item">
-  <img src="images\renungan/1.png" alt="Renungan Pagi">
-  <div class="carousel-captionl">
-    <h1><b>Berjalan Dalam Iman</b></h1>
-    <p class="subheading">Baca: IBRANI 11:1-12</p>
-    <p class="verse">Tetapi tanpa iman tidak mungkin orang berkenan kepada Allah. Sebab siapa yang berpaling kepada Allah, ia harus percaya bahwa Allah ada, dan bahwa Allah memberi upah kepada orang yang sungguh-sungguh mencari Dia. (Ibrani 11:6)</p>
-    
-    <p class="subheading">Bacaan Alkitab Setahun: Yohanes 4-5</p>
-    
-    <p>Wilma Rudolph, atlet wanita Amerika Serikat pemenang olimpiade, dilahirkan dengan masalah kesehatan yang membuat kedua kakinya pincang. “Apakah saya akan bisa berlari seperti anak-anak lain?” ia bertanya pada ibunya.</p>
-    
-    <p>“Sayang, kamu harus percaya kepada Tuhan dan jangan pernah berhenti berharap. Jika kamu percaya, Tuhan akan membuatnya terjadi,” jawab ibunya. Wilma percaya dan sejak itu ia bersusah payah belajar berjalan. Pada usia 12 tahun ia bisa berjalan tanpa memerlukan penyangga kaki. Bahkan di tahun 1960, ia berhasil mendapatkan tiga medali emas untuk cabang olahraga lari di Olimpiade.</p>
-    
-    <p>Iman adalah prinsip dasar kehidupan pengikut Kristus. Berjalan dalam iman berarti memercayai siapa Allah itu, apa yang dikatakan-Nya, apa yang sudah dilakukan-Nya, dan apa yang akan dilakukan-Nya. Iman adalah inti kehidupan kita dari hari ke hari. Rasul Paulus mengingatkan kita, “Kamu telah menerima Kristus Yesus, Tuhan kita. Karena itu hendaklah hidupmu tetap di dalam Dia” (Kolose 2:6). Sebagaimana kita dahulu menerima Kristus dengan iman, maka kita seharusnya juga akan berjalan dalam iman dari hari ke hari. Berjalan dalam iman artinya cara kita berperilaku dalam hidup sehari-hari.</p>
-  </div>
+<!-- Header dengan marquee -->
+         <?php
+            include('koneksi.php');
+            
+            // Query untuk mengambil data pengumuman yang statusnya Aktif dan diurutkan berdasarkan tanggal terbaru
+            $data = mysqli_query($koneksi, "SELECT * FROM kutipan");
+            $i = 0; // Untuk melacak indeks GIF
+            
+            // Menampilkan data dalam format card
+            while ($d = mysqli_fetch_array($data)) {
+                // Pilih GIF berdasarkan indeks
+                $i++;
+            ?>
+      <header class="header fade">
+          <img src="images/renungan/1.png" alt="SMP Kristen Agape Indah" class="img-fluid">
+          <marquee behavior="scroll" direction="left" class="quote bg-primary text-white" scrollamount="5">
+          <?php echo htmlspecialchars($d['deskripsi']); ?>
+          </marquee>
+      </header>
+
+      <?php
+      }
+      ?>
+<div class="container-fluid py-5" style="background: linear-gradient(to bottom, #f0f0f0, #d1d1d1); min-height: 100vh;">
+    <div class="container">
+        <h1 class="text-center text-dark mb-5" style="font-size: 2.5rem; font-weight: bold;">Renungan</h1>
+
+        <div class="row justify-content-center">
+            <?php
+            include('koneksi.php');
+            
+            // Query untuk mengambil data renungan dan diurutkan berdasarkan tanggal terbaru
+            $data = mysqli_query($koneksi, "SELECT * FROM renungan ORDER BY tanggal DESC");
+            $gifs = [
+                "images/a1.jpeg",  // Ganti dengan gambar yang sesuai
+                "images/a2.jpeg",
+                "images/a3.jpeg",
+                "images/a4.jpeg",
+                "images/a5.jpeg",
+                "images/a6.jpeg",
+                "images/a7.jpeg",
+                "images/a8.jpeg",
+                "images/a9.jpeg",
+                "images/a10.jpeg"
+            ];
+            $i = 0; // Untuk melacak indeks gambar
+            $first = true; // Untuk memastikan card pertama tetap di atas
+
+            while ($d = mysqli_fetch_array($data)) {
+                // Pilih gambar berdasarkan indeks
+                $gif = $gifs[$i % count($gifs)];
+                $i++;
+            ?>
+                <div class="col-12 col-md-8 col-lg-6 mb-4 <?php echo $first ? 'order-1' : ''; ?>"> <!-- Hanya card pertama yang tetap di atas -->
+                    <div class="card shadow-lg" style="border-radius: 15px; overflow: hidden;">
+                        <!-- Header -->
+                        <div class="card-header text-center" style="background-color: #3498db; color: white; font-size: 1.25rem; font-weight: bold;">
+                            <!-- Gambar Renungan -->
+                            <img src="<?php echo $gif; ?>" alt="Gambar Renungan" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px;">
+                            
+                            <!-- Judul Renungan -->
+                            <span><?php echo htmlspecialchars($d['judul']); ?></span>
+                        </div>
+                        
+                        <!-- Body -->
+                        <div class="card-body text-center">
+                            <!-- Konten Renungan -->
+                            <p><strong>Tanggal: </strong><?php echo date('d F Y', strtotime($d['tanggal'])); ?></p>
+                            <p><?php echo nl2br(htmlspecialchars($d['isi'])); ?></p>
+                        </div>
+                        
+                        <!-- Footer -->
+                        <div class="card-footer d-flex justify-content-between align-items-center" style="background-color: #f7f7f7;">
+                            <!-- Ikon Buku -->
+                            <div>
+                                <i class="fas fa-book" style="color: #3498db; font-size: 1.5rem;"></i>
+                                <small> Ayat: <?php echo htmlspecialchars($d['ayat']); ?></small>
+                            </div>
+                            
+                            <!-- Kalender -->
+                            <div>
+                                <i class="fas fa-calendar-alt" style="color: #3498db; font-size: 1.5rem;"></i>
+                                <small> <?php echo date('d M Y', strtotime($d['tanggal'])); ?></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                $first = false; // Setelah card pertama, set $first ke false
+            }
+            ?>
+        </div>
+    </div>
 </div>
 
-<!-- Footer Section -->
-<?php include('footer.php'); ?>
 
-<!-- //footer -->
+            
+
+      </div>
+      <?php include ('footer.php'); ?>
+      <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+       <!-- Animasi Scroll -->
+       <script>
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('show');
+                  } else {
+                      entry.target.classList.remove('show');
+                  }
+              });
+          });
+  
+          document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+      </script>
+  <!-- End of Page Wrapper -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <!-- Footer Section -->
+
+  <!-- js-scripts -->
+  <!-- js-files -->
+  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+  <!-- smooth scrolling -->
+  <script src="js/SmoothScroll.min.js"></script>
+  <!-- //smooth scrolling -->
+  <!-- stats -->
+  <script type="text/javascript" src="js/numscroller-1.0.js"></script>
+  <!-- //stats -->
+  <!-- moving-top scrolling -->
+  <script type="text/javascript" src="js/move-top.js"></script>
+  <script type="text/javascript" src="js/easing.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".scroll").click(function(event) {
+        event.preventDefault();
+        $('html,body').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 1000);
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      /*
+      	var defaults = {
+      	containerID: 'toTop', // fading element id
+      	containerHoverID: 'toTopHover', // fading element hover id
+      	scrollSpeed: 1200,
+      	easingType: 'linear' 
+      	};
+      */
+      $().UItoTop({
+        easingType: 'easeOutQuart'
+      });
+    });
+  </script>
+  <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+  <!-- //moving-top scrolling -->
+  <!-- gallery popup -->
+  <script src="js/jquery.swipebox.min.js"></script>
+  <script type="text/javascript">
+    jQuery(function($) {
+      $(".swipebox").swipebox();
+    });
+  </script>
+  <!-- //gallery popup -->
+  <!--/script-->
+  <script src="js/simplePlayer.js"></script>
+  <script>
+    $("document").ready(function() {
+      $("#video").simplePlayer();
+    });
+  </script>
+  <!-- //Baneer-js -->
+  <!-- Calendar -->
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+      $("#datepicker").datepicker();
+    });
+  </script>
+  <!-- //Calendar -->
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
+  <!-- //js-scripts -->
 </body>
 </html>

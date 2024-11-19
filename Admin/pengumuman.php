@@ -114,91 +114,209 @@
         </div>
 
         <div class="card-body">
-        <div class="table-responsive">
-    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
-            <tr>
-                <th class="header-no">No</th>
-                <th class="header-judul">Judul</th>
-                <th class="header-konten">Deskripsi</th>
-                <th class="header-tanggal">Tanggal</th>
-                <th class="header-status">Status</th>
-                <th class="header-aksi text-center" colspan="2">Aksi</th>
-            </tr>
-        </thead>
-        <?php
-        include '../koneksi.php';
-        $i = 1;
-        $data = mysqli_query($koneksi, "SELECT * FROM pengumuman");
-        while ($d = mysqli_fetch_array($data)) {
-        ?>
-        <tbody>
-            <tr>
-                <th><?php echo $i++; ?></th>
-                <th><?php echo $d['judul']; ?></th>
-                <th><?php echo $d['dekripsi']; ?></th>
-                <th><?php echo $d['tanggal']; ?></th>
-                <th>
-                <select class="form-control status" data-id="<?php echo $d['id']; ?>" name="status">
-                  <option value="Aktif" <?php echo ($d['status'] == 'Aktif') ? 'selected' : ''; ?>>Aktif</option>
-                  <option value="Nonaktif" <?php echo ($d['status'] == 'Nonaktif') ? 'selected' : ''; ?>>Nonaktif</option>
-              </select>
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-no">
+                        No
+                        <!-- Dropdown untuk Sorting -->
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownNo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-sort"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownNo">
+                                <a class="dropdown-item" href="#">Sort Ascending</a>
+                                <a class="dropdown-item" href="#">Sort Descending</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="header-judul">
+                        Judul
+                        <!-- Dropdown untuk Sorting -->
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownJudul" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-sort"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownJudul">
+                                <a class="dropdown-item" href="#">Sort Ascending</a>
+                                <a class="dropdown-item" href="#">Sort Descending</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="header-konten">
+                        Deskripsi
+                        <!-- Dropdown untuk Sorting -->
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownDeskripsi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-sort"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownDeskripsi">
+                                <a class="dropdown-item" href="#">Sort Ascending</a>
+                                <a class="dropdown-item" href="#">Sort Descending</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="header-tanggal">
+                        Tanggal
+                        <!-- Dropdown untuk Sorting -->
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownTanggal" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-sort"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownTanggal">
+                                <a class="dropdown-item" href="#">Sort Ascending</a>
+                                <a class="dropdown-item" href="#">Sort Descending</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="header-status">
+                        Status
+                        <!-- Dropdown untuk Sorting -->
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-sort"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownStatus">
+                                <a class="dropdown-item" href="#">Aktif</a>
+                                <a class="dropdown-item" href="#">Nonaktif</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="header-aksi text-center" colspan="2">Aksi</th>
+                </tr>
+            </thead>
+            <?php
+            include '../koneksi.php';
+            // Menangani parameter pengurutan dari query string
+            $column = isset($_GET['column']) ? $_GET['column'] : 'judul'; // Kolom default: judul
+            $order = isset($_GET['order']) ? $_GET['order'] : 'asc'; // Urutan default: ascending
 
-                </th>
-                <th class='text-center' width='100'>
-                    <a href='pengumuman_edit.php?id=<?php echo $d['id']; ?>' class='btn btn-success'>Edit</a>
-                </th>
-                <th class='text-center' width='100'>
-                    <button class='btn btn-danger' onclick="showDeleteModal('<?php echo $d['id']; ?>')">Hapus</button>
-                </th>
-            </tr>
-        </tbody>
-        <?php
-        }
-        ?>
-    </table>
+            // Query SQL dengan pengurutan dinamis
+            $sql = "SELECT * FROM pengumuman ORDER BY $column $order";
+            $data = mysqli_query($koneksi, $sql);
+            $i = 1;
+            $data = mysqli_query($koneksi, "SELECT * FROM pengumuman");
+            while ($d = mysqli_fetch_array($data)) {
+            ?>
+            <tbody>
+                <tr>
+                    <th><?php echo $i++; ?></th>
+                    <th><?php echo $d['judul']; ?></th>
+                    <th><?php echo $d['dekripsi']; ?></th>
+                    <th><?php echo $d['tanggal']; ?></th>
+                    <th><?php echo $d['status']; ?>
+                    <!-- Tombol untuk memperbarui status -->
+                        <button class="btn btn-warning" onclick="showUpdateModal('<?php echo $d['id']; ?>', '<?php echo $d['status']; ?>')">
+                            Perbarui
+                        </button>
+                    </th>
+                    <th class='text-center' width='100'>
+                        <a href='pengumuman_edit.php?id=<?php echo $d['id']; ?>' class='btn btn-success'>Edit</a>
+                    </th>
+                    <th class='text-center' width='100'>
+                        <button class='btn btn-danger' onclick="showDeleteModal('<?php echo $d['id']; ?>')">Hapus</button>
+                    </th>
+                </tr>
+            </tbody>
+            <?php
+            }
+            ?>
+        </table>
+    </div>
 </div>
-</div>
+
 
 </div>
 </div>
 
-<!-- JavaScript untuk Modal Hapus -->
+
+<!-- JavaScript untuk  pengurutan -->
 <script>
-    function showDeleteModal(id) {
-        // Set URL dengan ID data untuk dihapus
-        document.getElementById('confirmDeleteBtn').href = 'Hapus_pengumuman.php?kode=' + id;
-        
-        // Tampilkan modal
-        $('#deleteModal').modal('show');
+    function sortData(column, order) {
+        // Kirim data pengurutan ke server menggunakan AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "sort_data.php?column=" + column + "&order=" + order, true);
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                // Menampilkan hasil pengurutan (update tabel)
+                document.getElementById('dataTable').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    }
+</script>
+
+<!-- Modal Konfirmasi Pembaruan Status -->
+<div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="statusModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="statusModalLabel">Konfirmasi Perubahan Status</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="updateStatusForm">
+                    <div class="form-group">
+                        <label for="status">Pilih Status Baru</label>
+                        <select class="form-control" id="statusSelect">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Nonaktif">Nonaktif</option>
+                        </select>
+                    </div>
+                </form>
+                <p id="modalMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary" id="confirmUpdateStatus">Perbarui Status</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let selectedRowId = null; // Menyimpan ID pengumuman yang dipilih
+
+    // Fungsi untuk membuka modal dan menampilkan status saat ini
+    function showUpdateModal(id, currentStatus) {
+        selectedRowId = id; // Menyimpan ID baris
+        document.getElementById('statusSelect').value = currentStatus; // Mengatur nilai status di select
+
+        // Menampilkan modal
+        $('#statusModal').modal('show');
     }
 
-$(document).ready(function() {
-    // Mengubah status pengumuman saat dropdown berubah
-    $('.status').change(function() {
-        var id = $(this).data('id');  // Mengambil id pengumuman dari atribut data-id
-        var status = $(this).val();   // Mengambil nilai status yang dipilih
+    // Fungsi untuk memperbarui status
+    document.getElementById('confirmUpdateStatus').addEventListener('click', function() {
+        const newStatus = document.getElementById('statusSelect').value; // Mendapatkan status yang dipilih
 
-        // Mengirim data ke server menggunakan AJAX
-        $.ajax({
-            url: 'update_status.php',  // Halaman yang akan menangani perubahan status
-            method: 'POST',
-            data: {
-                id: id,
-                status: status
-            },
-            success: function(response) {
-                // Menampilkan pesan atau update status yang sukses
-                alert('Status pengumuman berhasil diperbarui!');
-            },
-            error: function() {
-                alert('Terjadi kesalahan saat memperbarui status.');
-            }
-        });
+        // Melakukan update status ke database menggunakan AJAX
+        updateStatus(selectedRowId, newStatus);
+
+        // Menutup modal setelah update
+        $('#statusModal').modal('hide');
     });
-});
 
+    // Fungsi untuk mengupdate status di basis data
+    function updateStatus(id, status) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "update_status.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert('Status berhasil diperbarui!');
+                // Optionally: reload or update the page content dynamically
+            }
+        };
+        // Mengirim ID dan status baru ke server
+        xhr.send("id=" + id + "&status=" + status);
+    }
 </script>
+
 
 <!-- Modal Konfirmasi Hapus -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -303,6 +421,17 @@ $(document).ready(function() {
     </div>
 </div>
 
+<!-- Bootstrap CSS -->
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- FontAwesome CSS untuk ikon -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+<!-- jQuery dan Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>

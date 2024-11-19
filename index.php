@@ -1,179 +1,162 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
   <title>SMP AGAPE</title>
   <!-- Meta tag Keywords -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="Scholarly web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-
-
-  <!--// Meta tag Keywords -->
-  <!-- css files -->
-  <link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  
+  <!-- CSS files -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/beranda.css" />
   <link rel="stylesheet" href="css/kontak.css" />
-   <!-- Custom fonts and styles for this template -->
-   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<link href="css/sb-admin-2.min.css" rel="stylesheet" />
-
-
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- JavaScript files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
-
-  <!-- //css files -->
-  <!-- online-fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
-  <!-- //online-fonts -->
 </head>
 
+<?php include ('navbar.php'); ?> 
 <body>
+<!-- Header dengan marquee -->
+         <?php
+            include('koneksi.php');
+            
+            // Query untuk mengambil data pengumuman yang statusnya Aktif dan diurutkan berdasarkan tanggal terbaru
+            $data = mysqli_query($koneksi, "SELECT * FROM kutipan");
+            $i = 0; // Untuk melacak indeks GIF
+            
+            // Menampilkan data dalam format card
+            while ($d = mysqli_fetch_array($data)) {
+                // Pilih GIF berdasarkan indeks
+                $i++;
+            ?>
+      <header class="header fade">
+          <img src="beranda_image/sekolah.webp" alt="SMP Kristen Agape Indah" class="img-fluid">
+          <marquee behavior="scroll" direction="left" class="quote bg-primary text-white" scrollamount="5">
+          <?php echo htmlspecialchars($d['deskripsi']); ?>
+          </marquee>
+      </header>
 
-
-  <div class="clearfix"> </div>
-<!-- Page Wrapper -->
-<div id="wrapper">
-    <!-- Sidebar -->
-    <?php include ('slide.php'); ?> 
-    <!-- End of Sidebar -->
-<!-- Konten kamu -->
-    <div class="clearfix"> </div>
-
-  <!-- Slideshoww -->
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-
-
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  <!-- //Slideshoww -->
-  <div class="jumbotron">
-  tulisan berjalan
-    <div class="container">
-     
-</div>
-  </div>
-  <!-- Event -->
-  <div class="jumbotron">
-    <div class="container">
-      <h1>EVENT SEKOLAH</h1>
-      <!-- Thumbniell-->
-
-      <div class="content">
-            <!-- Video 1 -->
-            <div class="video-section">
-                <h3>Proses Pemakaman Penganut Jingitiu</h3>
-                <iframe src="https://www.youtube.com/embed/4TCU2mKmi-U" allowfullscreen></iframe>
+      <?php
+            }
+            ?>
+      
+      <div class="container mt-4 fade">
+    <div class="row fade">
+        <!-- Tulisan Terbaru -->
+        <div id="tulisan" class="col-md-8">
+            <h2 class="section-title">Tulisan Terbaru</h2>
+            <!-- Artikel pertama -->
+            <?php
+    include('koneksi.php');
+    // Query untuk mengambil 2 data terbaru dari tabel kegiatan
+    $data = mysqli_query($koneksi, "SELECT * FROM kegiatan ORDER BY tanggal DESC LIMIT 2");
+    $i = 0; // Untuk melacak indeks GIF
+    
+    // Menampilkan data dalam format card
+    while ($d = mysqli_fetch_array($data)) {
+        // Menentukan deskripsi terbatas (batasi 200 karakter)
+        $description = substr($d['deskripsi'], 0, 200) . '...'; // Mengambil 200 karakter pertama
+?>
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4"> 
+                <!-- Memperbaiki path gambar -->
+                <img src="Admin/<?php echo $d['gambar']; ?>" class="img-fluid rounded-start" alt="Foto tidak tersedia">            </div>
+            <div class="col-md-8 fade">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo htmlspecialchars($d['judul']); ?></h5>
+                    <p class="card-text"><?php echo $description; ?></p> <!-- Menampilkan deskripsi terbatas -->
+                    <a href="kegiatan.php?id=<?php echo $d['id_kegiatan']; ?>">
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">Baca Selengkapnya</button>
+                    </a>
+                    <p class="card-text"><small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
+                </div>
             </div>
         </div>
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .header {
-            text-align: center;
-            color: #d9534f;
-            font-size: 26px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        .menu {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #d9534f;
-            padding-bottom: 10px;
-        }
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .menu a:hover {
-            background-color: #d9534f;
-            color: #fff;
-        }
-        .content {
-            margin-top: 20px;
-        }
-        .video-section {
-            margin-bottom: 30px;
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-        }
-        .video-section h3 {
-            color: #337ab7;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        iframe {
-            width: 100%;
-            height: 315px;
-            border: none;
-            border-radius: 10px;
-        }
-    </style>
-
-
-
-      <!-- //Thumbniell-->
-
-  </div>
+    </div>
+<?php
+    }
+?>
+                 
+                 
+              </div>
   
-      <!-- End of Footer -->
-         </div>
- <?php include('footer.php'); ?>
-
-
- <!-- Akhir konte yang mau di rubah  -->        
- </div>
+              <!-- Sidebar -->
+              <div id="kepala-sekolah" class="col-md-4 fade">
+                  <h2 class="section-title fade">Kepala Sekolah</h2>
+                  <div class="text-center fade">
+                      <img src="beranda_image/kepsek.png" class="img-fluid rounded-circle" alt="Kepala Sekolah">
+                      <h4>Shin Tae Yong</h4>
+                      <p>“**"Memimpin dengan kasih Kristus, menginspirasi melalui iman, dan melayani demi menciptakan generasi yang hidup dalam terang Tuhan."**”</p>
+                  </div>
+                  <hr>
+                  <h2 class="section-title fade">Tautan</h2>
+                  <ul>
+                      <li><a href="#">Dinas Pendidikan Jawa Timur</a></li>
+                      <li><a href="#">Dispendik Surabaya</a></li>
+                  </ul>
+              </div>
+          </div>
   
- </div>
-  </div>
+          <!-- Foto dan Video Terbaru (sesuai permintaan Anda) -->
+          <div id="galeri" class="mt-5 fade">
+              <h2 class="section-title">Foto Terbaru</h2>
+              <div class="row">
+                  <div class="col-md-4">
+                      <img src="beranda_image/5.jpg" class="img-thumbnail" alt="Foto 1">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="beranda_image/6.jpg" class="img-thumbnail" alt="Foto 2">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="beranda_image/3.jpg" class="img-thumbnail" alt="Foto 3">
+                  </div>
+              </div>
+              <h2 class="section-title mt-4 fade">Video Terbaru</h2>
+              <div class="row fade">
+                  <div class="col-md-6">
+                      <iframe class="w-100" src="https://www.youtube.com/embed/4TCU2mKmi-U" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <div class="col-md-6">
+                      <iframe class="w-100" src="https://www.youtube.com/embed/4TCU2mKmi-U" frameborder="0" allowfullscreen></iframe>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+      <?php include ('footer.php'); ?>
+      <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+       <!-- Animasi Scroll -->
+       <script>
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('show');
+                  } else {
+                      entry.target.classList.remove('show');
+                  }
+              });
+          });
+  
+          document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+      </script>
   <!-- End of Page Wrapper -->
 
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
  <!-- Footer Section -->
 
   <!-- js-scripts -->
   <!-- js-files -->
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
-  <!-- //js-files -->
-  <!-- Baneer-js -->
-
-
   <!-- smooth scrolling -->
   <script src="js/SmoothScroll.min.js"></script>
   <!-- //smooth scrolling -->
@@ -241,9 +224,4 @@
   <script src="js/sb-admin-2.min.js"></script>
   <!-- //js-scripts -->
 </body>
- <!-- Footer Bottom -->
- <div class="footer-bottom" style="background-color: 003366;">
-    &copy; Copyright SMP Agape Indah 2024. All Rights Reserved.
-  </div>
-  
 </html>
