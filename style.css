@@ -472,3 +472,13 @@ body {
 .galery {
   padding: 200px;
 }
+
+.section-title {
+  border: 2px solid #007bff; /* Warna border */
+  border-radius: 15px; /* Menambahkan border-radius */
+  padding: 10px 20px; /* Memberikan padding agar teks tidak menempel dengan border */
+  background-color: #f8f9fa; /* Memberikan latar belakang yang cerah */
+  color: #007bff; /* Warna teks sesuai dengan warna border */
+  font-size: 24px; /* Ukuran font */
+  text-align: center; /* Menyelaraskan teks di tengah */
+}

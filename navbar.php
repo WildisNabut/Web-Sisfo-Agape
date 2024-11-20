@@ -11,10 +11,10 @@
             <?php
             date_default_timezone_set('Asia/Jakarta');
             $hour = date('H');
-            if ($hour >= 5 && $hour < 12) {
+            if ($hour >= 5 && $hour < 11) {
                 $greeting = "Selamat Pagi";
-            } elseif ($hour >= 12 && $hour < 15) {
-                $greeting = "Selamat Siang"
+            } elseif ($hour >= 11 && $hour < 15) {
+                $greeting = "Selamat Siang";
             } elseif ($hour >= 15 && $hour < 18) {
                 $greeting = "Selamat Sore";
             } else {
@@ -69,10 +69,8 @@
                   </a>
                   <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdownSchoolProfile">
                       <li><a class="dropdown-item" href="sejarah.php"><i class="fas fa-history"></i> Sejarah</a></li>
-<<<<<<< HEAD
-                      <li><a class="dropdown-item" href="visi-misi.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
-=======
-                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
+
+                      <li><a class="dropdown-item" href=visi-misi.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
 
                       <li><a class="dropdown-item" href="struktur-organisasi.php"><i class="fas fa-users"></i> Organisasi</a></li>
                   </ul>

@@ -25,6 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $status = $row['status'] == 'selesai' ? "<span class='badge bg-success'>Selesai</span>" : "<span class='badge bg-warning'>Belum Selesai</span>";
                 $tanggal_selesai = date("d-m-Y", strtotime($row['tanggal_selesai']));
 
+                // Fungsi untuk mencari dan mengganti URL dengan tag <a>
+                function convertUrlsToLinks($text) {
+                    // Pola untuk mencocokkan URL (http, https, ftp, file)
+                    $pattern = "/(https?:\/\/[^\s]+)/";
+                    return preg_replace($pattern, "<a href=\"$1\" target=\"_blank\">$1</a>", $text);
+                }
+
+                // Ubah deskripsi jika ada URL
+                $deskripsi = convertUrlsToLinks($row['deskripsi']);
+
                 echo "<div class='card shadow-lg mb-4'>
                         <div class='card-body'>
                             <h4 class='card-title mb-3 text-primary'>{$row['nama_tugas']}</h4>
@@ -32,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <i class='fas fa-book'></i> {$row['nama_matapelajaran']}
                             </h6>
                             <hr>
-                            <p class='card-text mb-4'>{$row['deskripsi']}</p>
+                            <p class='card-text mb-4'>$deskripsi</p>
                             <div class='d-flex justify-content-between'>
                                 <div>
                                     <h6 class='text-muted mb-1'><i class='fas fa-calendar-alt'></i> Batas Waktu</h6>
