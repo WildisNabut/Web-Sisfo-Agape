@@ -41,12 +41,18 @@
     <!-- End of Sidebar -->
 <!-- Konten kamu -->
 
-<div class="header-text">
-        <span>SMP AGAPE INDAH - PENGUMUMAN</span>
+<!-- Header Hero -->
+<header class="herope">
+    <div class="hero-imagepe">
+        <img src="https://media.tenor.com/MsNLPObG-NIAAAAC/swisssalary-10years.gif" alt="Ilustrasi Pendidikan">
     </div>
+
+</header>
+
+<!-- Konten Utama -->
 <div class="container">
-  <!-- Pembungkus utama -->
-  <div class="#">
+    <!-- Pembungkus utama -->
+    <div class="#">
         <div class="card-wrapper">
             <?php
             include('koneksi.php');
@@ -65,7 +71,7 @@
                     <div class="announcement-body">
                         <p><strong>SMP Kristen Agape Indah - </strong> <?php echo nl2br(htmlspecialchars($d['dekripsi'])); ?></p>
                         <p><i class="fas fa-calendar-alt"></i> <?php echo date('d F Y', strtotime($d['tanggal'])); ?></p>
-                      </div>
+                    </div>
                 </div>
             <?php
             }
@@ -73,6 +79,7 @@
         </div>
     </div>
 </div>
+
 
 
             

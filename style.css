@@ -1,5 +1,28 @@
 /* =============== pengumuman=============== */
 /* =============== pengumuman=============== */
+
+/* CSS untuk Hero */
+/* CSS untuk header */
+/* Hero Section */
+.herope {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Menumpuk gambar dan teks secara vertikal */
+  padding: 50px 50px; /* Menambah padding agar lebih besar */
+  background: #ffffff;
+  color: white;
+  position: relative; /* Agar teks bisa diposisikan di atas gambar */
+  overflow: hidden; /* Menyembunyikan teks yang berada di luar area hero */
+}
+
+.hero-imagepe img {
+  max-width: 250px; /* Membesarkan gambar */
+  margin-bottom: 20px; /* Memberikan jarak antara gambar dan teks */
+}
+
+/* CSS untuk Hero */
+
 /* Pembungkus utama */
 .main-card {
   max-width: 900px;
@@ -38,7 +61,7 @@
   color: #007bff;
 }
 .header-text {
-  height: 150px; /* Tinggi div */
+  height: 100px; /* Tinggi div */
   display: flex; /* Menggunakan flexbox untuk menempatkan teks di tengah secara vertikal */
   align-items: center; /* Vertikal center */
   justify-content: left; /* Horizontal center */
@@ -482,3 +505,291 @@ body {
   font-size: 24px; /* Ukuran font */
   text-align: center; /* Menyelaraskan teks di tengah */
 }
+
+/* ============================================== Visi Misi=================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Menumpuk gambar dan teks secara vertikal */
+  padding: 50px 50px; /* Menambah padding agar lebih besar */
+  background: #2e4482;
+  color: white;
+  position: relative; /* Agar teks bisa diposisikan di atas gambar */
+  overflow: hidden; /* Menyembunyikan teks yang berada di luar area hero */
+}
+
+.hero-image img {
+  max-width: 250px; /* Membesarkan gambar */
+  margin-bottom: 20px; /* Memberikan jarak antara gambar dan teks */
+}
+
+.hero-content h1 {
+  font-size: 2.5rem; /* Ukuran teks yang lebih besar */
+  margin: 0;
+  position: absolute; /* Agar teks bisa bergerak */
+  white-space: nowrap; /* Menjaga teks tetap dalam satu baris */
+  animation: moveText 10s linear infinite; /* Animasi teks bergerak */
+}
+/* Animasi teks bergerak dari kiri ke kanan */
+@keyframes moveText {
+  0% {
+    left: -100%; /* Mulai dari luar layar di sebelah kiri */
+    opacity: 1;
+  }
+  50% {
+    left: 50%; /* Tengah layar */
+    opacity: 1;
+  }
+  100% {
+    left: 100%; /* Berhenti di luar layar di sebelah kanan */
+    opacity: 0;
+  }
+}
+
+/* Visi dan Misi */
+.visi-misi {
+  padding: 50px 20px;
+  text-align: justify;
+  background: #e3f2fd;
+}
+
+.visi-misi h2 {
+  font-size: 2rem;
+  color: #2e4482;
+  margin-bottom: 10px;
+}
+
+.visi-misi p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Layout untuk dua kolom (gambar + teks) */
+.visi-misi-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.visi-misi-image {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.visi-misi-text {
+  flex: 2;
+  text-align: justify; /* Membuat teks rata kiri-kanan */
+}
+
+.visi-misi-image img {
+  max-width: 400px; /* Menyesuaikan ukuran gambar GIF */
+  width: 100%; /* Agar gambar responsif */
+}
+
+.misi ol {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 700px;
+  padding-left: 20px;
+}
+
+/* Footer */
+.footer {
+  background: #2e4482;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+.footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================================Visi Misi=================================== */
+/* ==============================================Visi Misi=================================== */
+/* ==============================================foto beranda=================================== */
+/* Foto Carousel */
+.carousel-item img {
+  width: 100%;
+  height: 250px; /* Tentukan tinggi untuk ukuran landscape */
+  object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+  border: 3px solid #010911; /* Garis biru di sekitar gambar */
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease; /* Animasi hover */
+}
+
+/* Video */
+iframe {
+  width: 100%;
+  height: 250px; /* Sama dengan tinggi foto */
+  object-fit: cover; /* Sesuaikan konten video */
+  border: 3px solid #010c17dd; /* Border yang sama dengan gambar */
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk konsistensi */
+}
+
+/* Gaya untuk Section Kepala Sekolah */
+#kepala-sekolah {
+  background-color: #f9f9f9; /* Warna latar belakang lembut */
+  padding: 20px;
+  border-radius: 15px; /* Membuat sudut melengkung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+  text-align: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out; /* Animasi hover */
+}
+
+#kepala-sekolah:hover {
+  transform: translateY(-5px); /* Efek mengangkat sedikit saat hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tingkatkan bayangan */
+}
+
+/* Judul Section */
+#kepala-sekolah .section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000307; /* Warna teks biru */
+  margin-bottom: 15px;
+}
+
+/* Gambar Kepala Sekolah */
+#kepala-sekolah img {
+  width: 150px; /* Ukuran gambar */
+  height: 150px; /* Sama dengan lebar agar lingkaran sempurna */
+  object-fit: cover; /* Pastikan proporsi gambar tetap terjaga */
+  border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+  border: 4px solid #000102e0; /* Border biru */
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut pada gambar */
+}
+
+/* Nama Kepala Sekolah */
+#kepala-sekolah h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Warna teks */
+  margin-bottom: 10px;
+}
+
+/* Kutipan Kepala Sekolah */
+#kepala-sekolah p {
+  font-size: 14px;
+  font-style: italic;
+  color: #555; /* Warna teks kutipan */
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Garis Pemisah */
+#kepala-sekolah hr {
+  border: none;
+  border-top: 2px solid #ddd; /* Warna garis pemisah */
+  margin: 20px 0;
+}
+
+/* ==============================================foto beranda=================================== */
+/* ==============================================foto beranda=================================== */
+/* ==============================================berita=================================== */
+/* ==============================================berita=================================== */
+.custom-card {
+  display: flex;
+  flex-direction: row; /* Gambar di kiri, teks di kanan */
+  border: 1px solid #ddd; /* Border tipis */
+  border-radius: 8px; /* Sudut bulat */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+  margin-bottom: 20px;
+  overflow: hidden; /* Menghindari konten yang meluap */
+  height: 100%; /* Kartu memiliki tinggi yang konsisten */
+}
+
+.custom-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Membuat jarak antara elemen */
+  padding: 16px;
+  height: 100%; /* Konten menyesuaikan tinggi kartu */
+}
+
+.custom-card-title {
+  color: #6c4f2d; /* Warna coklat untuk judul */
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.custom-card-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.custom-card-img {
+  width: 100%;
+  height: 150px; /* Ukuran tetap untuk gambar */
+  object-fit: cover; /* Mengisi area gambar tanpa merusak proporsi */
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.custom-card-date {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Efek hover pada kartu */
+.custom-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-card .btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.custom-card .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Perilaku Responsif */
+@media (max-width: 767px) {
+  .custom-card {
+    flex-direction: column; /* Menumpuk gambar dan teks pada layar kecil */
+  }
+
+  .custom-card-img {
+    height: 120px; /* Ukuran gambar lebih kecil di perangkat mobile */
+  }
+}
+
+/* ==============================================berita=================================== */
+/* ==============================================berita=================================== */

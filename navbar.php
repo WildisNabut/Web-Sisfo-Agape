@@ -13,8 +13,8 @@
             $hour = date('H');
             if ($hour >= 5 && $hour < 11) {
                 $greeting = "Selamat Pagi";
-            } elseif ($hour >= 11 && $hour < 15) {
-                $greeting = "Selamat Siang";
+            } elseif ($hour >= 12 && $hour < 15) {
+                $greeting = "Selamat Siang"
             } elseif ($hour >= 15 && $hour < 18) {
                 $greeting = "Selamat Sore";
             } else {
@@ -60,17 +60,17 @@
               <li class="nav-item">
                   <a class="nav-link text-primary fw-semibold" href="renungan.php"><i class="fas fa-book"></i> Renungan</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link text-primary fw-semibold" href="fasilitas.php"><i class="fas fa-building"></i> Fasilitas</a>
-              </li>
+
               <li class="nav-item dropdown">
                   <a class="nav-link text-primary fw-semibold dropdown-toggle" href="#" id="navbarDropdownSchoolProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fas fa-school"></i> Profil Sekolah
                   </a>
                   <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdownSchoolProfile">
                       <li><a class="dropdown-item" href="sejarah.php"><i class="fas fa-history"></i> Sejarah</a></li>
-
-                      <li><a class="dropdown-item" href=visi-misi.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
+<<<<<<< HEAD
+                      <li><a class="dropdown-item" href="visi-misi.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
+=======
+                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
 
                       <li><a class="dropdown-item" href="struktur-organisasi.php"><i class="fas fa-users"></i> Organisasi</a></li>
                   </ul>

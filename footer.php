@@ -7,80 +7,108 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .footer {
-            background-color: #111;
-            color: #fff;
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-        }
-        .footer div {
-            max-width: 300px;
-        }
+.footer {
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap; /* Memungkinkan elemen untuk dibungkus ke baris berikutnya */
+}
 
-        .email p {
-          color: white;
-        }
-        .footer h3 {
-            color: #8c51ff;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        .footer a {
-            color: #ccc;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-        }
-        .footer a:hover {
-            color: #8c51ff;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 200px;
-            border: 0;
-        }
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .social-icons a {
-            color: #fff;
-            font-size: 24px;
-        }
-        .social-icons a:hover {
-            color: #8c51ff;
-        }
+.footer div {
+    max-width: 300px;
+    flex: 1 1 150px; /* Menyusun elemen secara fleksibel, dengan ukuran minimum 200px */
+    text-align: justify;
+}
 
-        .footer-bottom {
+.footer h3 {
+    color: #8c51ff;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer a:hover {
+    color: #8c51ff;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: #8c51ff;
+}
+
+.footer-bottom {
     background-color: #fff;
-    color: #000000 !important; ;
+    color: #efeaea !important;
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
 }
+
 .footer-bottom {
-    background-color: #fff; /* Warna latar belakang footer */
-    border-top: 2px solid #000; /* Garis pembatas atas dengan warna ungu */
-    padding: 10px; /* Jarak dalam elemen */
-    text-align: center; /* Teks rata tengah */
+    background-color: #fff;
+    border-top: 2px solid #000;
+    padding: 10px;
+    text-align: center;
 }
 
 .footer-bottom a {
-    color: #8c51ff; /* Warna teks link */
-    text-decoration: none; /* Hilangkan garis bawah link */
-    margin-left: 5px; /* Jarak antar link */
+    color: #8c51ff;
+    text-decoration: none;
+    margin-left: 5px;
 }
 
 .footer-bottom a:hover {
-    color: #fff; /* Warna teks menjadi putih saat hover */
+    color: #fff;
 }
 
+/* Media Query untuk layar kecil */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Elemen footer ditumpuk secara vertikal pada layar kecil */
+        align-items: center; /* Pusatkan konten footer */
+    }
+
+    .footer div {
+        text-align: center; /* Ratakan teks di dalam elemen */
+        margin-bottom: 20px; /* Jarak antar elemen */
+    }
+
+    .footer .map-container iframe {
+        height: 150px; /* Sesuaikan tinggi peta pada layar kecil */
+    }
+
+    .social-icons {
+        justify-content: center; /* Pusatkan ikon sosial media */
+    }
+
+    .footer-bottom {
+        font-size: 12px; /* Ukuran font lebih kecil pada layar kecil */
+    }
+}
 
     </style>
 </head>
@@ -123,6 +151,8 @@
         </div>
     </div>
 </div>
-
+<div class="footer-bottom" style="background-color: #0a0534; color: rgb(2, 12, 40);">
+    <p>&copy; Copyright SMP Agape Indah 2024. All Rights Reserved.</p>
+</div>
 </body>
 </html>

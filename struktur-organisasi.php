@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/beranda.css" />
-  <link rel="stylesheet" href="css/kontak.css" />
+  <link rel="stylesheet" href="style.css" />
   <link href="css/sb-admin-2.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- JavaScript files -->
@@ -67,7 +67,6 @@
               <img src="beranda_image/struktur-organisasi.png" alt="Struktur Organisasi Sekolah" class="fade-in-zoom">
           </section>
       </main>
- HEAD
   
       <?php include ('footer.php'); ?>
 
