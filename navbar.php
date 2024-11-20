@@ -68,13 +68,13 @@
                       <i class="fas fa-school"></i> Profil Sekolah
                   </a>
                   <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdownSchoolProfile">
-                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-history"></i> Sejarah</a></li>
-                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
-                      <li><a class="dropdown-item" href="profile_sekolah.php"><i class="fas fa-users"></i> Organisasi</a></li>
+                      <li><a class="dropdown-item" href="sejarah.php"><i class="fas fa-history"></i> Sejarah</a></li>
+                      <li><a class="dropdown-item" href="visi-misi.php"><i class="fas fa-bullseye"></i> Visi dan Misi</a></li>
+                      <li><a class="dropdown-item" href="struktur-organisasi.php"><i class="fas fa-users"></i> Organisasi</a></li>
                   </ul>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-primary fw-semibold" href="mail.php"><i class="fas fa-phone"></i> Kontak</a>
+                  <a class="nav-link text-primary fw-semibold" href="kontak2.php"><i class="fas fa-phone"></i> Kontak</a>
               </li>
           </ul>
         </div>

@@ -3,6 +3,18 @@
   <!DOCTYPE html>
   <html lang="id">
   <head>
+        <!-- CSS files -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/beranda.css" />
+  <link rel="stylesheet" href="css/kontak.css" />
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- JavaScript files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <?php include("navbar.php") ?>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Visi & Misi SMP AGAPE INDAH KUPANG</title>
@@ -160,7 +172,8 @@
               </div>
           </section>
       </main>
-  
+      <?php include ('footer.php'); ?>
+
 
   </body>
   </html>
