@@ -8,7 +8,7 @@
       <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/beranda.css" />
+  <link rel="stylesheet" href="style.css" />
   <link href="css/sb-admin-2.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- JavaScript files -->
@@ -55,7 +55,7 @@
                         <p class="email">smpagapeindah22@gmail.com</p>
 
                         <div class="button-container">
-                            <button class="btn btn-primary" onclick="window.location.href='mailto:siteunc22@gmail.com'">Kirim Email</button>
+                            <button class="btn btn-primary" onclick="window.location.href='mailto:agapeindahkupang@gmail.com'">Kirim Email</button>
                             <button class="btn btn-success" onclick="window.open('https://wa.me/6282144893442?text=Halo,%20saya%20ingin%20menghubungi%', '_blank')">Hubungi via WhatsApp</button>
                         </div>
                     </div>

@@ -67,27 +67,32 @@
             // Menentukan deskripsi terbatas (batasi 200 karakter)
             $description = substr($d['deskripsi'], 0, 50) . '...'; // Mengambil 200 karakter pertama
         ?>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <!-- Card -->
-            <div class="card">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <!-- Memperbaiki path gambar -->
-                        <img src="Admin/<?php echo $d['gambar']; ?>" class="img-fluid rounded-start" alt="Foto tidak tersedia">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: chocolate;"><strong><?php echo htmlspecialchars($d['judul']); ?></strong></h5>
-                            <p class="card-text"><?php echo $description; ?></p> <!-- Menampilkan deskripsi terbatas -->
-                            <a href="tampil_berita.php?id=<?php echo $d['id_kegiatan']; ?>">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">Baca Selengkapnya</button>
-                            </a>
-                            <p class="card-text"><small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
-                        </div>
-                    </div>
+<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+    <!-- Layout Kartu -->
+    <div class="custom-card">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <!-- Gambar -->
+                <img src="Admin/<?php echo $d['gambar']; ?>" class="custom-card-img" alt="Foto tidak tersedia">
+            </div>
+            <div class="col-md-8">
+                <div class="custom-card-body">
+                    <!-- Judul -->
+                    <h5 class="custom-card-title"><strong><?php echo htmlspecialchars($d['judul']); ?></strong></h5>
+                    <!-- Deskripsi singkat -->
+                    <p class="custom-card-text"><?php echo $description; ?></p> 
+                    <!-- Tombol 'Lihat Selengkapnya' -->
+                    <a href="tampil_berita.php?id=<?php echo $d['id_kegiatan']; ?>">
+                        <button class="btn btn-primary btn-sm">Lihat Selengkapnya</button>
+                    </a>
+                    <!-- Tanggal -->
+                    <p class="custom-card-date"><small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
         <?php
         }
         ?>
