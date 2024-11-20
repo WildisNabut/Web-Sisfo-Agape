@@ -96,7 +96,7 @@
     <div id="collapseGaleri" class="collapse" aria-labelledby="headingGaleri" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Galeri Sekolah</h6>
-        <a class="collapse-item" href="#">Foto</a>
+        <a class="collapse-item" href="foto.php">Foto</a>
         <a class="collapse-item" href="vidio.php">Video</a>
       </div>
     </div>
