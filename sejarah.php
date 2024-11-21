@@ -22,7 +22,7 @@
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-<<<<<<< HEAD
+
   <!DOCTYPE html>
   <html lang="id">
   <head>
@@ -168,12 +168,11 @@
   </head>
   <body>
       <header class="hero">
-=======
 <?php include ('navbar.php'); ?> 
 <body>
 <!-- Header dengan marquee -->
 <header class="hero">
->>>>>>> b011226f4f6dbb7d12fd85cbfc9c2ea278d26fe5
+
           <div class="hero-image">
               <img src="https://smp42sby.sch.id/assets/img/hero-img.png" alt="Ilustrasi Pendidikan">
           </div>
@@ -252,10 +251,7 @@
       });
     });
   </script>
-<<<<<<< HEAD
-        <?php include ('footer.php'); ?>
 
-=======
   <script type="text/javascript">
     $(document).ready(function() {
       /*
@@ -303,6 +299,6 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
   <!-- //js-scripts -->
->>>>>>> b011226f4f6dbb7d12fd85cbfc9c2ea278d26fe5
+
 </body>
 </html>

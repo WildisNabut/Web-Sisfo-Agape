@@ -56,7 +56,7 @@
           <section id="visi-misi" class="visi-misi">
               <div class="visi-misi-content">
                   <div class="visi-misi-image">
-                      <img src="animasi/visi.gif" alt="GIF Pendidikan">
+                      <img src="beranda_image/visi.gif" alt="GIF Pendidikan">
                   </div>
                   <div class="visi-misi-text">
                       <h2>VISI</h2>
