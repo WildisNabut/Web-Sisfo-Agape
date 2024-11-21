@@ -3,7 +3,7 @@
 if (empty($_SESSION['username'])) {
     echo "
     <ul class='nav'>
-        <li class='nav-item'>
+        <li class='Navigasi-item'>
         <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#myModal2'>
             <i class='fa' aria-hidden='true'>Login</i>
         </button>
@@ -12,7 +12,7 @@ if (empty($_SESSION['username'])) {
 } else {
     echo "
     <ul class='nav'>
-        <li class='nav-item dropdown'>
+        <li class='Navigasi-item dropdown'>
         <a class='nav-link user-dropdown' href='#' id='userDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                 <div class='profile-icon rounded-circle d-flex justify-content-center align-items-center' style='width: 40px; height: 40px; background-color: #366273; color: white;'>
                 ";
@@ -125,7 +125,7 @@ if (empty($_SESSION['username'])) {
 
 <style>
     /* Menambah ukuran font dan padding untuk .dropdown-header */
-    .nav-item.dropdown .dropdown-header {
+    .Navigasi-item.dropdown .dropdown-header {
         background-color: #f0f0f0; /* Warna latar belakang elegan */
         padding: 20px 15px; /* Menambah padding agar lebih besar */
         font-size: 18px; /* Ukuran font lebih besar */
@@ -135,39 +135,41 @@ if (empty($_SESSION['username'])) {
     }
 
     /* Membuat icon username dengan warna biru dan penataan lebih elegan */
-    .nav-item.dropdown .dropdown-header i {
+    .Navigasi-item.dropdown .dropdown-header i {
         color: #007bff; /* Warna biru pada icon */
         margin-right: 10px;
     }
 
     /* Menambahkan garis pembatas dengan jarak yang rapat */
-    .nav-item.dropdown .dropdown-menu .dropdown-item {
+    .Navigasi-item.dropdown .dropdown-menu .dropdown-item {
         border-bottom: 1px solid #ddd;
         padding: 15px 15px; /* Mengurangi jarak antara item */
     }
 
     /* Menghapus garis pembatas dari item terakhir */
-    .nav-item.dropdown .dropdown-menu .dropdown-item:last-child {
+    .Navigasi-item.dropdown .dropdown-menu .dropdown-item:last-child {
         border-bottom: none;
     }
 
     /* Efek hover pada item dropdown */
-    .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    .Navigasi-item.dropdown .dropdown-menu .dropdown-item:hover {
         background-color: #f0f0f0; /* Warna latar belakang saat hover */
         color: #333; /* Mengubah warna teks saat hover */
     }
 
     /* Gaya untuk item dropdown dengan icon */
-    .nav-item.dropdown .dropdown-menu .dropdown-item i {
+    .Navigasi-item.dropdown .dropdown-menu .dropdown-item i {
         margin-right: 10px; /* Jarak antara icon dan teks */
     }
-    .nav-item.dropdown .dropdown-menu {
+    .Navigasi-item.dropdown .dropdown-menu {
         position: absolute;
         left: -140px;
         right: 0;
         width: 200px; /* Menyesuaikan lebar dropdown */
         padding: 0;
     }
+
+    
 
 </style>
 

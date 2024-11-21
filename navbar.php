@@ -81,52 +81,15 @@
 </nav>
 
 <style>
-    /* Mengurangi lebar offcanvas */
-.custom-offcanvas {
-    width: 10px; /* Ubah sesuai dengan lebar yang diinginkan */
-}
-@media (max-width: 768px) {
-    .custom-offcanvas {
-        width: 200px; /* Lebar untuk perangkat kecil */
-    }
+    /* Menambahkan efek hover pada setiap item menu */
+.nav-item:hover .nav-link {
+    background-color: #f0f0f0;  /* Ganti warna latar belakang saat hover */
+    color: #007bff;  /* Ganti warna teks saat hover */
+    border-radius: 5px;  /* Memberikan radius pada sudut tombol */
 }
 
-.navbar-nav .nav-link {
-    position: relative;
-    font-weight: bold;
-    padding-left: 35px; /* Memberikan ruang untuk ikon dan teks */
-    transition: color 0.3s ease; /* Animasi untuk efek hover */
-}
-
-.navbar-nav .nav-link i {
-    position: absolute;
-    left: 10px; /* Menempatkan ikon di kiri */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.navbar-nav .nav-link span {
-    padding-left: 30px; /* Jarak antara ikon dan teks */
-}
-
-/* Warna hover kuning telur */
-.navbar-nav .nav-link:hover {
-    color: #ffc107; /* Kuning telur */
-}
-
-/* Dropdown menu */
-.navbar-nav .dropdown-menu {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.navbar-nav .dropdown-menu .dropdown-item:hover {
-    background-color: #f1f1f1; /* Warna latar saat item di-hover */
-}
-
-.navbar-nav .dropdown-menu i {
-    margin-right: 10px; /* Memberi jarak antara ikon dan teks */
+.nav-link {
+    transition: all 0.3s ease;  /* Efek transisi yang halus */
 }
 
 </style>
