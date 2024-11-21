@@ -74,7 +74,9 @@ if (isset($_GET['id']))
                 <img src="Admin/<?php echo $d['gambar']; ?>" class="img-fluid rounded-start" alt="Foto tidak tersedia">            </div>
             <div class="col-md-8 fade">
                 <div class="card-body">
-                    <p class="card-text"><?php echo htmlspecialchars($d['deskripsi']); ?></p> <!-- Menampilkan deskripsi terbatas -->
+                <p class="card-text" style="text-align: justify;">
+                        <?php echo htmlspecialchars($d['deskripsi']); ?>
+                    </p>                    
                     <p class="card-text"><i class="fas fa-calendar-alt"></i> <small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
                 </div>
             </div>

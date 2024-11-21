@@ -1,4 +1,3 @@
-
 <?php
 @session_start();
 if (empty($_SESSION['username'])) {
@@ -6,7 +5,7 @@ if (empty($_SESSION['username'])) {
     <ul class='nav'>
         <li class='nav-item'>
         <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#myModal2'>
-            <i class='fa fa-sign-in' aria-hidden='true'></i>
+            <i class='fa' aria-hidden='true'>Login</i>
         </button>
     </li> 
     </ul>";
@@ -14,10 +13,21 @@ if (empty($_SESSION['username'])) {
     echo "
     <ul class='nav'>
         <li class='nav-item dropdown'>
-        <a class='nav-link dropdown-toggle user-dropdown' href='#' id='userDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                <i class='fa fa-user' aria-hidden='true'></i> $_SESSION[username]
-            </a>
+        <a class='nav-link user-dropdown' href='#' id='userDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <div class='profile-icon rounded-circle d-flex justify-content-center align-items-center' style='width: 40px; height: 40px; background-color: #366273; color: white;'>
+                ";
+                // Show the first 2 letters of the username
+                echo strtoupper(substr($_SESSION['username'], 0, 2));
+    echo "
+            </div>
+        </a>
             <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+    ";
+
+    echo "
+            <li class='dropdown-header'>
+               <i class='fa fa-user' style='color:blue'></i>$_SESSION[username]
+            </li>
     ";
 
     if ($_SESSION['level'] == "admin") {
@@ -32,7 +42,7 @@ if (empty($_SESSION['username'])) {
         echo "
                 <li>
                     <a class='dropdown-item' href='Guru'>
-                        <i class='fa fa-pencil-alt' aria-hidden='true'></i> Dashboard
+                        <i class='fa fa-home-alt' aria-hidden='true'></i> Dashboard
                     </a>
                 </li>
         ";
@@ -79,7 +89,6 @@ if (empty($_SESSION['username'])) {
     </div>
 </div>
    
-
 <!-- Modal1 -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -114,6 +123,53 @@ if (empty($_SESSION['username'])) {
 </div>
 <!-- //Modal1 -->
 
+<style>
+    /* Menambah ukuran font dan padding untuk .dropdown-header */
+    .nav-item.dropdown .dropdown-header {
+        background-color: #f0f0f0; /* Warna latar belakang elegan */
+        padding: 20px 15px; /* Menambah padding agar lebih besar */
+        font-size: 18px; /* Ukuran font lebih besar */
+        font-weight: bold; /* Menambah ketebalan font */
+        color: #333; /* Mengubah warna teks */
+        border-bottom: 2px solid #ddd; /* Garis pembatas lebih tebal */
+    }
+
+    /* Membuat icon username dengan warna biru dan penataan lebih elegan */
+    .nav-item.dropdown .dropdown-header i {
+        color: #007bff; /* Warna biru pada icon */
+        margin-right: 10px;
+    }
+
+    /* Menambahkan garis pembatas dengan jarak yang rapat */
+    .nav-item.dropdown .dropdown-menu .dropdown-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 15px; /* Mengurangi jarak antara item */
+    }
+
+    /* Menghapus garis pembatas dari item terakhir */
+    .nav-item.dropdown .dropdown-menu .dropdown-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Efek hover pada item dropdown */
+    .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+        background-color: #f0f0f0; /* Warna latar belakang saat hover */
+        color: #333; /* Mengubah warna teks saat hover */
+    }
+
+    /* Gaya untuk item dropdown dengan icon */
+    .nav-item.dropdown .dropdown-menu .dropdown-item i {
+        margin-right: 10px; /* Jarak antara icon dan teks */
+    }
+    .nav-item.dropdown .dropdown-menu {
+        position: absolute;
+        left: -140px;
+        right: 0;
+        width: 200px; /* Menyesuaikan lebar dropdown */
+        padding: 0;
+    }
+
+</style>
 
 
 
