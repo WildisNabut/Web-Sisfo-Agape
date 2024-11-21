@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
   <!DOCTYPE html>
   <html lang="id">
   <head>
@@ -64,12 +63,9 @@
   
       <main>
           <section class="struktur-organisasi">
-              <img src="beranda_image/struktur-organisasi.png" alt="Struktur Organisasi Sekolah" class="fade-in-zoom">
+              <img src="images/animasi/struktur-organisasi.png" alt="Struktur Organisasi Sekolah" class="fade-in-zoom">
           </section>
       </main>
-  
-      <?php include ('footer.php'); ?>
-
             
 
       </div>
