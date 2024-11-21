@@ -36,16 +36,6 @@
   </button>
 
   <h4 class="modal-title mx-auto">Dashboard Admin</h4>
-
-  <!-- Message Icon with separator -->
-  <a class="nav-link" href="pesan.php">
-    <i class="fas fa-envelope fa-fw"></i>
-    <!-- Counter - Messages (Optional) -->
-  </a>
-
-  <!-- Divider between Message and User icons -->
-  <div class="topbar-divider d-none d-sm-block"></div>
-
   <!-- User Dropdown (aligned to right) -->
   <ul class="navbar-nav ml-auto">
     <?php
@@ -72,63 +62,84 @@
     ?>
   </ul>
 </nav>
-<!-- End of Topbar -->
-        <!-- End of Topbar -->
-
-
-        
-        <!-- konten yang ingin di rubah -->
-        <div class="container-fluid">
-          <!-- Page Content here -->
-          <div class="row">
-    <?php
+      <!-- End of Topbar -->
+    
+      <!-- konten yang ingin di rubah -->
+      <div class="container-fluid">
+        <!-- Page Content here -->
+        <div class="row">
+  <?php
     include('../koneksi.php');
 
-    // Queries for each data type
-    $queries = [
-        "Akun" => "SELECT COUNT(*) as total FROM akun",
-        "Guru" => "SELECT COUNT(*) as total FROM guru",
-        "Siswa" => "SELECT COUNT(*) as total FROM murid",
-        "Kelas" => "SELECT COUNT(*) as total FROM kelas",
-        "Mata Pelajaran" => "SELECT COUNT(*) as total FROM mata_pelajaran",
-    ];
+// Queries for each data type
+$queries = [
+  "Akun" => "SELECT COUNT(*) as total FROM akun",
+  "Guru" => "SELECT COUNT(*) as total FROM guru",
+  "Siswa" => "SELECT COUNT(*) as total FROM murid",
+  "Kelas" => "SELECT COUNT(*) as total FROM kelas",
+  "Renungan" => "SELECT COUNT(*) as total FROM renungan",
+  "Pengumuman" => "SELECT COUNT(*) as total FROM pengumuman",
+  "Kutipan" => "SELECT COUNT(*) as total FROM kutipan",
+  "Berita" => "SELECT COUNT(*) as total FROM kegiatan",
+  "Vidio" => "SELECT COUNT(*) as total FROM vidio",
+  "Foto" => "SELECT COUNT(*) as total FROM foto",
+  "Mata Pelajaran" => "SELECT COUNT(*) as total FROM mata_pelajaran",
+];
 
-    // Icons for each card
-    $icons = [
-        "Akun" => "fa-user",
-        "Guru" => "fa-chalkboard-teacher",
-        "Siswa" => "fa-user-graduate",
-        "Kelas" => "fa-school",
-        "Mata Pelajaran" => "fa-book",
-    ];
+// Icons for each card
+$icons = [
+  "Akun" => "fa-user",
+  "Guru" => "fa-chalkboard-teacher",
+  "Siswa" => "fa-user-graduate",
+  "Kelas" => "fa-school",
+  "Renungan" => "fa-book",
+  "Pengumuman" => "fa-bullhorn",
+  "Kutipan" => "fa-quote-right",
+  "Berita" => "fa-newspaper",
+  "Vidio" => "fa-video",
+  "Foto" => "fa-image",
+  "Mata Pelajaran" => "fa-book",
+];
 
-    // Colors for each card
-    $colors = [
-        "Akun" => "primary",
-        "Guru" => "warning",
-        "Siswa" => "info",
-        "Kelas" => "success",
-        "Mata Pelajaran" => "danger",
-    ];
+// Colors for each card
+$colors = [
+  "Akun" => "primary",
+  "Guru" => "warning",
+  "Siswa" => "info",
+  "Kelas" => "success",
+  "Renungan" => "primary",
+  "Pengumuman" => "secondary",
+  "Kutipan" => "dark",
+  "Berita" => "danger",
+  "Vidio" => "warning",
+  "Foto" => "info",
+  "Mata Pelajaran" => "danger",
+];
 
-    // Links for each card
-    $links = [
-        "Akun" => "akun.php",
-        "Guru" => "guru.php",
-        "Siswa" => "murid.php",
-        "Kelas" => "kelas.php",
-        "Mata Pelajaran" => "mata_pelajaran.php",
-    ];
+// Links for each card
+$links = [
+  "Akun" => "akun.php",
+  "Guru" => "guru.php",
+  "Siswa" => "murid.php",
+  "Kelas" => "kelas.php",
+  "Renungan" => "renungan.php",
+  "Pengumuman" => "pengumuman.php",
+  "Kutipan" => "kutipan.php",
+  "Berita" => "kegiatan.php",
+  "Vidio" => "vidio.php",
+  "Foto" => "foto.php",
+  "Mata Pelajaran" => "mata_pelajaran.php",
+];
 
-    // Loop through each type and generate a card
-    foreach ($queries as $label => $query) {
-        $result = mysqli_query($koneksi, $query);
-        $row = mysqli_fetch_assoc($result);
-        $total = $row['total'];
-        $icon = $icons[$label];
-        $color = $colors[$label];
-        $link = $links[$label];
-    ?>
+// Loop through each type and generate a card
+foreach ($queries as $label => $query) {
+  $result = mysqli_query($koneksi, $query);
+  $row = mysqli_fetch_assoc($result);
+  $total = $row['total'];
+  $icon = $icons[$label];
+  $color = $colors[$label];
+  $link = $links[$label];
+  ?>
 
     <!-- Card for <?php echo $label; ?> -->
     <div class="col-xl-3 col-md-6 mb-4">

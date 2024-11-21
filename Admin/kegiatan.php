@@ -40,16 +40,7 @@ include ('../koneksi.php');
     <i class="fa fa-bars"></i>
   </button>
 
-  <h4 class="modal-title mx-auto">Data Kegiatan</h4>
-
-  <!-- Message Icon with separator -->
-  <a class="nav-link" href="pesan.php">
-    <i class="fas fa-envelope fa-fw"></i>
-    <!-- Counter - Messages (Optional) -->
-  </a>
-
-  <!-- Divider between Message and User icons -->
-  <div class="topbar-divider d-none d-sm-block"></div>
+  <h4 class="modal-title mx-auto">Data Berita</h4>
 
   <!-- User Dropdown (aligned to right) -->
   <ul class="navbar-nav ml-auto">
@@ -105,16 +96,6 @@ include ('../koneksi.php');
 <div class="card shadow mb-4">
 <div class="card-header py-3 d-flex justify-content-between align-items-center">
 <a href="tambah_kegiatan.php" class="btn btn-primary">Tambah Data</a>
-<form class="form-inline" method="POST" action="#">
-   <div class="input-group">
-       <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-       <div class="input-group-append">
-           <button class="btn btn-primary" type="submit">
-               <i class="fas fa-search fa-sm"></i>
-           </button>
-      </div>
-   </div>
-</form>
 </div>
        <div class="card-body">
            <div class="table-responsive">

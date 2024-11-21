@@ -79,8 +79,8 @@
   <!-- Nav Item - Kegiatan -->
   <li class="nav-item">
     <a class="nav-link" href="kegiatan.php">
-      <i class="fas fa-fw fa-calendar-check"></i>
-      <span>Kegiatan</span>
+      <i class="fas fa-fw fa-newspaper"></i>
+      <span>Berita</span>
     </a>
   </li>
 

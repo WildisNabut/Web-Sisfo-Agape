@@ -1,179 +1,47 @@
 <?php session_start(); ?>
+<?php include ('koneksi.php'); ?> 
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
   <title>SMP AGAPE</title>
   <!-- Meta tag Keywords -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="Scholarly web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-  
-  <!-- CSS files -->
-   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--// Meta tag Keywords -->
+  <!-- css files -->
+  <link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   <link rel="stylesheet" href="css/beranda.css" />
   <link rel="stylesheet" href="css/kontak.css" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- JavaScript files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Custom fonts and styles for this template -->
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="css/sb-admin-2.min.css" rel="stylesheet" />
+ <link rel="stylesheet" href="style.css">
+
   <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- //css files -->
+  <!-- online-fonts -->
+  <link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+  <!-- //online-fonts -->
 </head>
 
-<<<<<<< HEAD
-  <!DOCTYPE html>
-  <html lang="id">
-  <head>
-    <!-- CSS files -->
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/beranda.css" />
-  <link rel="stylesheet" href="css/kontak.css" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- JavaScript files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <?php include("navbar.php") ?>
-
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Sejarah SMP AGAPE INDAH KUPANG</title>
-      <style>
-          * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-          }
-  
-          body {
-              font-family: 'Arial', sans-serif;
-              line-height: 1.6;
-              color: #333;
-          }
-  
-          .hero {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column; /* Menumpuk gambar dan teks secara vertikal */
-              padding: 20px 50px;
-              background: #2e4482;
-              color: white;
-          }
-  
-          .hero-image {
-              position: relative;
-              text-align: center;
-              margin-bottom: 20px;
-          }
-  
-          .hero-image img {
-              max-width: 250px;
-              animation: zoomImage 10s infinite alternate;
-          }
-  
-          /* Animasi gambar */
-          @keyframes zoomImage {
-              0% {
-                  transform: scale(1);
-              }
-              100% {
-                  transform: scale(1.1);
-              }
-          }
-  
-          /* Teks yang berjalan */
-          .hero-content {
-              width: 100%;
-              text-align: left;
-              overflow: hidden;
-              white-space: nowrap;
-          }
-  
-          .hero-content h1 {
-              font-size: 2.5rem;
-              color: white;
-              animation: scrollText 10s linear infinite;
-          }
-  
-          /* Animasi teks berjalan dari kiri ke kanan */
-          @keyframes scrollText {
-              0% {
-                  transform: translateX(-100%); /* Mulai di luar layar di kiri */
-              }
-              100% {
-                  transform: translateX(100%); /* Bergerak ke luar layar di kanan */
-              }
-          }
-  
-          /* Bagian Sejarah */
-          .sejarah {
-              padding: 50px 20px;
-              text-align: center;
-              background: #f9f9f9;
-          }
-  
-          .sejarah h2 {
-              font-size: 2.5rem;
-              color: #2e4482;
-              margin-bottom: 10px;
-          }
-  
-          .sejarah-content {
-              display: flex;
-              justify-content: space-between;
-              flex-wrap: wrap;
-              max-width: 1000px;
-              margin: 0 auto;
-          }
-  
-          .sejarah-content div {
-              width: 48%;
-              text-align: justify;
-              margin-bottom: 20px;
-              opacity: 0;
-              transform: translateY(20px);
-              animation: fadeInUp 1s ease-out forwards;
-          }
-  
-          @keyframes fadeInUp {
-              to {
-                  opacity: 1;
-                  transform: translateY(0);
-              }
-          }
-  
-          /* Footer */
-          .footer {
-              background: #2e4482;
-              color: white;
-              padding: 20px;
-              text-align: center;
-          }
-  
-          .footer nav a {
-              text-decoration: none;
-              color: white;
-              margin: 0 10px;
-          }
-  
-          .footer nav a:hover {
-              text-decoration: underline;
-          }
-      </style>
-  </head>
-  <body>
-      <header class="hero">
-=======
-<?php include ('navbar.php'); ?> 
 <body>
-<!-- Header dengan marquee -->
+
+<!-- Page Wrapper -->
+    <!-- Sidebar -->
+    <?php include ('navbar.php'); ?> 
+    <!-- End of Sidebar -->
+<!-- Konten kamu -->
+
 <header class="hero">
->>>>>>> b011226f4f6dbb7d12fd85cbfc9c2ea278d26fe5
           <div class="hero-image">
               <img src="https://smp42sby.sch.id/assets/img/hero-img.png" alt="Ilustrasi Pendidikan">
           </div>
@@ -204,12 +72,147 @@
           </section>
       </main>
 
-            
+      
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-      </div>
-      <?php include ('footer.php'); ?>
-      <!-- Bootstrap JS -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Menumpuk gambar dan teks secara vertikal */
+        padding: 20px 50px;
+        background: #2e4482;
+        color: white;
+    }
+
+    .hero-image {
+        position: relative;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-image img {
+        max-width: 250px;
+        animation: zoomImage 10s infinite alternate;
+    }
+
+    /* Animasi gambar */
+    @keyframes zoomImage {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+
+    /* Teks yang berjalan */
+    .hero-content {
+        width: 100%;
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .hero-content h1 {
+    font-size: 2.5rem;
+    color: white;
+    animation: scrollText 15s linear infinite;
+
+    position: absolute; /* Membuat teks bisa dipindahkan secara bebas */
+    top: 80%; /* Sesuaikan nilai untuk menaikkan teks ke atas */
+    left: 50%; /* Posisikan di tengah secara horizontal */
+    transform: translateX(-50%); /* Sesuaikan agar tetap rata tengah */
+    white-space: nowrap; /* Pastikan teks tidak terpotong */
+}
+    /* Animasi teks berjalan dari kiri ke kanan */
+    @keyframes scrollText {
+        0% {
+            transform: translateX(-100%); /* Mulai di luar layar di kiri */
+        }
+        100% {
+            transform: translateX(100%); /* Bergerak ke luar layar di kanan */
+        }
+    }
+
+    /* Bagian Sejarah */
+    .sejarah {
+        padding: 50px 20px;
+        text-align: center;
+        background: #f9f9f9;
+    }
+
+    .sejarah h2 {
+        font-size: 2.5rem;
+        color: #2e4482;
+        margin-bottom: 10px;
+    }
+
+    .sejarah-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .sejarah-content div {
+        width: 48%;
+        text-align: justify;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Footer */
+    .footer {
+        background: #2e4482;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer nav a {
+        text-decoration: none;
+        color: white;
+        margin: 0 10px;
+    }
+
+    .footer nav a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+
+ <!-- End of Footer -->
+<?php include('footer.php'); ?>
+ <!-- Akhir konte yang mau di rubah  -->        
+		</div>
+	</div>
+  </div>
+  <!-- End of Page Wrapper -->
+ <!-- Footer Section -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
        <!-- Animasi Scroll -->
        <script>
           const observer = new IntersectionObserver((entries) => {
@@ -252,10 +255,6 @@
       });
     });
   </script>
-<<<<<<< HEAD
-        <?php include ('footer.php'); ?>
-
-=======
   <script type="text/javascript">
     $(document).ready(function() {
       /*
@@ -303,6 +302,5 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
   <!-- //js-scripts -->
->>>>>>> b011226f4f6dbb7d12fd85cbfc9c2ea278d26fe5
 </body>
 </html>

@@ -37,17 +37,8 @@ include ('../koneksi.php');
     <i class="fa fa-bars"></i>
   </button>
 
-  <h4 class="modal-title mx-auto">Form Tambah data Kegiatan
+  <h4 class="modal-title mx-auto">Form Tambah data Berita
   </h4>
-
-  <!-- Message Icon with separator -->
-  <a class="nav-link" href="pesan.php">
-    <i class="fas fa-envelope fa-fw"></i>
-    <!-- Counter - Messages (Optional) -->
-  </a>
-
-  <!-- Divider between Message and User icons -->
-  <div class="topbar-divider d-none d-sm-block"></div>
 
   <!-- User Dropdown (aligned to right) -->
   <ul class="navbar-nav ml-auto">

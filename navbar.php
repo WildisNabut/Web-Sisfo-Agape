@@ -31,10 +31,6 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2 rounded-pill" type="search" placeholder="Cari sesuatu..." aria-label="Search">
-                <button class="btn btn-primary rounded-pill px-4" type="submit">Cari</button>
-            </form>
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 mt-4">
               <li class="nav-item">
                   <a class="nav-link text-primary fw-semibold" href="index.php"><i class="fas fa-home"></i> Beranda</a>
@@ -85,7 +81,8 @@
 .nav-item:hover .nav-link {
     background-color: #f0f0f0;  /* Ganti warna latar belakang saat hover */
     color: #007bff;  /* Ganti warna teks saat hover */
-    border-radius: 5px;  /* Memberikan radius pada sudut tombol */
+    border-radius: 2px;  /* Memberikan radius pada sudut tombol */
+    padding: 10px 15px; /* Menambahkan lebar (atas/bawah dan kanan/kiri) */
 }
 
 .nav-link {

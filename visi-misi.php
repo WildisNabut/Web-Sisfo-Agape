@@ -1,6 +1,4 @@
-
-
-      <?php session_start(); ?>
+<?php session_start(); ?>
 <?php include ('koneksi.php'); ?> 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -42,13 +40,12 @@
     <?php include ('navbar.php'); ?> 
     <!-- End of Sidebar -->
 <!-- Konten kamu -->
-
 <header class="hero">
           <div class="hero-image">
               <img src="https://smp42sby.sch.id/assets/img/hero-img.png" alt="Ilustrasi Pendidikan">
           </div>
           <div class="hero-content">
-              <h1>VISI DAN MISI SMP AGAPE INDAH KUPANG</h1>
+              <h1 class="hero-content" style="animation: scrollText 15s linear infinite;">VISI DAN MISI SMP AGAPE INDAH KUPANG</h1>
           </div>
       </header>
   
@@ -56,7 +53,7 @@
           <section id="visi-misi" class="visi-misi">
               <div class="visi-misi-content">
                   <div class="visi-misi-image">
-                      <img src="animasi/visi.gif" alt="GIF Pendidikan">
+                      <img src="Admin/animasi/visi.gif" alt="GIF Pendidikan">
                   </div>
                   <div class="visi-misi-text">
                       <h2>VISI</h2>
@@ -74,13 +71,7 @@
           </section>
       </main>
 
-
-            
-        
-
-
-
-
+      
  <!-- End of Footer -->
 <?php include('footer.php'); ?>
  <!-- Akhir konte yang mau di rubah  -->        

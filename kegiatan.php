@@ -25,34 +25,24 @@
 <?php include ('navbar.php'); ?> 
 <body>
 <!-- Header dengan marquee -->
-         <?php
-            include('koneksi.php');
-            
-            // Query untuk mengambil data pengumuman yang statusnya Aktif dan diurutkan berdasarkan tanggal terbaru
-            $data = mysqli_query($koneksi, "SELECT * FROM kutipan");
-            $i = 0; // Untuk melacak indeks GIF
-            
-            // Menampilkan data dalam format card
-            while ($d = mysqli_fetch_array($data)) {
-                // Pilih GIF berdasarkan indeks
-                $i++;
-            ?>
-            <div class="header-text">
-        <span>SMP AGAPE INDAH > Berita</span>   
-    </div>
-      <header class="header fade">
-      <marquee behavior="scroll" direction="left" class="quote bg-primary text-white" scrollamount="5">
-            <?php echo htmlspecialchars($d['deskripsi']); ?>
-        </marquee>
-        <!-- Card untuk Tanggal Hari Ini -->
-        <div class="date-card">
-            <?php echo date('l, d F Y'); // Menampilkan hari, tanggal, bulan, dan tahun ?>
-        </div>        
-    </header>
-
-      <?php
-      }
-      ?>
+<?php
+    include('koneksi.php');
+    
+    // Query untuk mengambil data dari tabel 'kutipan' dengan urutan data terbaru berdasarkan ID
+    $data = mysqli_query($koneksi, "SELECT * FROM kutipan ORDER BY id_kutipan DESC"); // Ganti 'id' dengan nama kolom kunci utama di tabel Anda jika berbeda
+    
+    // Menampilkan data dalam format card
+    while ($d = mysqli_fetch_array($data)) {
+?>
+<header class="header fade">
+    <img src="beranda_image/sekolah.webp" alt="SMP Kristen Agape Indah" class="img-fluid">
+    <marquee behavior="scroll" direction="left" class="quote bg-primary text-white" scrollamount="5">
+        <?php echo htmlspecialchars($d['deskripsi']); ?>
+    </marquee>
+</header>
+<?php
+    }
+?>
 
 <div class="container mt-4">
     <!-- Pembungkus utama -->
