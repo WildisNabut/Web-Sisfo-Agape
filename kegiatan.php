@@ -24,27 +24,137 @@
 
 <?php include ('navbar.php'); ?> 
 <body>
-<!-- Header dengan marquee -->
-<?php
-    include('koneksi.php');
-    
-    // Query untuk mengambil data dari tabel 'kutipan' dengan urutan data terbaru berdasarkan ID
-    $data = mysqli_query($koneksi, "SELECT * FROM kutipan ORDER BY id_kutipan DESC"); // Ganti 'id' dengan nama kolom kunci utama di tabel Anda jika berbeda
-    
-    // Menampilkan data dalam format card
-    while ($d = mysqli_fetch_array($data)) {
-?>
-<header class="header fade">
-    <img src="beranda_image/sekolah.webp" alt="SMP Kristen Agape Indah" class="img-fluid">
-    <marquee behavior="scroll" direction="left" class="quote bg-primary text-white" scrollamount="5">
-        <?php echo htmlspecialchars($d['deskripsi']); ?>
-    </marquee>
-</header>
-<?php
-    }
-?>
+<section class="py-5" style="background-image: url('images/bg.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row align-items-center">
+           
+            <!-- Kolom 1 -->
+            <div class="col-md-6 text-white pt-5">
+                <h2>Kategori: Berita</h2>
+                <hr style="border-top: 4px solid #fff; width: 20%; margin: 10px 0;">
+            <p><a href="index.php">Smp Kristen Agape Indah Kupang</a> - Berita </p>
+              </div>
+        </div>
+    </div>
 
+</section>
+<style>
+
+.py-5{
+    height: 300px;
+}
+    /* Gambar tanpa pembatas dan ukuran penuh */
+.full-width-image {
+    width: 100%; /* Gambar mengisi penuh kolom */
+    height: auto; /* Pertahankan proporsi asli gambar */
+    border: none; /* Hilangkan pembatas */
+}
+ /* Hapus garis bawah pada link */
+ p a {
+            text-decoration: none;
+            color: inherit; /* Agar warna teks mengikuti paragraf */
+        }
+
+        /* Tambahkan efek hover jika diperlukan */
+        p a:hover {
+          color: aquamarine;
+        }
+
+    .fw-bold{
+        color: blue;
+    }
+    .jumbotron{
+        background-color: #fff;
+        padding-bottom: 100px;
+    }
+    .konten-1{
+        background-color: #fff;
+    }
+    .icon{
+        font-size: 30px;
+        padding-top: 50px;
+    }
+
+    /* General Body Reset */
+body {
+    margin: 0;
+    padding: 0;
+}
+/* Atur gambar header */
+.header {
+    position: relative;
+    height: 400px; /* Tinggi header */
+    overflow: hidden;
+}
+
+.header img {
+    object-fit: cover; /* Gambar menyesuaikan tanpa meregang */
+}
+
+/* Overlay Gelap */
+.header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Teks di Tengah */
+.header .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Membuat teks berada tepat di tengah */
+    z-index: 2; /* Pastikan teks berada di atas overlay */
+    text-align: center;
+}
+
+.header .text-overlay h3 {
+    font-size: 2rem; /* Ukuran teks */
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Efek bayangan pada teks */
+}
+
+/* Marquee */
+.quote {
+    background-color: #fff; /* Warna biru */
+    color: black; /* Warna teks tetap putih */
+    font-size: 1.2rem; /* Ukuran teks */
+    padding-top: -20px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Wave SVG */
+.wave {
+    display: block;
+    margin: 20px;
+    padding: 0;
+    height: auto; /* Sesuaikan agar SVG tidak terdistorsi */
+}
+.konten{
+    background-color: #fff; /* Warna biru */
+    margin-top: -30px;
+}
+
+#tulisan{
+   margin-top: 30px; 
+}
+
+#kepala-sekolah{
+    margin-top: 60px;
+}
+.title{
+    padding-bottom: 10px;
+}
+</style>
 <div class="container mt-4">
+<h2 class="title fade text-center">Berita</h2>
+        <hr style="border-top: 4px solid #000; width: 20%; margin: 10px auto; display: block;">
+
     <!-- Pembungkus utama -->
     <div class="row">
         <?php

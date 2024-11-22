@@ -55,18 +55,55 @@ if (isset($_GET['id']))
     <!-- End of Sidebar -->
 <!-- Konten kamu -->
 
+<section class="py-5" style="background-image: url('images/bg.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row align-items-center">
+           
+            <!-- Kolom 1 -->
+            <div class="col-md-6 text-white pt-5">
+                <h2>Kategori: Berita</h2>
+                <hr style="border-top: 4px solid #fff; width: 20%; margin: 10px 0;">
+            <p><a href="index.php">Smp Kristen Agape Indah Kupang</a> - Berita -  <?php echo htmlspecialchars($d['judul']); ?></p>
+              </div>
+        </div>
+</section>
+<style>
 
-<div class="header-text">
-        <span class="title">SMP AGAPE INDAH - Berita - <?php echo htmlspecialchars($d['judul']); ?></span>
-            
-        
+.py-5{
+    height: 300px;
+}
+    /* Gambar tanpa pembatas dan ukuran penuh */
+.full-width-image {
+    width: 100%; /* Gambar mengisi penuh kolom */
+    height: auto; /* Pertahankan proporsi asli gambar */
+    border: none; /* Hilangkan pembatas */
+}
+ /* Hapus garis bawah pada link */
+ p a {
+            text-decoration: none;
+            color: inherit; /* Agar warna teks mengikuti paragraf */
+        }
+
+        /* Tambahkan efek hover jika diperlukan */
+        p a:hover {
+          color: aquamarine;
+        }
+
+</style>
+<section class="social-icons">
+    <div class="row text-center">
+        <div class="col-mt-3 pt-3 ">
+        <p><div class="icon">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <hr style="border-top: 4px solid #000; width: 10%; margin: 10px auto; display: block;">
+    </p>
+        </div>
     </div>
-    <div class="social-icons">
-    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-    </div>
+</section>
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4"> 

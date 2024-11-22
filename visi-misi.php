@@ -53,11 +53,7 @@
           <section id="visi-misi" class="visi-misi">
               <div class="visi-misi-content">
                   <div class="visi-misi-image">
-<<<<<<< HEAD
-                      <img src="Admin/animasi/visi.gif" alt="GIF Pendidikan">
-=======
                       <img src="beranda_image/visi.gif" alt="GIF Pendidikan">
->>>>>>> f1dacbc798b21dcebec434da840f1e6b7bad5084
                   </div>
                   <div class="visi-misi-text">
                       <h2>VISI</h2>

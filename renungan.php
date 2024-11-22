@@ -37,9 +37,43 @@
                 // Pilih GIF berdasarkan indeks
                 $i++;
             ?>
-            <div class="header-text">
-        <span>SMP AGAPE INDAH > Renungan</span>   
+<section class="py-5" style="background-image: url('images/bg.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row align-items-center">
+           
+            <!-- Kolom 1 -->
+            <div class="col-md-6 text-white pt-5">
+                <h2>Kategori: Renungan</h2>
+                <hr style="border-top: 4px solid #fff; width: 20%; margin: 10px 0;">
+            <p><a href="index.php">Smp Kristen Agape Indah Kupang</a> - Renungan </p>
+              </div>
+        </div>
     </div>
+
+</section>
+<style>
+
+.py-5{
+    height: 300px;
+}
+    /* Gambar tanpa pembatas dan ukuran penuh */
+.full-width-image {
+    width: 100%; /* Gambar mengisi penuh kolom */
+    height: auto; /* Pertahankan proporsi asli gambar */
+    border: none; /* Hilangkan pembatas */
+}
+ /* Hapus garis bawah pada link */
+ p a {
+            text-decoration: none;
+            color: inherit; /* Agar warna teks mengikuti paragraf */
+        }
+
+        /* Tambahkan efek hover jika diperlukan */
+        p a:hover {
+          color: aquamarine;
+        }
+
+</style>
       <header class="header fade">
       <marquee behavior="scroll" direction="left" class="quote bg-primary text-white" scrollamount="5">
             <?php echo htmlspecialchars($d['deskripsi']); ?>
@@ -55,6 +89,9 @@
       ?>
 
 <div class="container mt-4">
+<h2 class="title fade text-center">Renungan</h2>
+        <hr style="border-top: 4px solid #000; width: 20%; margin: 10px auto; display: block;">
+
     <!-- Pembungkus utama -->
     <div class="row">
         <?php

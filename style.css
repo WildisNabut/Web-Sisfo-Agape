@@ -1,4 +1,5 @@
-/* =============== pengumuman=============== */
+/* 
+=============== pengumuman=============== */
 /* =============== pengumuman=============== */
 
 /* CSS untuk Hero */
@@ -527,7 +528,7 @@ body {
   align-items: center;
   flex-direction: column; /* Menumpuk gambar dan teks secara vertikal */
   padding: 50px 50px; /* Menambah padding agar lebih besar */
-  background: #2e4482;
+  background: #2e8281;
   color: white;
   position: relative; /* Agar teks bisa diposisikan di atas gambar */
   overflow: hidden; /* Menyembunyikan teks yang berada di luar area hero */

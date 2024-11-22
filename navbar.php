@@ -1,10 +1,12 @@
 
 <?php include("nab.php") ?>
 <nav class="navbar bg-white fixed-top">
-  <div class="d-flex align-items-center ms-3">
-    <i class="fas fa-bars text-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="font-size: 24px; cursor: pointer;"></i>
-    <span class="ms-2" style="font-size: 18px; font-weight: bold; color: #366273;">SMP KRISTEN AGAPE INDAH</span>
-  </div>
+        <div class="d-flex align-items-center ms-3">
+            <i class="fas fa-bars text-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="font-size: 24px; cursor: pointer;"></i>
+            <!-- Gantikan span dengan gambar -->
+            <img src="images/logo_agape.png" alt="Gambar Sekolah" class="img-fluid full-width-image">
+            <img src="beranda_image/log.png" alt="Gambar Sekolah" class="img-fluid full-width-img">
+            </div>
   <?php include("nab.php") ?>
   <div class="container-fluid">
   <div class="offcanvas offcanvas-end custom-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">        <div class="offcanvas-header bg-light text-primary">
@@ -87,6 +89,108 @@
 
 .nav-link {
     transition: all 0.3s ease;  /* Efek transisi yang halus */
+}
+
+/* Gaya Default untuk <h5> */
+.d-flex.align-items-center.ms-3 h2 {
+    font-family: 'Arial', sans-serif; /* Jenis huruf */
+    color: #007bff; /* Warna primer */
+    font-weight: bold; /* Menjadikan teks tebal */
+    font-size: 24px; /* Ukuran default */
+    margin-left: 10px; /* Tambahkan sedikit jarak kiri */
+    transition: all 0.3s ease; /* Efek transisi halus */
+}
+
+/* Gaya Responsif untuk layar kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .d-flex.align-items-center.ms-3 h5 {
+        font-size: 20px; /* Ukuran lebih kecil */
+    }
+}
+
+/* Gaya Responsif untuk layar sangat kecil (max-width: 576px) */
+@media (max-width: 576px) {
+    .d-flex.align-items-center.ms-3 h5 {
+        font-size: 16px; /* Ukuran paling kecil */
+    }
+}
+
+/* Tambahkan efek hover untuk memberikan kombinasi warna */
+.d-flex.align-items-center.ms-3 h2:hover {
+    color: orange; /* Warna oranye saat hover */
+}
+
+/* Gaya Default untuk Ikon */
+.d-flex.align-items-center.ms-3 i {
+    font-size: 18px; /* Ukuran ikon lebih kecil */
+    color: #007bff; /* Warna primer */
+    transition: all 0.3s ease; /* Efek transisi halus */
+    margin-right: 10px; /* Menambahkan jarak antara ikon dan teks */
+}
+/* Menyesuaikan ukuran logo di navbar */
+.full-width-image {
+    max-width: 80px; /* Menyesuaikan ukuran logo agar tidak terlalu besar */
+    height: auto; /* Menjaga rasio aspek gambar */
+}
+
+/* Menyesuaikan ukuran logo ketika layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    .full-width-image {
+        max-width: 50px; /* Mengurangi ukuran logo pada perangkat kecil */
+    }
+}
+/* Menyesuaikan ukuran logo di navbar */
+.full-width-img {
+    max-width: 200px; /* Menyesuaikan ukuran logo agar tidak terlalu besar */
+    height: auto; /* Menjaga rasio aspek gambar */
+}
+
+/* Menyesuaikan ukuran logo ketika layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    .full-width-img {
+        max-width: 140px; /* Mengurangi ukuran logo pada perangkat kecil */
+    }
+}
+
+/* Efek Hover untuk Ikon */
+.d-flex.align-items-center.ms-3 i:hover {
+    color: orange; /* Warna berubah menjadi oranye saat hover */
+    transform: scale(1.2); /* Ikon membesar saat hover */
+}
+
+/* Responsivitas untuk Ikon pada Layar Kecil */
+@media (max-width: 768px) {
+    .d-flex.align-items-center.ms-3 i {
+        font-size: 16px; /* Ukuran lebih kecil untuk layar kecil */
+    }
+}
+
+/* Responsivitas untuk Ikon pada Layar Sangat Kecil */
+@media (max-width: 576px) {
+    .d-flex.align-items-center.ms-3 i {
+        font-size: 14px; /* Ukuran paling kecil untuk layar sangat kecil */
+    }
+}
+
+/* Responsivitas untuk layar sangat sangat kecil (max-width: 320px) */
+@media (max-width: 320px) {
+    /* Memperkecil ukuran teks dan ikon pada navbar untuk layar 320px */
+    .navbar .nav-link {
+        font-size: 12px; /* Ukuran teks lebih kecil */
+        padding: 8px 12px; /* Menyesuaikan padding agar lebih kompak */
+    }
+
+    .navbar .nav-item {
+        font-size: 12px; /* Ukuran font untuk item navbar lebih kecil */
+    }
+
+    .d-flex.align-items-center.ms-3 h5 {
+        font-size: 14px; /* Ukuran judul lebih kecil */
+    }
+
+    .d-flex.align-items-center.ms-3 i {
+        font-size: 12px; /* Ukuran ikon lebih kecil */
+    }
 }
 
 </style>

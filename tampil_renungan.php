@@ -51,11 +51,59 @@ if (isset($_GET['id'])) {
     exit;
 }
 ?>
-<div class="header-text">
-        <span>SMP AGAPE INDAH - Renungan-<?php echo htmlspecialchars($renungan['judul']); ?></span>
-    </div>
-<div class="container mt-5">
 
+<section class="py-5" style="background-image: url('images/bg.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row align-items-center">
+           
+            <!-- Kolom 1 -->
+            <div class="col-md-6 text-white pt-5">
+                <h2>Kategori: Renungan</h2>
+                <hr style="border-top: 4px solid #fff; width: 20%; margin: 10px 0;">
+            <p><a href="index.php">Smp Kristen Agape Indah Kupang</a> - Renungan - <?php echo htmlspecialchars($renungan['judul']); ?> </p>
+              </div>
+        </div>
+    </div>
+
+</section>
+<style>
+.konten {
+            max-width: 850px; /* Tentukan lebar maksimum card */
+            margin: auto; /* Pusatkan card */
+        }
+
+        .card {
+            width: 100%; /* Pastikan card mengambil lebar penuh container */
+        }
+
+        @media (max-width: 768px) {
+            .konten {
+                max-width: 90%; /* Card lebih fleksibel pada layar kecil */
+            }
+        }
+
+.py-5{
+    height: 300px;
+}
+    /* Gambar tanpa pembatas dan ukuran penuh */
+.full-width-image {
+    width: 100%; /* Gambar mengisi penuh kolom */
+    height: auto; /* Pertahankan proporsi asli gambar */
+    border: none; /* Hilangkan pembatas */
+}
+ /* Hapus garis bawah pada link */
+ p a {
+            text-decoration: none;
+            color: inherit; /* Agar warna teks mengikuti paragraf */
+        }
+
+        /* Tambahkan efek hover jika diperlukan */
+        p a:hover {
+          color: aquamarine;
+        }
+
+</style>
+<div class="konten mt-5">
     <div class="card shadow-sm">
         <!-- Gambar Renungan -->
         <img src="images/a1.jpeg" class="card-img-top" alt="Gambar Renungan" style="height: 300px; object-fit: cover;">
