@@ -11,9 +11,9 @@
   <title>SMP AGAPE INDAH</title>
 
   <!-- Custom fonts and styles for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -65,8 +65,6 @@
 <!-- End of Topbar -->
         <!-- End of Topbar -->
 
-
-        
 <div class="container-fluid">
     <div id="Edit_Akun">
         <div class="container">
@@ -76,9 +74,12 @@
                 $query = mysqli_query($koneksi, "SELECT * FROM murid WHERE nisn='$Kode'");
                 $data = mysqli_fetch_array($query);
                 ?>
-
                 <form class="form-group" action="Proses_Edit_Murid.php" method="post">
-                    <!-- NISN Lama -->
+                 <!-- Form Username dengan tombol Pilih -->
+                    <input type="hidden" name="username" id="username" value="<?php echo $data['username']; ?>">
+
+
+                <!-- NISN Lama -->
                     <div class="form-group row">
                         <label for="inputnis" class="col-sm-2 col-form-label">NISN Lama</label>
                         <div class="col-sm-10">
@@ -111,15 +112,15 @@
                     </div>
 
                     <!-- Kolom Jenis Kelamin -->
-					<div class="form-group row">
-						<label for="jenis_kelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
-						<div class="col-sm-10">
-							<select name="Jenis_Kelamin" class="form-control" id="jenis_kelamin">
-								<option value="Laki-Laki" <?php echo $data['jenkel'] == "Laki-Laki" ? 'selected' : ''; ?>>Laki-Laki</option>
-								<option value="Perempuan" <?php echo $data['jenkel'] == "Perempuan" ? 'selected' : ''; ?>>Perempuan</option>
-							</select>
-						</div>
-					</div>
+                  <div class="form-group row">
+                    <label for="jenis_kelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                    <div class="col-sm-10">
+                      <select name="Jenis_Kelamin" class="form-control" id="jenis_kelamin">
+                        <option value="Laki-Laki" <?php echo $data['jenkel'] == "Laki-Laki" ? 'selected' : ''; ?>>Laki-Laki</option>
+                        <option value="Perempuan" <?php echo $data['jenkel'] == "Perempuan" ? 'selected' : ''; ?>>Perempuan</option>
+                      </select>
+                    </div>
+                  </div>
 
                    <!-- Kolom Agama -->
 					<div class="form-group row">
@@ -137,16 +138,16 @@
 						</div>
 					</div>
 
-                    <!-- Kelas -->
-                    <div class="form-group row">
-                        <label for="kelasInput" class="col-sm-2 col-form-label">Kelas</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="id_kelas" id="kelasInput" readonly>
-                        </div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-secondary" onclick="openKelasModal()">Pilih</button>
-                        </div>
-                    </div>
+                   <!-- Form Kelas dengan tombol Pilih -->
+                  <div class="form-group row">
+                      <label for="kelasInput" class="col-sm-2 col-form-label">Kelas</label>
+                      <div class="col-sm-8">
+                          <input type="text" class="form-control" name="id_kelas" id="kelasInput" value="<?php echo $data['id_kelas']; ?>" readonly>
+                      </div>
+                      <div class="col-sm-2">
+                          <button type="button" class="btn btn-secondary" onclick="openKelasModal()">Pilih</button>
+                      </div>
+                  </div>
 
                     <!-- Submit and Cancel buttons -->
                     <button type="submit" class="btn btn-primary">Simpan</button>
@@ -182,7 +183,10 @@
             </table>
         </div>
     </div>
+    
 </div>
+
+
 
 <script>
 // Fungsi untuk membuka dan menutup modal
@@ -213,7 +217,11 @@ function pilihUsername(username) {
 </script>
 
 
-      <!-- Footer -->
+
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+           <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -221,9 +229,6 @@ function pilihUsername(username) {
           </div>
         </div>
       </footer>
-      <!-- End of Footer -->
-    </div>
-    <!-- End of Content Wrapper -->
   </div>
   <!-- End of Page Wrapper -->
 
@@ -253,9 +258,9 @@ function pilihUsername(username) {
 </div>
 
   <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../js/sb-admin-2.min.js"></script>
 </body>
 </html>

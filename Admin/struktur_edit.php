@@ -1,4 +1,7 @@
-<?php include('../koneksi.php');?>
+
+<?php
+include ('../koneksi.php');
+?>
 <?php include ('autentikasi.php'); ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +37,9 @@
     <i class="fa fa-bars"></i>
   </button>
 
-  <h4 class="modal-title mx-auto">Form Tambah Vidio</h4>
+  <h4 class="modal-title mx-auto">Form Edit Struktur Organisasi
+  </h4>
+
   <!-- User Dropdown (aligned to right) -->
   <ul class="navbar-nav ml-auto">
     <?php
@@ -62,43 +67,46 @@
   </ul>
 </nav>
 <!-- End of Topbar -->
-        <!-- End of Topbar -->
 
- <!-- Konten -->
- <div class="container-fluid">
-<!-- Form untuk Tambah Video -->
-        <form class="form-group" action="Proses_Tambah_vidio.php" method="post">
-            <input type="hidden" class="form-control" id="inputId" name="id_vidio" value="AUTO_INCREMENT_ID">
+ <!-- konten yang ingin di rubah -->      
+   <div class="container-fluid">
+    <div id="Edit_Akun">
+    <?php
+      include('../koneksi.php'); // Pastikan file koneksi sudah di-include
+      $Kode = $_GET['kode'];
+      $query = mysqli_query($koneksi, "SELECT * FROM struktur WHERE id_struktur='$Kode'");
+      $data = mysqli_fetch_array($query);
+    ?>
+        <div class="container" style="max-width: 800px;"> <!-- Perlebar kontainer form -->
+            <div class="mt-4"> <!-- margin atas untuk spasi tambahan -->
+            <form action="Proses_edit_struktur.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id_struktur" value="<?php echo htmlspecialchars($data['id_struktur']); ?>">
 
-    <!-- Keterangan -->
-    <div class="form-group row">
-        <label for="inputKeterangan" class="col-sm-2 col-form-label">Keterangan</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputKeterangan" name="judul" required>
+                <div class="form-group row">
+                    <label for="inputGambar" class="col-sm-2 col-form-label">Gambar</label>
+                    <div class="col-sm-10">
+                        <?php if (!empty($data['gambar'])): ?>
+                            <img src="<?php echo htmlspecialchars($data['gambar']); ?>" alt="Gambar Kegiatan" width="100">
+                        <?php else: ?>
+                            <span>Gambar Tidak Tersedia</span>
+                        <?php endif; ?>
+                        <br><br>
+                        <input type="file" class="form-control" id="inputGambar" name="gambar">
+                    </div>
+                </div>
+
+                <div class="form-group row justify-content-end">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <a href="struktur.php" class="btn btn-secondary">Batal</a>
+                    </div>
+                </div>       
+            </form>
+            </div>
         </div>
     </div>
-
-    <!-- URL Video YouTube -->
-    <div class="form-group row">
-        <label for="inputUrlVidio" class="col-sm-2 col-form-label">URL Video YouTube</label>
-        <div class="col-sm-10">
-            <input type="url" class="form-control" id="inputUrlVidio" name="url_vidio" required>
-        </div>
-    </div>
-
-    <!-- Buttons for Save and Cancel -->
-    <div class="form-group row">
-        <div class="col-sm-10 offset-sm-2">
-            <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="vidio.php" class="btn btn-secondary">Batal</a>
-        </div>
-    </div>
-
-</form>
 </div>
-<!-- Akhir dari Konten -->
-
-
+        <!-- akhir dari konten -->
 
 
 
@@ -124,7 +132,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-<!-- Modal Konfirmasi Logout -->
+  <!-- Modal Konfirmasi Logout -->
 <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

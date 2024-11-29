@@ -13,9 +13,9 @@ include ('../koneksi.php');
   <title>SMP AGAPE INDAH - Akun</title>
 
   <!-- Custom fonts and styles for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -36,7 +36,6 @@ include ('../koneksi.php');
   <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
     <i class="fa fa-bars"></i>
   </button>
-
   <h4 class="modal-title mx-auto">Kontrol Akun </h4>
 
   <!-- User Dropdown (aligned to right) -->
@@ -65,69 +64,98 @@ include ('../koneksi.php');
     ?>
   </ul>
 </nav>
+
         <!-- End of Topbar -->
-
-
-        <!-- konten yang ingin di rubah -->
-        <div class="container-fluid">
-         <div class="card shadow mb-4">
+<!-- konten yang ingin di rubah -->
+<div class="container-fluid">
+    <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <a href="tambah_akun.php" class="btn btn-primary">Tambah Data</a>
-            <form class="form-inline" method="POST" action="">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-          <div class="card-body">
-              <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                      <thead>
-					  <tr>
-							<th class="text-center"><b> Username </th>
-							<th class="text-center" width="150"><b> Level </th>
-							<th  class="text-center" colspan="2"><b> Aksi </th>
-						</tr>
-                      </thead>
-                      <tbody>
-					  <?php	
-						$tampil="SELECT * FROM `akun` ORDER BY `akun`.`username` ASC  ";
-						$hasil=mysqli_query($koneksi, $tampil);
+            <div class="d-flex align-items-center">
+                <!-- Sorting berdasarkan level -->
+                <form class="form-inline mr-2" method="POST" action="">
+                    <select name="filter_level" class="form-control" onchange="this.form.submit()">
+                        <option value="">Semua</option>
+                        <option value="1" <?= isset($_POST['filter_level']) && $_POST['filter_level'] == '1' ? 'selected' : '' ?>>Admin</option>
+                        <option value="2" <?= isset($_POST['filter_level']) && $_POST['filter_level'] == '2' ? 'selected' : '' ?>>Guru</option>
+                        <option value="3" <?= isset($_POST['filter_level']) && $_POST['filter_level'] == '3' ? 'selected' : '' ?>>Murid</option>
+                    </select>
+                </form>
 
-						while ($data=mysqli_fetch_array($hasil))
-						{
-							if ($data['level'] == 1)
-							{
-								$Level = "Admin";
-							}
-							else if ($data['level'] == 2)
-							{
-								$Level = "Guru";
-							}
-							else
-							{
-								$Level = "Murid";
-							}
-							
-							echo "<td class='text-center'>$data[username]</TD>";
-							echo "<td class='text-center'>$Level</TD>";
-							echo "<td class='text-center' width='100'><a href='akun_edit.php?kode=$data[username]' class='btn btn-success'>Edit </a></td>";
-              echo "<td class='text-center' width='100'>
-                     <button class='btn btn-danger' onclick='showDeleteModal(\"$data[username]\")'>Hapus</button>
-                  </TR>";
-						}					
-						?>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-      </div>
+                <!-- Pencarian -->
+                <form class="form-inline" method="POST" action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" value="<?= isset($_POST['search']) ? $_POST['search'] : '' ?>" />
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="text-center"><b>Username</th>
+                            <th class="text-center" width="150"><b>Level</th>
+                            <th class="text-center" colspan="2"><b>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        // Mendapatkan nilai filter dan pencarian
+                        $filter_level = isset($_POST['filter_level']) ? $_POST['filter_level'] : '';
+                        $search = isset($_POST['search']) ? $_POST['search'] : '';
+
+                        // Query dasar
+                        $query = "SELECT * FROM `akun` WHERE 1";
+
+                        // Tambahkan kondisi filter level
+                        if (!empty($filter_level)) {
+                            $query .= " AND level = '$filter_level'";
+                        }
+
+                        // Tambahkan kondisi pencarian
+                        if (!empty($search)) {
+                            $query .= " AND username LIKE '%$search%'";
+                        }
+
+                        // Tambahkan sorting
+                        $query .= " ORDER BY `username` ASC";
+
+                        // Eksekusi query
+                        $hasil = mysqli_query($koneksi, $query);
+
+                        while ($data = mysqli_fetch_array($hasil)) {
+                            // Konversi level
+                            if ($data['level'] == 1) {
+                                $Level = "Admin";
+                            } elseif ($data['level'] == 2) {
+                                $Level = "Guru";
+                            } else {
+                                $Level = "Murid";
+                            }
+
+                            echo "<tr>";
+                            echo "<td class='text-center'>$data[username]</td>";
+                            echo "<td class='text-center'>$Level</td>";
+                            echo "<td class='text-center' width='100'><a href='akun_edit.php?kode=$data[username]' class='btn btn-success'>Edit</a></td>";
+                            echo "<td class='text-center' width='100'>
+                                <button class='btn btn-danger' onclick='showDeleteModal(\"$data[username]\")'>Hapus</button>
+                            </td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+</div>
 
     <!-- Modal Konfirmasi Hapus -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -205,9 +233,9 @@ include ('../koneksi.php');
 
 
   <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../js/sb-admin-2.min.js"></script>
 </body>
 </html>

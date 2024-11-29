@@ -49,28 +49,162 @@
               <h1>SEJARAH SEKOLAH SMP AGAPE INDAH KUPANG</h1> <!-- Teks berjalan di bawah gambar -->
           </div>
       </header>
-  
-      <main>
-          <section class="sejarah">
-              <div class="sejarah-content">
-                  <div>
-                      <p>SMP AGAPE INDAH KUPANG didirikan pada tahun 2000 dengan tujuan untuk memberikan pendidikan yang berkualitas bagi siswa di wilayah Kupang. Sejak saat itu, sekolah ini telah berkembang pesat, mengedepankan nilai-nilai karakter, kreativitas, dan prestasi. Dalam perjalanannya, sekolah ini terus berusaha untuk memperbaiki fasilitas dan kualitas pengajaran agar bisa mencetak generasi yang berkompeten dan berakhlak mulia.</p>
-  
-                      <p>Pada tahun 2005, SMP AGAPE INDAH KUPANG mulai membuka berbagai program ekstrakurikuler untuk menunjang minat dan bakat siswa di luar bidang akademik. Kegiatan-kegiatan ini, seperti olahraga, seni, dan keterampilan, sangat mendukung perkembangan pribadi siswa. Sekolah ini juga menjalin kerjasama dengan berbagai lembaga pendidikan dan pemerintahan untuk meningkatkan kualitas pendidikannya.</p>
-  
-                      <p>Seiring berjalannya waktu, SMP AGAPE INDAH KUPANG semakin dikenal sebagai sekolah yang berprestasi dalam berbagai bidang. Tidak hanya di tingkat lokal, sekolah ini juga sering meraih penghargaan dalam berbagai kompetisi, baik akademik maupun non-akademik, di tingkat provinsi maupun nasional. Visi dan misi yang telah dijalankan dengan baik turut mendorong semangat para siswa untuk terus berprestasi.</p>
-                  </div>
-  
-                  <div>
-                      <p>Hari ini, SMP AGAPE INDAH KUPANG terus berkembang dengan membangun generasi muda yang unggul dalam akademik, kreatif dalam seni, dan kokoh dalam karakter. Dengan nilai-nilai pendidikan yang berlandaskan pada kebudayaan dan kemajuan zaman, sekolah ini siap mencetak lulusan-lulusan yang siap bersaing di dunia global.</p>
-  
-                      <p>Dalam menghadapi era digital dan globalisasi, SMP AGAPE INDAH KUPANG berkomitmen untuk mempersiapkan para siswa dengan keterampilan teknologi yang dibutuhkan di masa depan. Oleh karena itu, berbagai fasilitas digital dan program pembelajaran berbasis teknologi terus dikembangkan.</p>
-  
-                      <p>Dengan semangat dan dedikasi yang tinggi, SMP AGAPE INDAH KUPANG akan terus berusaha menjadi lembaga pendidikan yang unggul, berkualitas, dan memberikan kontribusi positif bagi kemajuan pendidikan di Indonesia.</p>
-                  </div>
-              </div>
-          </section>
-      </main>
+      <section class="legalitas py-4">
+      <div class="container">
+    <div class="row text-center">
+        <!-- Kolom 1 -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-0 shadow-sm card-sk-pendirian">
+                <div class="card-body">
+                    <i class="fas fa-building fa-2x text-primary mb-2"></i>
+                    <h6 class="card-title">SK Pendirian</h6>
+                    <p class="card-text">DIS.PPO.801/SEK.14/2014</p>
+                </div>
+            </div>
+        </div>
+        <!-- Kolom 2 -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-0 shadow-sm card-tanggal-sk">
+                <div class="card-body">
+                    <i class="fas fa-calendar-alt fa-2x text-success mb-2"></i>
+                    <h6 class="card-title">Tanggal SK Pendirian</h6>
+                    <p class="card-text">20 March 2014</p>
+                </div>
+            </div>
+        </div>
+        <!-- Kolom 3 -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-0 shadow-sm card-sk-operasional">
+                <div class="card-body">
+                    <i class="fas fa-file-signature fa-2x text-warning mb-2"></i>
+                    <h6 class="card-title">SK Operasional</h6>
+                    <p class="card-text">DIS.PPO.801/SEK.14/2014</p>
+                </div>
+            </div>
+        </div>
+        <!-- Kolom 4 -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-0 shadow-sm card-tanggal-sk-operasional">
+                <div class="card-body">
+                    <i class="fas fa-calendar-check fa-2x text-danger mb-2"></i>
+                    <h6 class="card-title">Tanggal SK Operasional</h6>
+                    <p class="card-text">20 March 2014</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</section>
+<style>
+    /* Atur dasar untuk card */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem; /* Sudut membulat */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Zoom sedikit saat hover */
+}
+
+/* Atur dasar untuk icon */
+.card i {
+    z-index: 2; /* Pastikan ikon tetap di atas */
+    position: relative;
+    transition: color 0.3s ease; /* Animasi perubahan warna */
+}
+
+/* Pseudo-element untuk efek warna */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Transparan saat tidak hover */
+    border-radius: 0.5rem; /* Menjaga sudut membulat */
+    transition: all 0.5s ease; /* Animasi efek meluas */
+    z-index: 1;
+    opacity: 0.3; /* Transparansi */
+}
+
+/* Efek hover untuk setiap kartu */
+.card:hover i {
+    color: white; /* Ikon berubah menjadi putih saat hover */
+}
+
+.card:hover .card-sk-pendirian::before {
+    background-color: #007bff; /* Warna biru untuk SK Pendirian */
+}
+
+.card:hover .card-tanggal-sk::before {
+    background-color: #28a745; /* Warna hijau untuk Tanggal SK Pendirian */
+}
+
+.card:hover .card-sk-operasional::before {
+    background-color: #ffc107; /* Warna kuning untuk SK Operasional */
+}
+
+.card:hover .card-tanggal-sk-operasional::before {
+    background-color: #dc3545; /* Warna merah untuk Tanggal SK Operasional */
+}
+
+/* Kelas khusus untuk setiap ikon */
+.card-sk-pendirian i {
+    color: #007bff; /* Warna biru untuk ikon SK Pendirian */
+}
+
+.card-tanggal-sk i {
+    color: #28a745; /* Warna hijau untuk ikon Tanggal SK Pendirian */
+}
+
+.card-sk-operasional i {
+    color: #ffc107; /* Warna kuning untuk ikon SK Operasional */
+}
+
+.card-tanggal-sk-operasional i {
+    color: #dc3545; /* Warna merah untuk ikon Tanggal SK Operasional */
+}
+
+</style>
+<section class="sejarah">
+  <div class="container">
+    <div class="row">
+      <!-- Kolom 1 -->
+      <div class="col-md-6 mb-3">
+        <div class="sejarah-content">
+          <p class="text-justify">SMP AGAPE INDAH KUPANG didirikan pada tahun 2000 dengan tujuan untuk memberikan pendidikan yang berkualitas bagi siswa di wilayah Kupang. Sejak saat itu, sekolah ini telah berkembang pesat, mengedepankan nilai-nilai karakter, kreativitas, dan prestasi. Dalam perjalanannya, sekolah ini terus berusaha untuk memperbaiki fasilitas dan kualitas pengajaran agar bisa mencetak generasi yang berkompeten dan berakhlak mulia.</p>
+          
+          <p class="text-justify">Pada tahun 2005, SMP AGAPE INDAH KUPANG mulai membuka berbagai program ekstrakurikuler untuk menunjang minat dan bakat siswa di luar bidang akademik. Kegiatan-kegiatan ini, seperti olahraga, seni, dan keterampilan, sangat mendukung perkembangan pribadi siswa. Sekolah ini juga menjalin kerjasama dengan berbagai lembaga pendidikan dan pemerintahan untuk meningkatkan kualitas pendidikannya.</p>
+          
+          <p class="text-justify">Seiring berjalannya waktu, SMP AGAPE INDAH KUPANG semakin dikenal sebagai sekolah yang berprestasi dalam berbagai bidang. Tidak hanya di tingkat lokal, sekolah ini juga sering meraih penghargaan dalam berbagai kompetisi, baik akademik maupun non-akademik, di tingkat provinsi maupun nasional. Visi dan misi yang telah dijalankan dengan baik turut mendorong semangat para siswa untuk terus berprestasi.</p>
+        </div>
+      </div>
+      <!-- Kolom 2 -->
+      <div class="col-md-6 mb-3">
+        <div class="sejarah-content">
+          <p class="text-justify">Hari ini, SMP AGAPE INDAH KUPANG terus berkembang dengan membangun generasi muda yang unggul dalam akademik, kreatif dalam seni, dan kokoh dalam karakter. Dengan nilai-nilai pendidikan yang berlandaskan pada kebudayaan dan kemajuan zaman, sekolah ini siap mencetak lulusan-lulusan yang siap bersaing di dunia global.</p>
+          
+          <p class="text-justify">Dalam menghadapi era digital dan globalisasi, SMP AGAPE INDAH KUPANG berkomitmen untuk mempersiapkan para siswa dengan keterampilan teknologi yang dibutuhkan di masa depan. Oleh karena itu, berbagai fasilitas digital dan program pembelajaran berbasis teknologi terus dikembangkan.</p>
+          
+          <p class="text-justify">Dengan semangat dan dedikasi yang tinggi, SMP AGAPE INDAH KUPANG akan terus berusaha menjadi lembaga pendidikan yang unggul, berkualitas, dan memberikan kontribusi positif bagi kemajuan pendidikan di Indonesia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menambahkan styling untuk teks rata kiri-kanan jika diperlukan -->
+<style>
+  .sejarah-content p {
+    text-align: justify;
+  }
+</style>
+
 
       
 <style>
@@ -150,7 +284,6 @@
     .sejarah {
         padding: 50px 20px;
         text-align: center;
-        background: #f9f9f9;
     }
 
     .sejarah h2 {

@@ -145,8 +145,7 @@
         <p>Kirimkan Kami Pesan jika membutuhkan bantuan lebih lanjut<a href="mail.php">disini</a></p>
         <div class="social-icons">
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@km5smpkagapeindah_sdnlanaus" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
     </div>

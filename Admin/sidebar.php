@@ -47,6 +47,7 @@
         <a class="collapse-item" href="murid.php">Siswa</a>
         <a class="collapse-item" href="kelas.php">Kelas</a>
         <a class="collapse-item" href="mata_pelajaran.php">Mata Pelajaran</a>
+        <a class="collapse-item" href="struktur.php">Stuktur Organisasi</a>
       </div>
     </div>
   </li>

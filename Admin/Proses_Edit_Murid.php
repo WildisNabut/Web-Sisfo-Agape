@@ -4,7 +4,7 @@ include "../koneksi.php";
 $NISN_Lama = $_POST['NISN_Lama'];
 $NISN = $_POST['NISN'];
 $Nama = $_POST['Nama'];
-$Username = $_POST['Username'];
+$Username = $_POST['username'];
 $Kota = $_POST['Kota'];
 $Jenis_Kelamin = $_POST['Jenis_Kelamin'];
 $Agama = $_POST['Agama'];

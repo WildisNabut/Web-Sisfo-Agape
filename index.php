@@ -71,7 +71,7 @@
 <style>
 
 .py-5{
-    height: 500px;
+    height: 650px;
 }
     /* Gambar tanpa pembatas dan ukuran penuh */
 .full-width-image {
@@ -160,29 +160,22 @@ body {
 }
 
 #tulisan{
-   margin-top: 30px; 
+   margin-top: 60px; 
 }
 
 #kepala-sekolah{
-    margin-top: 60px;
+    margin-top: 90px;
 }
 .title{
     padding-bottom: 10px;
 }
 </style>
 
+<section class="konten">
     <div class="row text-center">
-        <div class="col-mt-3 pt-3 ">
-        <p><div class="icon margin: 10px auto;">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <hr style="border-top: 4px solid #000; width: 20%; margin: 10px auto; display: block;">
-    </p>
-        </div>
+        
     </div>
+</section>
 <section class="konten">
 <div class="container mt-4 fade">
 
@@ -227,10 +220,10 @@ while ($d = mysqli_fetch_array($data)) {
 
           <!-- Sidebar -->
           <div id="kepala-sekolah" class="col-md-4 fade">
-              <h2 class="title fade text-center">Kepala Sekolah</h2>
+              <h2 class="title fade text-center">Ketua Yayasan</h2>
               <div class="text-center fade">
-                  <img src="beranda_image/kepsek.png" class="img-fluid rounded-circle" alt="Kepala Sekolah">
-                  <h4>Shin Tae Yong</h4>
+                  <img src="" class="img-fluid rounded-circle" alt="Jetua Yayasan">
+                  <h4>John W.Haan, MA.Ph.D</h4>
                   <p>“**"Memimpin dengan kasih Kristus, menginspirasi melalui iman, dan melayani demi menciptakan generasi yang hidup dalam terang Tuhan."**”</p>
               </div>
               <hr>

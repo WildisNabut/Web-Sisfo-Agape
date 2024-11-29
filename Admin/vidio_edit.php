@@ -11,9 +11,9 @@
   <title>SMP AGAPE INDAH</title>
 
   <!-- Custom fonts and styles for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -77,34 +77,27 @@
             $data = mysqli_fetch_array($query);
             ?>
 
-            <form action="Proses_Edit_Vidio.php" method="post">
-                <!-- Input ID Kelas -->
-                <input type="hidden" class="form-control" id="inputId" name="id_vidio" value="AUTO_INCREMENT_ID">
-                
-                <!-- Keterangan -->
-                <div class="form-group row">
-                    <label for="inputjudul" class="col-sm-3 col-form-label">Keterangan</label> <!-- Ubah col-sm-2 menjadi col-sm-3 -->
-                    <div class="col-sm-9"> <!-- Ubah offset dan ukuran kolom -->
-                        <input type="text" class="form-control" id="judul" name="judul" value="<?php echo $data['judul']; ?>" required>
-                    </div>
-                </div>
-
-                <!-- URL Video YouTube -->
-                <div class="form-group row">
-                    <label for="inputUrlVidio" class="col-sm-3 col-form-label">URL Video YouTube</label> <!-- Ubah col-sm-2 menjadi col-sm-3 -->
-                    <div class="col-sm-9"> <!-- Ubah offset dan ukuran kolom -->
-                        <input type="text" class="form-control" id="inputVidio" name="url_vidio" value="<?php echo $data['url_vidio']; ?>" required>
-                    </div>
-                </div>
-
-                <!-- Submit and Cancel Buttons -->
-                <div class="form-group row">
-                    <div class="col-sm-9 offset-sm-3"> <!-- Ubah offset sesuai label kolom -->
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a href="vidio.php" class="btn btn-secondary">Batal</a>
-                    </div>
-                </div>
-            </form>
+<form action="Proses_Edit_Vidio.php" method="post">
+    <input type="hidden" class="form-control" name="id_vidio" value="<?php echo $data['id_vidio']; ?>">
+    <div class="form-group row">
+        <label for="judul" class="col-sm-3 col-form-label">Keterangan</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="judul" value="<?php echo $data['judul']; ?>" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="url_vidio" class="col-sm-3 col-form-label">URL Video YouTube</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="url_vidio" value="<?php echo $data['url_vidio']; ?>" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-9 offset-sm-3">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="vidio.php" class="btn btn-secondary">Batal</a>
+        </div>
+    </div>
+</form>
         </div>
     </div>
 </div>
@@ -157,9 +150,9 @@
 </div>
 
   <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../js/sb-admin-2.min.js"></script>
 </body>
 </html>

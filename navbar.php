@@ -15,7 +15,7 @@
             $hour = date('H');
             if ($hour >= 5 && $hour < 11) {
                 $greeting = "Selamat Pagi";
-            } elseif ($hour >= 12 && $hour < 15) {
+            } elseif ($hour >= 11 && $hour < 15) {
                 $greeting = "Selamat Siang";
             } elseif ($hour >= 15 && $hour < 18) {
                 $greeting = "Selamat Sore";
@@ -192,5 +192,4 @@
         font-size: 12px; /* Ukuran ikon lebih kecil */
     }
 }
-
 </style>

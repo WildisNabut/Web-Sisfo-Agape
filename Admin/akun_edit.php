@@ -11,9 +11,9 @@
   <title>SMP AGAPE INDAH - Edit akun</title>
 
   <!-- Custom fonts and styles for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -67,8 +67,7 @@
         <!-- End of Topbar -->
 
 
-        
- <!-- Konten -->
+<!-- Konten -->
 <div class="container-fluid">
 
 <div id="Edit_Akun">
@@ -83,6 +82,27 @@
             $Password = md5($data['password']);
             $Level = $data['level'];
         ?>
+
+        <!-- Modal untuk Error -->
+        <?php if (isset($_SESSION['error'])): ?>
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title" id="errorModalLabel">Kesalahan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?= $_SESSION['error']; ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php unset($_SESSION['error']); ?>
+        <?php endif; ?>
 
         <form class="form-group" action="Proses_Edit_Akun.php" method="post">
             <!-- Username Lama -->
@@ -139,6 +159,16 @@
 </div>
 <!-- Akhir dari Konten -->
 
+<script>
+    // Tampilkan modal jika ada error
+    window.addEventListener('load', function () {
+        if (document.getElementById('errorModal')) {
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        }
+    });
+</script>
+
+
 
 
 
@@ -185,9 +215,9 @@
     </div>
 
   <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../js/sb-admin-2.min.js"></script>
 </body>
 </html>

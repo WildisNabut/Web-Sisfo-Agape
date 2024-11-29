@@ -124,9 +124,6 @@ if (isset($_GET['id']))
             ?>          
         
 
-
-
-
  <!-- End of Footer -->
 <?php include('footer.php'); ?>
  <!-- Akhir konte yang mau di rubah  -->        

@@ -13,9 +13,9 @@ include ('../koneksi.php');
   <title>Smp Agape Indah</title>
 
   <!-- Custom fonts and styles for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -72,59 +72,84 @@ include ('../koneksi.php');
   <div class="container-fluid">
          <!-- Murid -->
 <div class="card shadow mb-4">
-    <div class="card-header py-3 d-flex justify-content-between align-items-center">
-        <a href="tambah_murid.php" class="btn btn-primary">Tambah Data</a>
-        <form class="form-inline" method="POST" action="">
-            <div class="input-group">
-                <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+<div class="card-header py-4 d-flex justify-content-between align-items-center">
+    <a href="tambah_murid.php" class="btn btn-primary">Tambah Data</a>
+    <div class="input-group mx-3">
+        <select class="form-control" name="filter" onchange="filterData(this.value)">
+            <option value="" selected>Semua Data</option>
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Islam">Islam</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Budha">Budha</option>
+        </select>
     </div>
+    <form class="form-inline" method="POST" action="">
+        <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>NISN</th>
-                        <th>Nama</th>
-                        <th>Username</th>
-                        <th>Alamat</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Agama</th>
-                        <th>Kelas</th>
-                        <th colspan="2"><b>Aksi</b></th>
+                        <th class='text-center'>NISN</th>
+                        <th class='text-center'>Nama</th>
+                        <th class='text-center'>Username</th>
+                        <th class='text-center'>Alamat</th>
+                        <th class='text-center'>Jenis Kelamin</th>
+                        <th class='text-center'>Agama</th>
+                        <th class='text-center'>Kelas</th>
+                        <th class='text-center' colspan="2" ><b>Aksi</b></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
+                <?php
+                // Ambil nilai filter jika ada
+                $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
+
+                if ($filter) {
+                    // Tambahkan kondisi filter pada query SQL
+                    $tampil = "SELECT * FROM `murid` WHERE `jenkel` = '$filter' OR `agama` = '$filter' ORDER BY `nisn` ASC";
+                } else {
+                    // Query default tanpa filter (semua data)
                     $tampil = "SELECT * FROM `murid` ORDER BY `nisn` ASC";
-                    $hasil = mysqli_query($koneksi, $tampil);
+                }
 
-                    while ($data = mysqli_fetch_array($hasil)) {
-                        $tampil_kelas = "SELECT * FROM `kelas` WHERE id_kelas = '$data[id_kelas]'";
-                        $hasil_kelas = mysqli_query($koneksi, $tampil_kelas);
-                        $data_kelas = mysqli_fetch_array($hasil_kelas);
+                $hasil = mysqli_query($koneksi, $tampil);
 
-                        echo "<tr>
-                            <td class='text-center'>$data[nisn]</td>
-                            <td class='text-center'>$data[nama_murid]</td>
-                            <td class='text-center'>$data[username]</td>
-                            <td class='text-center'>$data[kota]</td>
-                            <td class='text-center'>$data[jenkel]</td>
-                            <td class='text-center'>$data[agama]</td>
-                            <td class='text-center'>$data_kelas[nama_kelas]</td>
-                            <td width='80'><a href='murid_edit.php?kode=$data[nisn]' class='btn btn-success'>Edit</a></td>
-                            <td width='80'>
-                       <button class='btn btn-danger' onclick='showDeleteModal(\"$data[nisn]\")'>Hapus</button>
-                       </td>
-                        </tr>";
-                    }
-                    ?>
+                while ($data = mysqli_fetch_array($hasil)) {
+                    $tampil_kelas = "SELECT * FROM `kelas` WHERE id_kelas = '$data[id_kelas]'";
+                    $hasil_kelas = mysqli_query($koneksi, $tampil_kelas);
+                    $data_kelas = mysqli_fetch_array($hasil_kelas);
+
+                    echo "<tr>
+                        <td class='text-center'>$data[nisn]</td>
+                        <td class='text-center'>$data[nama_murid]</td>
+                        <td class='text-center'>$data[username]</td>
+                        <td class='text-center'>$data[kota]</td>
+                        <td class='text-center'>$data[jenkel]</td>
+                        <td class='text-center'>$data[agama]</td>
+                        <td class='text-center'>$data_kelas[nama_kelas]</td>
+                        <td width='80'><a href='murid_edit.php?kode=$data[nisn]' class='btn btn-success'>Edit</a></td>
+                        <td width='80'>
+                          <button class='btn btn-danger' onclick='showDeleteModal(\"$data[nisn]\")'>Hapus</button>
+                      </td>
+                    </tr>";
+                }
+                ?>
                 </tbody>
             </table>
         </div>
@@ -164,6 +189,20 @@ include ('../koneksi.php');
 </script>
 
 <!-- //Murid -->
+
+<!-- js filter data siswa  -->
+<script>
+    function filterData(value) {
+        if (value === "") {
+            // Redirect untuk semua data tanpa filter
+            window.location.href = 'index.php';
+        } else {
+            // Redirect ke URL dengan parameter filter
+            window.location.href = '?filter=' + value;
+        }
+    }
+</script>
+<!-- js filter data siswa  -->
 
 
 
@@ -209,9 +248,9 @@ include ('../koneksi.php');
 </div>
 
   <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../js/sb-admin-2.min.js"></script>
 </body>
 </html>

@@ -57,14 +57,13 @@
                   </div>
                   <div class="visi-misi-text">
                       <h2>VISI</h2>
-                      <p>Unggul dalam Prestasi, Berbudi Pekerti Luhur Dilandasi Imtak dan Iptek serta Berbudaya Lingkungan.</p>
+                      <p>TERWUJUDNYA GENERASI BERADAB, BERKEARIFAN LOKAL, MENGHARGAI PLURALISME DAN BERDWIBAHASA BERDASARKAN KASIH ALLAH. </p>
                       <h2>MISI</h2>
                       <ol>
-                          <li>Meningkatkan prestasi akademik melalui kegiatan intrakurikuler dan kokurikuler.</li>
-                          <li>Meningkatkan prestasi nonakademik melalui kegiatan ekstrakurikuler.</li>
-                          <li>Mengembangkan sikap dan pribadi yang berbudi pekerti luhur, religius, dan cinta tanah air.</li>
-                          <li>Membentuk karakter kritis, kreatif, dan kolaboratif melalui Projek Penguatan Profil Pelajar Pancasila.</li>
-                          <li>Menyediakan lingkungan sekolah yang sehat, nyaman, dan inklusif.</li>
+                          <li>Menyelenggarakan Pendidikan berkualitas Internasional tanpa menyepelehkan kearifan lokal melalui system pendidikan dan pembelajaran dwi-bahasa: Inggris-Indonesia yang inovatif, kreatif dan actual,</li>
+                          <li>Mengembangkan kepribadian siswa secara utuh dan seimbang dengan cara mengolah kecerdasan hati (spiritual emosional), kecerdasan otak (intelektual), dan kecerdasan raga (dayaluang),</li>                          
+                          <li>Mengembangkan karakter siswa menunjukkan karakter yang menghargai pluralism atas dasar Kasih Allah (Agape), Pancasila dan semboyan Bhineka Tunggal Ika,</li>
+                          <li>Mengembangkan bakat dan potensi siswa ke arah pembangunan diri dan masyarakat beradab secara utuh dan menyeluruh.</li>
                       </ol>
                   </div>
               </div>

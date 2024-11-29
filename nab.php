@@ -4,7 +4,7 @@ if (empty($_SESSION['username'])) {
     echo "
     <ul class='nav'>
         <li class='Navigasi-item'>
-        <button type='button' class='btn btn-outline-primary' data-bs-toggle='modal' data-bs-target='#myModal2'>Login</button>        </button>
+        <button type='button' class='btn btn-outline-primary mr-4' data-bs-toggle='modal' data-bs-target='#myModal2'>Login</button>        </button>
     </li> 
     </ul>";
 } else {

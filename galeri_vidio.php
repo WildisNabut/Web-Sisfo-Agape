@@ -32,7 +32,7 @@
     <?php  
                 include('koneksi.php');
                 // Query untuk mengambil data dari tabel vidio
-                $tampil = "SELECT * FROM vidio LIMIT 2"; // Batasi jumlah video yang ditampilkan
+                $tampil = "SELECT * FROM vidio"; // Batasi jumlah video yang ditampilkan
                 $hasil = mysqli_query($koneksi, $tampil);
 
                 while ($data = mysqli_fetch_array($hasil)) {

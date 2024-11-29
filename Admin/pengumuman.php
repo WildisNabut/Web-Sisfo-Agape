@@ -11,9 +11,9 @@
   <title>SMP AGAPE INDAH</title>
 
   <!-- Custom fonts and styles for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -84,24 +84,12 @@
                   </select>
               </div>
           </form>  
-
-          <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Download</a>
           </div>
             </form>  
 
            <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <a href="tambahpengumuman.php" class="btn btn-primary">Tambah Data</a>
-            <form class="form-inline" method="POST" action="">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
         </div>
 
         <div class="card-body">
@@ -111,68 +99,21 @@
                 <tr>
                     <th class="header-no">
                         No
-                        <!-- Dropdown untuk Sorting -->
-                        <div class="dropdown">
-                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownNo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-sort"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownNo">
-                                <a class="dropdown-item" href="#">Sort Ascending</a>
-                                <a class="dropdown-item" href="#">Sort Descending</a>
-                            </div>
-                        </div>
+                       
                     </th>
                     <th class="header-judul">
                         Judul
-                        <!-- Dropdown untuk Sorting -->
-                        <div class="dropdown">
-                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownJudul" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-sort"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownJudul">
-                                <a class="dropdown-item" href="#">Sort Ascending</a>
-                                <a class="dropdown-item" href="#">Sort Descending</a>
-                            </div>
-                        </div>
                     </th>
                     <th class="header-konten">
                         Deskripsi
-                        <!-- Dropdown untuk Sorting -->
-                        <div class="dropdown">
-                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownDeskripsi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-sort"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownDeskripsi">
-                                <a class="dropdown-item" href="#">Sort Ascending</a>
-                                <a class="dropdown-item" href="#">Sort Descending</a>
-                            </div>
-                        </div>
+                       
                     </th>
                     <th class="header-tanggal">
                         Tanggal
-                        <!-- Dropdown untuk Sorting -->
-                        <div class="dropdown">
-                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownTanggal" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-sort"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownTanggal">
-                                <a class="dropdown-item" href="#">Sort Ascending</a>
-                                <a class="dropdown-item" href="#">Sort Descending</a>
-                            </div>
-                        </div>
                     </th>
                     <th class="header-status">
                         Status
-                        <!-- Dropdown untuk Sorting -->
-                        <div class="dropdown">
-                            <button class="btn btn-sm btn-link dropdown-toggle" type="button" id="dropdownStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-sort"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownStatus">
-                                <a class="dropdown-item" href="#">Aktif</a>
-                                <a class="dropdown-item" href="#">Nonaktif</a>
-                            </div>
-                        </div>
+                        
                     </th>
                     <th class="header-aksi text-center" colspan="2">Aksi</th>
                 </tr>
@@ -425,9 +366,9 @@ $(document).ready(function() {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../js/sb-admin-2.min.js"></script>
 </body>
 </html>

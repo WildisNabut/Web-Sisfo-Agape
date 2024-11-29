@@ -1,77 +1,88 @@
-
-  <!DOCTYPE html>
-  <html lang="id">
-  <head>
-        <!-- CSS files -->
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/beranda.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- JavaScript files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <?php include("navbar.php") ?>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Struktur Organisasi SMP AGAPE INDAH KUPANG</title>
-      <style>
-          * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-          }
-
 <?php session_start(); ?>
+<?php include ('koneksi.php'); ?> 
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
   <title>SMP AGAPE</title>
   <!-- Meta tag Keywords -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="Scholarly web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-  
-  <!-- CSS files -->
-   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font-Awesome-Icons-CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--// Meta tag Keywords -->
+  <!-- css files -->
+  <link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   <link rel="stylesheet" href="css/beranda.css" />
   <link rel="stylesheet" href="css/kontak.css" />
-  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- JavaScript files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Custom fonts and styles for this template -->
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="css/sb-admin-2.min.css" rel="stylesheet" />
+ <link rel="stylesheet" href="style.css">
+
   <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- //css files -->
+  <!-- online-fonts -->
+  <link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+  <!-- //online-fonts -->
 </head>
 
-<?php include ('navbar.php'); ?> 
 <body>
-<!-- Header dengan marquee -->
 
+<!-- Page Wrapper -->
+    <!-- Sidebar -->
+    <?php include ('navbar.php'); ?> 
+    <!-- End of Sidebar -->
+<!-- Konten kamu -->
 <header class="hero">
           <div class="hero-image">
               <img src="https://smp42sby.sch.id/assets/img/hero-img.png" alt="Ilustrasi Pendidikan">
           </div>
           <div class="hero-content">
-              <h1>STRUKTUR ORGANISASI</h1>
+              <h1 class="hero-content" style="animation: scrollText 15s linear infinite;">STRUKTUR ORGANISASI SMP AGAPE INDAH KUPANG</h1>
           </div>
       </header>
-  
-      <main>
-          <section class="struktur-organisasi">
-              <img src="images/animasi/struktur-organisasi.png" alt="Struktur Organisasi Sekolah" class="fade-in-zoom">
-          </section>
-      </main>
-            
 
-      </div>
-      <?php include ('footer.php'); ?>
-      <!-- Bootstrap JS -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="container">
+    <div class="row g-3">
+        <?php
+        include('koneksi.php');
+
+        $tampil = "SELECT * FROM `struktur`";
+        $hasil = mysqli_query($koneksi, $tampil);
+
+        // Menampilkan data dalam bentuk sederhana
+        while ($data = mysqli_fetch_array($hasil)) {
+            echo "
+            <div >
+                    <!-- Gambar Responsif -->
+                    <img src='Admin/$data[gambar]' alt='Struktur Gambar' class='img-fluid' 
+                    <div style='padding: 10px; text-align: center;'>
+                </div>
+            </div>";
+        }
+        ?>
+    </div>
+</div>
+
+
+
+      
+ <!-- End of Footer -->
+<?php include('footer.php'); ?>
+ <!-- Akhir konte yang mau di rubah  -->        
+		</div>
+	</div>
+  </div>
+  <!-- End of Page Wrapper -->
+ <!-- Footer Section -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
        <!-- Animasi Scroll -->
        <script>
           const observer = new IntersectionObserver((entries) => {
@@ -163,4 +174,3 @@
   <!-- //js-scripts -->
 </body>
 </html>
-  

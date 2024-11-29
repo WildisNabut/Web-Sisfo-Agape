@@ -1,4 +1,6 @@
-<?php include ('../koneksi.php');?>
+<?php
+include ('../koneksi.php');
+?>
 <?php include ('autentikasi.php'); ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,16 +29,14 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <!-- Main Content -->
       <div id="content">
-      
-      
-
+        
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
   <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
     <i class="fa fa-bars"></i>
   </button>
 
-  <h4 class="modal-title mx-auto">Data Renungan</h4>
+  <h4 class="modal-title mx-auto">Struktur Organisasi</h4>
 
   <!-- User Dropdown (aligned to right) -->
   <ul class="navbar-nav ml-auto">
@@ -67,86 +67,38 @@
 <!-- End of Topbar -->
         <!-- End of Topbar -->
 
-  <!-- Begin Page Content -->
-  <div class="container-fluid">
+  <!-- konten yang ingin di rubah -->
+        
+  <div class="card-body">
+    <div class="row g-3">
+        <?php
+        include('../koneksi.php');
 
-<!-- Page Heading -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
+        $tampil = "SELECT * FROM `struktur`";
+        $hasil = mysqli_query($koneksi, $tampil);
 
-<!-- Dropdown untuk memilih jumlah data per halaman -->
-<form method="POST" action="" class="form-inline">
- <div class="input-group mr-2">
-     <label for="limit" class="mr-2">Tampilkan:</label>
-     <select name="limit" id="limit" class="custom-select" onchange="this.form.submit()">
-         <option value="10" <?php if (isset($_POST['limit']) && $_POST['limit'] == 10) echo 'selected'; ?>>10</option>
-         <option value="15" <?php if (isset($_POST['limit']) && $_POST['limit'] == 25) echo 'selected'; ?>>15</option>
-         <option value="20" <?php if (isset($_POST['limit']) && $_POST['limit'] == 50) echo 'selected'; ?>>20</option>
-     </select>
- </div>
-</form>  
-
-<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Download</a>
+        // Menampilkan data dalam bentuk kartu
+        while ($data = mysqli_fetch_array($hasil)) {
+            echo "
+            <div class='col-12 col-sm-6 col-md-4 col-lg-3'>
+                <div class='card h-100'>
+                    <img src='$data[gambar]' class='card-img-top' alt='Struktur Gambar' style='height: auto; max-height: 200px; object-fit: cover;' />
+                    <div class='card-body d-flex flex-column justify-content-between'>
+                        <div class='text-center mb-3'>
+                            <h6 class='card-title'>Struktur Organisasi</h6>
+                            <h6 class='card-title'>Smp Kristen agape Indah</h6>
+                        </div>
+                        <a href='struktur_edit.php?kode=$data[id_struktur]' class='btn btn-success'>Edit</a>
+                    </div>
+                </div>
+            </div>";
+        }
+        ?>
+    </div>
 </div>
-</form>  
 
-<div class="card shadow mb-4">
-<div class="card-header py-3 d-flex justify-content-between align-items-center">
-<a href="tambahrenungan.php" class="btn btn-primary">Tambah Data</a>
-<form class="form-inline" method="POST" action="">
-   <div class="input-group">
-       <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-       <div class="input-group-append">
-           <button class="btn btn-primary" type="submit">
-               <i class="fas fa-search fa-sm"></i>
-           </button>
-       </div>
-   </div>
-</form>
-</div>
-       <div class="card-body">
-           <div class="table-responsive">
-               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                   <thead>
-                       <tr>
-                           <th class="header-no text-center">No</th>
-                           <th class="header-judul text-center">Judul</th>
-                           <th class="header-konten text-center">Ayat Alkitab</th>
-                           <th class="header-tanggal text-center">Tanggal</th>
-                           <th class="header-status text-center">Isi Renungan</th>
-                           <th colspan="2" class="header-status text-center" ><b>Aksi</b></th>
-                       </tr>
-                   </thead>
-                   <?php include('../koneksi.php');
-                   $i = 1;
-                   $data = mysqli_query($koneksi, "SELECT * FROM  renungan");
-                   while($d =  mysqli_fetch_array($data) ){
-                   ?>
-                   <tbody>
-                       <tr>
-                       <th> <?php echo $i++; ?> </th>
-                       <th> <?php echo $d['judul']; ?> </th>
-                       <th> <?php echo $d['ayat']; ?> </th>
-                       <th> <?php echo $d['tanggal']; ?> </th>
-                       <th> <?php echo $d['isi']; ?> </th>
-                       <th class='text-center' width='100'>
-                            <a href='renungan_edit.php?kode=<?php echo $d['judul']; ?>' class='btn btn-success'>Edit</a>
-                        </th>
-                        <th class='text-center' width='100'>
-                        <button class='btn btn-danger' onclick="showDeleteModal('<?php echo $d['judul']; ?>')">Hapus</button>
-                         </th>  
-                       </tr>
-                       <?php
-                       }
-                       ?>
-                   </tbody>
-               </table>
-           </div>
-       </div>
-   </div>
- </div>
 
- <!-- Modal hapus  -->
-<?php include('konfirmasi_hapus.php'); ?>
+
 
     <!-- End of Content Wrapper -->
   </div>
