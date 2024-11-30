@@ -179,14 +179,15 @@ body {
                 <div class="custom-card-body">
                     <!-- Judul -->
                     <h5 class="custom-card-title"><strong><?php echo htmlspecialchars($d['judul']); ?></strong></h5>
+                    <!-- Tanggal -->
+                    <p class="custom-card-date"><small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
+
                     <!-- Deskripsi singkat -->
                     <p class="custom-card-text"><?php echo $description; ?></p> 
                     <!-- Tombol 'Lihat Selengkapnya' -->
                     <a href="tampil_berita.php?id=<?php echo $d['id_kegiatan']; ?>">
                         <button class="btn btn-primary btn-sm">Lihat Selengkapnya</button>
                     </a>
-                    <!-- Tanggal -->
-                    <p class="custom-card-date"><small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
                 </div>
             </div>
         </div>

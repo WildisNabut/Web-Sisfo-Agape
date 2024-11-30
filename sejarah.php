@@ -177,21 +177,21 @@
       <!-- Kolom 1 -->
       <div class="col-md-6 mb-3">
         <div class="sejarah-content">
-          <p class="text-justify">SMP AGAPE INDAH KUPANG didirikan pada tahun 2000 dengan tujuan untuk memberikan pendidikan yang berkualitas bagi siswa di wilayah Kupang. Sejak saat itu, sekolah ini telah berkembang pesat, mengedepankan nilai-nilai karakter, kreativitas, dan prestasi. Dalam perjalanannya, sekolah ini terus berusaha untuk memperbaiki fasilitas dan kualitas pengajaran agar bisa mencetak generasi yang berkompeten dan berakhlak mulia.</p>
+          <p class="text-justify">SMP Kristen Agape Indah memiliki awal sejarah yang penuh semangat dan dedikasi terhadap pendidikan berbasis nilai-nilai Kristiani. Awalnya, gagasan pendirian sekolah ini lahir dari pengalaman pendirinya, John W. Haan, MA, Ph.D., yang pada tahun 1990-an merasakan sulitnya menemukan kursus bahasa Inggris selama masa perkuliahan. Berangkat dari kebutuhan tersebut, ia berhasil mendirikan pusat pelatihan bahasa Inggris bernama English Spanning Center.</p>
           
-          <p class="text-justify">Pada tahun 2005, SMP AGAPE INDAH KUPANG mulai membuka berbagai program ekstrakurikuler untuk menunjang minat dan bakat siswa di luar bidang akademik. Kegiatan-kegiatan ini, seperti olahraga, seni, dan keterampilan, sangat mendukung perkembangan pribadi siswa. Sekolah ini juga menjalin kerjasama dengan berbagai lembaga pendidikan dan pemerintahan untuk meningkatkan kualitas pendidikannya.</p>
+          <p class="text-justify">Kesuksesan pusat pelatihan ini menarik perhatian banyak pihak. Banyak siswa dari sekolah ternama pada saat yang mengikuti kursus di English Spanning Center. Dari sinilah muncul ide untuk mendirikan sekolah sendiri yang lebih terintegrasi. Pada tahun 2010, ketika Dinas Pendidikan dan Kebudayaan (PK) masih membawahi jenjang TK hingga SMA di tingkat kota, rencana untuk membuka TK, SD, dan SMP mulai direalisasikan dengan nama Agape Indah.</p>
           
-          <p class="text-justify">Seiring berjalannya waktu, SMP AGAPE INDAH KUPANG semakin dikenal sebagai sekolah yang berprestasi dalam berbagai bidang. Tidak hanya di tingkat lokal, sekolah ini juga sering meraih penghargaan dalam berbagai kompetisi, baik akademik maupun non-akademik, di tingkat provinsi maupun nasional. Visi dan misi yang telah dijalankan dengan baik turut mendorong semangat para siswa untuk terus berprestasi.</p>
+          <p class="text-justify">Namun, atas usulan Bapak Ape Duka dan Ibu Bendelina Sou, disarankan agar setiap jenjang sekolah mencantumkan kata "Kristen" dalam namanya untuk memperkuat identitas spiritualnya. Setelah proposal diajukan ke dinas, izin operasional diterbitkan. Menariknya, dari tiga jenjang yang direncanakan (TK, SD, SMP), hanya SMP yang secara resmi menyandang nama "Kristen" dalam izin operasionalnya, sehingga dikenal sebagai SMP Kristen Agape Indah.</p>
         </div>
       </div>
       <!-- Kolom 2 -->
       <div class="col-md-6 mb-3">
         <div class="sejarah-content">
-          <p class="text-justify">Hari ini, SMP AGAPE INDAH KUPANG terus berkembang dengan membangun generasi muda yang unggul dalam akademik, kreatif dalam seni, dan kokoh dalam karakter. Dengan nilai-nilai pendidikan yang berlandaskan pada kebudayaan dan kemajuan zaman, sekolah ini siap mencetak lulusan-lulusan yang siap bersaing di dunia global.</p>
+          <p class="text-justify">Ketika SMP Kristen Agape Indah dibuka secara resmi pada tahun 2011, tantangan besar muncul. Tidak ada siswa yang mendaftar di jenjang SMP pada tahun pertama operasionalnya. Sementara itu, di jenjang SD, pendaftaran pertama hanya diikuti oleh satu siswa, yang menimbulkan dilema besar bagi pihak sekolah, apakah operasional harus dilanjutkan atau tidak. Dengan keyakinan bahwa setiap individu adalah berharga, pihak sekolah memutuskan untuk tetap melanjutkan. Keputusan ini terbayar dua minggu kemudian, ketika jumlah siswa SD bertambah menjadi 18 orang. Namun, jenjang SMP masih belum memiliki siswa pada tahun tersebut.</p>
           
-          <p class="text-justify">Dalam menghadapi era digital dan globalisasi, SMP AGAPE INDAH KUPANG berkomitmen untuk mempersiapkan para siswa dengan keterampilan teknologi yang dibutuhkan di masa depan. Oleh karena itu, berbagai fasilitas digital dan program pembelajaran berbasis teknologi terus dikembangkan.</p>
+          <p class="text-justify">Pada tahun 2012, SMP Kristen Agape Indah mulai menerima siswa angkatan pertamanya, meskipun jumlahnya masih sangat terbatas, yakni hanya empat orang. Dengan visi membangun generasi muda yang berlandaskan nilai-nilai Kristiani yang kuat, sekolah ini terus berupaya berkembang dan berkontribusi terhadap pendidikan berkualitas di komunitasnya</p>
           
-          <p class="text-justify">Dengan semangat dan dedikasi yang tinggi, SMP AGAPE INDAH KUPANG akan terus berusaha menjadi lembaga pendidikan yang unggul, berkualitas, dan memberikan kontribusi positif bagi kemajuan pendidikan di Indonesia.</p>
+          <p class="text-justify">Dedikasi dan keteguhan pendirinya menjadi fondasi kokoh bagi perjalanan SMP Kristen Agape Indah, yang hingga kini tetap berkomitmen mencetak generasi unggul dengan karakter Kristiani.</p>
         </div>
       </div>
     </div>
