@@ -178,13 +178,10 @@ body {
 </section>
 <section class="konten">
 <div class="container mt-4 fade">
-
 <div class="row fade">
-    <!-- Tulisan Terbaru -->
     <div id="tulisan" class="col-md-8">
         <h2 class="title fade text-center">Tulisan Terbaru</h2>
-        <hr style="border-top: 4px solid #000; width: 20%; margin: 10px auto; display: block;">
-        <!-- Artikel pertama -->
+        <span class="mb-4" style="border-top: 4px solid #000; width: 15%; margin: 10px auto; display: block;"></span>        <!-- Artikel pertama -->
         <?php
 include('koneksi.php');
 // Query untuk mengambil 2 data terbaru dari tabel kegiatan
@@ -208,7 +205,7 @@ while ($d = mysqli_fetch_array($data)) {
                 <a href="tampil_berita.php?id=<?php echo $d['id_kegiatan']; ?>">
                     <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">Baca Selengkapnya</button>
                 </a>
-                <p class="card-text"><small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
+                <p class="card-text"><small class="text-muted"><i class="fas fa-calendar-alt"></i> <?php echo htmlspecialchars($d['tanggal']); ?></small></p>
             </div>
         </div>
     </div>
@@ -216,15 +213,15 @@ while ($d = mysqli_fetch_array($data)) {
 <?php
 }
 ?>        
-          </div>
+</div>
 
           <!-- Sidebar -->
           <div id="kepala-sekolah" class="col-md-4 fade">
               <h2 class="title fade text-center">Ketua Yayasan</h2>
               <div class="text-center fade">
-                  <img src="" class="img-fluid rounded-circle" alt="Jetua Yayasan">
+                  <img src="images/person.jpg" class="img-fluid rounded-circle" alt="Jetua Yayasan">
                   <h4>John W.Haan, MA.Ph.D</h4>
-                  <p>“**"Memimpin dengan kasih Kristus, menginspirasi melalui iman, dan melayani demi menciptakan generasi yang hidup dalam terang Tuhan."**”</p>
+                  <p>“Memimpin dengan kasih Kristus, menginspirasi melalui iman, dan melayani demi menciptakan generasi yang hidup dalam terang Tuhan.”</p>
               </div>
               <hr>
 
@@ -235,7 +232,7 @@ while ($d = mysqli_fetch_array($data)) {
 <!-- Foto dan Video Terbaru -->
 <div id="galeri" class="mt-5 fade">
 <h2 class="title fade text-center">Galeri Foto dan Video</h2>
-<hr style="border-top: 4px solid #000; width: 20%; margin: 10px auto; display: block;">
+<span class="mb-4" style="border-top: 4px solid #000; width: 15%; margin: 10px auto; display: block;"></span>        <!-- Artikel pertama -->
 <div class="row align-items-start">
     <!-- Foto -->
     <div class="col-lg-6 mb-3">
@@ -289,16 +286,12 @@ while ($d = mysqli_fetch_array($data)) {
                 <?php         
             }
             ?>
+             </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
-
-
-          
       </div>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,128L48,149.3C96,171,192,213,288,213.3C384,213,480,171,576,149.3C672,128,768,128,864,122.7C960,117,1056,107,1152,96C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 
 

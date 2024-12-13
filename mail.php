@@ -44,9 +44,6 @@
         <div class="col-md-8 text-center">
             <!-- Gambar animasi -->
             <img src="https://i.pinimg.com/originals/3b/e2/f4/3be2f445535301ebc8d739576ce8b36d.gif" alt="Animasi Kontak" class="img-fluid mb-4">
-
-<<<<<<< HEAD
-=======
             <h2>Silahkan kontak Email berikut</h2>
     <p class="email">siteunc22@gmail.com</p>
     
@@ -56,7 +53,6 @@
         </div>
         </div>
     </div> 
->>>>>>> 51c778b7862ef6fac958fe002d62f6514862da36
 
 <div class="Konten">
 <div class="contact-container">
@@ -65,10 +61,7 @@
     
     <h2>Silahkan kontak Email berikut</h2>
     <p class="email">smpagapeindah22@gmail.com</p>
-    
-<<<<<<< HEAD
-
-
+  
             <div class="button-container">
                 <!-- Tombol Kirim Email dengan ikon -->
                 <button class="btn btn-primary btn-lg" onclick="window.location.href='mailto:siteunc22@gmail.com'">
@@ -79,12 +72,6 @@
                     <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
                 </button>
             </div>
-=======
-    <div class="button-container">
-        <button onclick="window.location.href='mailto:siteunc22@gmail.com'">Kirim Email</button>
-        <button onclick="window.open('https://wa.me/6282144893442?text=Halo,%20saya%20ingin%20menghubungi%', '_blank')">Hubungi via WhatsApp</button>
-        </div>
->>>>>>> 51c778b7862ef6fac958fe002d62f6514862da36
         </div>
     </div>
 </div>

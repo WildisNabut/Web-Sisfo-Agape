@@ -43,7 +43,7 @@
                   </a>
                   <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="pengumuman.php"><i class="fas fa-bullhorn"></i> Pengumuman</a></li>
-                      <li><a class="dropdown-item" href="kegiatan.php"><i class="fas fa-calendar-alt"></i>Berita</a></li>
+                      <li><a class="dropdown-item" href="kegiatan.php"><i class="fas fa-calendar-alt"></i> Berita</a></li>
                   </ul>
               </li>
               <li class="nav-item dropdown">

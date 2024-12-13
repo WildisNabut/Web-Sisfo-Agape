@@ -31,9 +31,9 @@
             <!-- Kolom 1 -->
             <div class="col-md-6 text-white pt-5">
                 <h2>Kategori: Berita</h2>
-                <hr style="border-top: 4px solid #fff; width: 20%; margin: 10px 0;">
+                <hr style="border-top: 4px solid #000; width: 20%; margin: 10px 0;">
             <p><a href="index.php">Smp Kristen Agape Indah Kupang</a> - Berita </p>
-              </div>
+            </div>
         </div>
     </div>
 
@@ -153,56 +153,38 @@ body {
 </style>
 <div class="container mt-4">
 <h2 class="title fade text-center">Berita</h2>
-        <hr style="border-top: 4px solid #000; width: 20%; margin: 10px auto; display: block;">
-
-    <!-- Pembungkus utama -->
-    <div class="row">
-        <?php
-        include('koneksi.php');
+<span style="border-top: 2px solid #000; width: 15%; margin: 10px auto; display: block;" class="pb-4"></span>
+<div class="row">
+        <?php include('koneksi.php');
         // Query untuk mengambil 2 data terbaru dari tabel kegiatan
         $data = mysqli_query($koneksi, "SELECT * FROM kegiatan ORDER BY tanggal DESC");
-        
         // Menampilkan data dalam format card
         while ($d = mysqli_fetch_array($data)) {
-            // Menentukan deskripsi terbatas (batasi 200 karakter)
-            $description = substr($d['deskripsi'], 0, 50) . '...'; // Mengambil 200 karakter pertama
+        // Menentukan deskripsi terbatas (batasi 200 karakter)
+        $description = substr($d['deskripsi'], 0, 50) . '...'; // Mengambil 200 karakter pertama
         ?>
-<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-    <!-- Layout Kartu -->
-    <div class="custom-card">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <!-- Gambar -->
-                <img src="Admin/<?php echo $d['gambar']; ?>" class="custom-card-img" alt="Foto tidak tersedia">
-            </div>
-            <div class="col-md-8">
-                <div class="custom-card-body">
-                    <!-- Judul -->
-                    <h5 class="custom-card-title"><strong><?php echo htmlspecialchars($d['judul']); ?></strong></h5>
-                    <!-- Tanggal -->
-                    <p class="custom-card-date"><small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
-
-                    <!-- Deskripsi singkat -->
-                    <p class="custom-card-text"><?php echo $description; ?></p> 
-                    <!-- Tombol 'Lihat Selengkapnya' -->
-                    <a href="tampil_berita.php?id=<?php echo $d['id_kegiatan']; ?>">
-                        <button class="btn btn-primary btn-sm">Lihat Selengkapnya</button>
-                    </a>
-                </div>
-            </div>
+ <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card h-100">
+          <img src="Admin/<?php echo $d['gambar']; ?>" class="card-img-top" alt="Foto tidak tersedia">
+          <div class="card-body">
+            <p class="custom-card-date">
+              <i class="fas fa-calendar-alt"></i> 
+              <?php echo htmlspecialchars($d['tanggal']); ?>
+            </p>
+            <h5 class="card-title">
+              <i class="fas fa-tag"></i> 
+              <strong><?php echo htmlspecialchars($d['judul']); ?></strong>
+            </h5>
+            <p class="card-text mt-2"><?php echo $description; ?></p>
+            <a href="tampil_berita.php?id=<?php echo $d['id_kegiatan']; ?>" class="btn btn-primary">Baca Selengkapnya</a>
+          </div>
         </div>
-    </div>
-</div>
-
+      </div>
         <?php
         }
         ?>
     </div>
 </div>
-
-
-            
-
       </div>
       <?php include ('footer.php'); ?>
       <!-- Bootstrap JS -->

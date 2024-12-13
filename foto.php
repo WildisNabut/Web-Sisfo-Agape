@@ -27,7 +27,8 @@
 <body>
 <!-- Header dengan marquee -->
 <div id="galeri" class="mt-5">
-    <h2 class="section-title">Galeri Foto </h2>
+    <h2 class="text-center mb-2 font-bold" style="font-weight: bold;">Galeri Foto </h2>
+    <span style="border-top: 2px solid #000; width: 15%; margin: 10px auto; display: block;" class="pb-4"></span>
     <div class="row">
         <?php
         include('koneksi.php');
@@ -36,7 +37,7 @@
         while ($d = mysqli_fetch_array($data)) {
         ?>
             <!-- Responsif: 4 kolom besar, 2 kolom sedang, 1 kolom kecil -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 mx-4">
                 <div class="card">
                     <img src="Admin/<?php echo $d['gambar']; ?>" class="card-img-top img-fluid rounded" alt="Foto tidak tersedia">
                 </div>

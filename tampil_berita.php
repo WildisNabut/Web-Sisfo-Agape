@@ -46,19 +46,11 @@ if (isset($_GET['id']))
   <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
   <!-- //online-fonts -->
 </head>
-
 <body>
-
-<!-- Page Wrapper -->
-    <!-- Sidebar -->
-    <?php include ('navbar.php'); ?> 
-    <!-- End of Sidebar -->
-<!-- Konten kamu -->
-
+  <?php include ('navbar.php'); ?> 
 <section class="py-5" style="background-image: url('images/bg.jpg'); background-size: cover; background-position: center;">
     <div class="container">
         <div class="row align-items-center">
-           
             <!-- Kolom 1 -->
             <div class="col-md-6 text-white pt-5">
                 <h2>Kategori: Berita</h2>
@@ -90,40 +82,23 @@ if (isset($_GET['id']))
         }
 
 </style>
-<section class="social-icons">
-    <div class="row text-center">
-        <div class="col-mt-3 pt-3 ">
-        <p><div class="icon">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <hr style="border-top: 4px solid #000; width: 10%; margin: 10px auto; display: block;">
-    </p>
-        </div>
-    </div>
-</section>
-    <div class="card mb-3">
+    <div class="card m-4">
         <div class="row g-0">
             <div class="col-md-4"> 
-                <!-- Memperbaiki path gambar -->
-                <img src="Admin/<?php echo $d['gambar']; ?>" class="img-fluid rounded-start" alt="Foto tidak tersedia">            </div>
+                <img src="Admin/<?php echo $d['gambar']; ?>" class="img-fluid rounded h-100 p-3" alt="Foto tidak tersedia">            </div>
             <div class="col-md-8 fade">
                 <div class="card-body">
                 <p class="card-text" style="text-align: justify;">
-                        <?php echo htmlspecialchars($d['deskripsi']); ?>
-                    </p>                    
-                    <p class="card-text"><i class="fas fa-calendar-alt"></i> <small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
+                  <?php echo htmlspecialchars($d['deskripsi']); ?>
+                  </p>                    
+                  <p class="card-text"><i class="fas fa-calendar-alt"></i> <small class="text-muted"><?php echo htmlspecialchars($d['tanggal']); ?></small></p>
                 </div>
             </div>
         </div>
     </div>
   <?php
-            }
-            ?>          
-        
-
+  }
+  ?>              
  <!-- End of Footer -->
 <?php include('footer.php'); ?>
  <!-- Akhir konte yang mau di rubah  -->        

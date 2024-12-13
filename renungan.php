@@ -90,7 +90,7 @@
 
 <div class="container mt-4">
 <h2 class="title fade text-center">Renungan</h2>
-        <hr style="border-top: 4px solid #000; width: 20%; margin: 10px auto; display: block;">
+<span style="border-top: 2px solid #000; width: 15%; margin: 10px auto; display: block;" class="pb-4"></span>
 
     <!-- Pembungkus utama -->
     <div class="row">
@@ -133,9 +133,9 @@
                     </p>
                     <!-- Ayat dan Tanggal -->
                     <p class="small text-muted">
-                        <i class="fas fa-calendar-alt"></i>Tanggal : <?php echo date('d F Y', strtotime($d['tanggal'])); ?>
-                        <br>
-                        <i class="fas fa-book"></i> Baca : <?php echo htmlspecialchars($d['ayat']); ?>
+                      <i class="fas fa-book"></i> <span style="font-weight: bold;"> Bacaan</span> :  <?php echo htmlspecialchars($d['ayat']); ?>
+                      <br>
+                      <i class="fas fa-calendar-alt"></i> <span style="font-weight: bold;"> Tanggal</span> : <?php echo date('d F Y', strtotime($d['tanggal'])); ?>
                     </p>
                 </div>
                 <div class="card-footer text-center">
@@ -151,9 +151,7 @@
         ?>
     </div>
 </div>
-
-            
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,128L48,149.3C96,171,192,213,288,213.3C384,213,480,171,576,149.3C672,128,768,128,864,122.7C960,117,1056,107,1152,96C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
       </div>
       <?php include ('footer.php'); ?>
       <!-- Bootstrap JS -->

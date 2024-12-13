@@ -110,10 +110,32 @@
     }
 }
 
+
+/* Animasi garis bawah bergerak dari tengah */
+.linkcepat {
+  position: relative;
+  display: inline-block;
+}
+
+.linkcepat::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: rgb(249 115 22); /* Warna biru */
+  transition: all 0.3s ease-in-out;
+}
+
+.linkcepat:hover::before {
+  left: 0;
+  width: 100%;
+}
     </style>
 </head>
 <body>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,128L48,149.3C96,171,192,213,288,213.3C384,213,480,171,576,149.3C672,128,768,128,864,122.7C960,117,1056,107,1152,96C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 <div class="footer">
     <!-- Map Section -->
     <div class="map-container">
@@ -124,11 +146,11 @@
     <!-- Quick Links Section -->
     <div>
         <h3>Link Cepat</h3>
-        <a href="index.php">Beranda</a>
-        <a href="kegiatan.php">Album</a>
-        <a href="renungan.php">Renungan</a>
-        <a href="pengumuman.php">Pengumuman</a>
-        <a href="Profile_sekolah.php">Profil Sekolah</a>
+        <a id="linkcepat" href="index.php">Beranda</a>
+        <a id="linkcepat" href="kegiatan.php">Album</a>
+        <a id="linkcepat" href="renungan.php">Renungan</a>
+        <a id="linkcepat" href="pengumuman.php">Pengumuman</a>
+        <a id="linkcepat" href="Profile_sekolah.php">Profil Sekolah</a>
     </div>
 
     <!-- Contact Us Section -->
@@ -142,7 +164,7 @@
     <!-- About Us Section -->
     <div class="email">
         <h3>Tentang Kami</h3>
-        <p>Kirimkan Kami Pesan jika membutuhkan bantuan lebih lanjut<a href="mail.php">disini</a></p>
+        <p>Kirimkan Kami Pesan jika membutuhkan bantuan lebih lanjut<a href="kontak2.php">disini</a></p>
         <div class="social-icons">
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.youtube.com/@km5smpkagapeindah_sdnlanaus" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>

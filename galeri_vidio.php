@@ -27,50 +27,46 @@
 <body>
 <!-- Header dengan marquee -->
 <div id="galeri" class="mt-5">
-    <h2 class="section-title">Galeri Vidio</h2>
+<h2 class="text-center mb-2 font-bold" style="font-weight: bold;">Galeri Vidio </h2>
+<span style="border-top: 2px solid #000; width: 15%; margin: 10px auto; display: block;" class="pb-4"></span>
     <div class="row">
     <?php  
-                include('koneksi.php');
-                // Query untuk mengambil data dari tabel vidio
-                $tampil = "SELECT * FROM vidio"; // Batasi jumlah video yang ditampilkan
-                $hasil = mysqli_query($koneksi, $tampil);
+      include('koneksi.php');
+      // Query untuk mengambil data dari tabel vidio
+      $tampil = "SELECT * FROM vidio"; // Batasi jumlah video yang ditampilkan
+      $hasil = mysqli_query($koneksi, $tampil);
 
-                while ($data = mysqli_fetch_array($hasil)) {
-                    // Mengganti URL YouTube dengan format embed
-                    $url_vidio = $data['url_vidio'];
-                    $embed_url = str_replace("watch?v=", "embed/", $url_vidio);
-                    ?>
-                    <div class="col-md-6 mb-3">
-                        <iframe width="100%" height="150" src="<?php echo $embed_url; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <?php         
-                }
-                ?>
+      while ($data = mysqli_fetch_array($hasil)) {
+          // Mengganti URL YouTube dengan format embed
+          $url_vidio = $data['url_vidio'];
+          $embed_url = str_replace("watch?v=", "embed/", $url_vidio);
+          ?>
+          <div class="col-md-6 mb-3 mx-outo px-5">
+              <iframe width="100%" height="100" src="<?php echo $embed_url; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <?php         
+      }
+      ?>
     </div>
 </div>
+</div>
+<?php include ('footer.php'); ?>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Animasi Scroll -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
 
-
-
-            
-
-      </div>
-      <?php include ('footer.php'); ?>
-      <!-- Bootstrap JS -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-       <!-- Animasi Scroll -->
-       <script>
-          const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                      entry.target.classList.add('show');
-                  } else {
-                      entry.target.classList.remove('show');
-                  }
-              });
-          });
-  
-          document.querySelectorAll('.fade').forEach(el => observer.observe(el));
-      </script>
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
   <!-- End of Page Wrapper -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

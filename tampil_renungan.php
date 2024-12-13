@@ -105,21 +105,17 @@ if (isset($_GET['id'])) {
 </style>
 <div class="konten mt-5">
     <div class="card shadow-sm">
-        <!-- Gambar Renungan -->
         <img src="images/a1.jpeg" class="card-img-top" alt="Gambar Renungan" style="height: 300px; object-fit: cover;">
         <div class="card-body">
-            <!-- Isi Renungan -->
-            <p class="card-text">
+            <p class="card-text text-justify">
                 <?php echo nl2br(htmlspecialchars($renungan['isi'])); ?>
             </p>
-            <!-- Ayat dan Tanggal -->
             <p class="small text-muted">
-                <i class="fas fa-calendar-alt"></i> Tanggal: <?php echo date('d F Y', strtotime($renungan['tanggal'])); ?>
-                <br>
-                <i class="fas fa-book"></i> Baca: <?php echo htmlspecialchars($renungan['ayat']); ?>
+            <i class="fas fa-calendar-alt"></i> <span style="font-weight: bold;"> Tanggal</span> : <?php echo date('d F Y', strtotime($renungan['tanggal'])); ?>
+            <br>
+            <i class="fas fa-book"></i> <span style="font-weight: bold;"> Bacaan</span> : <?php echo htmlspecialchars($renungan['ayat']); ?>
             </p>
         </div>
-
         <div class="card-footer text-center">
             <a href="renungan.php" class="btn btn-secondary btn-sm">Kembali ke Daftar Renungan</a>
         </div>
@@ -127,9 +123,9 @@ if (isset($_GET['id'])) {
 </div>
       </div>
       <?php include ('footer.php'); ?>
-      <!-- Bootstrap JS -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-       <!-- Animasi Scroll -->
+      
+      <!-- Animasi Scroll -->
        <script>
           const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
@@ -143,11 +139,8 @@ if (isset($_GET['id'])) {
   
           document.querySelectorAll('.fade').forEach(el => observer.observe(el));
       </script>
-  <!-- End of Page Wrapper -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- <!-- Footer Section -->
-
   <!-- js-scripts -->
   <!-- js-files -->
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
